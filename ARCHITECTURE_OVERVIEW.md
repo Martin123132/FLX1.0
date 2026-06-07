@@ -36,15 +36,15 @@ At a system level, a FLX1.0 run follows this pattern:
 ```mermaid
 sequenceDiagram
     participant User
-    participant FLX as FLX1.0 prototype
+    participant Fabric as FLX1.0 prototype
     participant REF as CPU/reference model
     participant Evidence
 
-    User->>FLX: define workload
+    User->>Fabric: define workload
     User->>REF: define same workload
-    FLX->>FLX: run hardware path
+    Fabric->>Fabric: run hardware path
     REF->>REF: run reference path
-    FLX->>Evidence: export hardware result
+    Fabric->>Evidence: export hardware result
     REF->>Evidence: export reference result
     Evidence->>Evidence: compare outputs
     Evidence->>User: report pass/fail and metrics
