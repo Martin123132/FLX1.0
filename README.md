@@ -34,19 +34,6 @@ The raw evidence archive is here:
 - [manifest.json](evidence/acceptance_20260606_full/manifest.json)
 - [flx_evidence_file_hashes_sha256.txt](evidence/acceptance_20260606_full/flx_evidence_file_hashes_sha256.txt)
 
-## Presentation Media
-
-![FLX1.0 presentation thumbnail](MEDIA/public_presentation_thumbnail.png)
-
-The repository includes presentation-ready media generated from the acceptance evidence:
-
-- [architecture_overview.png](MEDIA/architecture_overview.png)
-- [validation_result_card.png](MEDIA/cards/validation_result_card.png)
-- [experiment_evidence_wall.png](MEDIA/experiment_evidence_wall.png)
-- [MEDIA/README.md](MEDIA/README.md)
-- [MEDIA_MANIFEST.json](MEDIA/MEDIA_MANIFEST.json)
-- [VIDEO_STORYBOARD.md](MEDIA/VIDEO_STORYBOARD.md)
-
 ## What Has Been Demonstrated
 
 The latest hardware acceptance run completed on **6 June 2026**.
