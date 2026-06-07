@@ -1,0 +1,51 @@
+{
+  "summary": {
+    "points": 1024,
+    "density_sum": 0.09659885568544269,
+    "density_max": 0.09631619811989367,
+    "density_min": 0.0,
+    "peak_index": 0,
+    "peak_density": 0.09631619811989367,
+    "real_min": 0.0,
+    "real_max": 0.3103485107421875,
+    "imag_min": 0.0,
+    "imag_max": 0.0
+  },
+  "q16_metrics": {
+    "source_dir": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\mts\\mts_2d_32x32_t2",
+    "metric_name": "field_norm_energy_q16",
+    "dimension": null,
+    "logical_shape": null,
+    "active_points": 1024,
+    "particles": 0,
+    "timesteps": 0,
+    "cycles": 0,
+    "wall_elapsed_s": null,
+    "cycles_per_point": 0.0,
+    "cycles_per_point_step": null,
+    "density_energy_q16": 0.09659885568544269,
+    "density_l2": 0.09631640538697994,
+    "density_max": 0.09631619811989367,
+    "density_min": 0.0,
+    "peak_index": 0,
+    "peak_density": 0.09631619811989367,
+    "real_min": 0.0,
+    "real_max": 0.3103485107421875,
+    "imag_min": 0.0,
+    "imag_max": 0.0,
+    "kernel_contract": null,
+    "kernel_contract_word": null,
+    "kernel_contract_word_hex": null,
+    "compare": {
+      "pass": true,
+      "mismatches": 0,
+      "max_abs_delta_q16": 0,
+      "normalized_overlap": 1.0000000000000002,
+      "density_integral_relative_error": 0.0
+    }
+  },
+  "plots": [
+    "mts_2d_density.png",
+    "mts_2d_real.png"
+  ]
+}

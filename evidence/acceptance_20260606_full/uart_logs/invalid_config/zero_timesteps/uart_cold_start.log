@@ -1,0 +1,73 @@
+[host] opening COM5 @ 115200
+[host] draining for 5.0s
+[uart] [SD] Wrote '0:/BOOT.bin' (4541468 bytes)
+[uart] [SD] Wrote '0:/mbt.cfg' (1671 bytes)
+[uart] [SD] Wrote '0:/state.bin' (6144 bytes)
+[uart] [SD] Wrote '0:/lambda_r.bin' (2048 bytes)
+[uart] [DDR] Copied 4 file(s) to SD card.  Staging area cleared.
+[uart] [MAIN] 4 experiment file(s) copied from DDR to SD.
+[uart] [SD] Read '0:/mbt.cfg' (1671 bytes)
+[uart] [CONFIG] Parsing SD/JTAG config buffer directly...
+[uart] [CONFIG] Loaded experiment 'notebook_10M_particles' from direct buffer parser
+[uart] [SD] Experiment config loaded from SD.
+[uart] [SD] Particle3D mode: ignoring optional state.bin/lambda_r.bin; using generated Particle3D field.
+[uart] Z7 Orchestrator v2.0
+[uart] === Experiment Configuration ===
+[uart]   Name:          notebook_10M_particles
+[uart]   Lattice:       512 sites (8x8x8)
+[uart]   Mode:          particle_superposition_3d (2)
+[uart]   Auto-run:      no
+[uart]   Dimension:     kind=particle_superposition_3d packing=dense_compressed min_thickness=state_words
+[uart]                  logical=8x8x8 physical=8x8x8 channels/tile=1 layers=1
+[uart]   Layering:      capacity=512 items/layer=1 total_layers=1
+[uart]                  grid/item=512 timesteps/layer=1 used/spare=512/0
+[uart]   Particle3D:    particles=1 batch=1 seed=42 steps=1
+[uart]                  D=0.800 V=0.600 T=35.000 dt=0.080 sigma=0.500
+[uart]                  accum_mode=full_512 lanes=1 site_lanes=1 wal_policy=full bin_first=no
+[uart]   A7 coeffs:     v2=0x00001062 eta=0x00000000 zeta=0x00000000
+[uart]                  lambda=0x00000000 gamma=0x00000000 cg2=0x00010000
+[uart]                  epsilon=0x00000000 step_period=0
+[uart]                  spi3_push=7 spi3_sites=512
+[uart]   Cmod coeffs:   tau_low=0x00100000 tau_high=0x00400000
+[uart]                  tau_block=0x01000000 w_e=0x00008000 w_g=0x00008000
+[uart]                  eta_psi=0x00000666
+[uart]   Timing:        tau_div=49999999  steps=1  ckpt_every=100  poll=10000 µs
+[uart]   Logging:       energy=no  snapshot_every=0  wal_stream=no
+[uart]   Recovery:      snapshot_fields=6  depth=128  restore_audit=yes
+[uart]   IC (cold):     sigma=32.0  amplitude=1.000
+[uart]   Robustness:    max_consec_errors=5  wal_stream_floor=5000 µs
+[uart] ================================
+[uart] [SD] output dir ready: 0:/output
+[uart] === Z7 Orchestrator Early Startup ===
+[uart] [STARTUP] PL version: 0x00010001
+[uart] [STARTUP] SPI dividers: SPI1=9 (5 MHz), SPI0=31 (~1.56 MHz)
+[uart] [STARTUP] Cmod SHUTDOWN_FLAG = 0xFF
+[uart] [S�C��>> EARLY PRESTART: adjust/debug before A7/Cmod config or restore
+[uart]     Commands: status, regs, spi-health, set spi1-div <n>, set spi0-div <n>
+[uart]               a7-debug, layer-status, particle-load, mts-config/load/status, bp-recover, sd-ls, cold-start, restore, wal-bypass on/off, help
+[uart]     'go' continues only after cold-start or restore succeeds. 'stop' exits.
+[cmd] cold-start
+[uart] cold-start
+[uart] === COLD START: Configuring A7 and Cmod from defaults/config ===
+[uart] [STARTUP] Configuring A7 ...
+[uart]   A7 layer descriptor <- mode=particle_superposition_3d layer=0 item_start=0 items=1 grid=512 steps=1
+[uart] [STARTUP] Writing notebook-equivalent per-site lambdaR for 512 sites ...
+[uart]   A7 layer descriptor <- mode=particle_superposition_3d layer=0 item_start=0 items=1 grid=512 steps=1
+[uart] [STARTUP] Particle3D accelerator: implementation=A7 hardware accumulator
+[uart] [STARTUP] Particle3D config: particles=1 grid=8x8x8 seed=42 sigma=0x00008000 scale=0x00000000
+[uart] [STARTUP] Particle3D accel: mode=full_512 accum_lanes=1 site_lanes=1 wal_policy=full binary_first=no
+[uart] [STARTUP] Setup console active. Type 'setup-help' for safe diagnostic commands during accumulation.
+[uart] [STARTUP] Particle3D accumulation done on A7 in 0.009 s; evolution steps=1.
+[uart]   Accel: mode=full_512 req_lanes=1 req_site_lanes=1 actual_lanes=1 actual_site_lanes=1 wal=full bin_first=0
+[uart]          caps=0x0010F414 cycles accum=3587 finalize=3072 active=0x00011110
+[uart] [STARTUP] A7 configured OK.
+[uart] [STARTUP] Capturing initial A7 field RAM ...
+[uart] [A7] Dumping 512 sites 0 64 128 192 256 320 384 448 done
+[uart] [STARTUP] Initial A7 field captured in PS RAM.
+[uart] [STARTUP] Initial A7 field SD output deferred to final evidence bundle.
+[uart] [STARTUP] Configuring Cmod ...
+[uart] [STARTUP] Cmod recovery: fields=6 policy=0x0000000F depth=128
+[uart] [STARTUP] Cmod WAL control: logging=on repair=on
+[uart] [STARTUP] Cmod configured OK.
+[uart] === Cold Start Complete - Hardware Ready (tau NOT started) ===
+[host] final drain 1.0s

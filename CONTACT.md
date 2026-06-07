@@ -6,7 +6,5 @@ Suggested contact fields for publication:
 
 - organisation: TWO HANDS NETWORK LTD
 - project: FLX1.0 / Finite Lattice maXimus
-- contact name: glyn evans 
+- contact name: Glyn Evans
 - email: glyn@twohandsnetwork.co.uk
-
-

@@ -1,0 +1,35 @@
+{
+  "workload": {
+    "name": "sha256_nonce_scan",
+    "kind": "sha256_nonce_scan",
+    "active_points": 1,
+    "dimension": null,
+    "shape": [],
+    "particles": 1,
+    "timesteps": 1,
+    "requires_restore": true,
+    "prefer_accelerator": true,
+    "source": "E:\\FLX\\programs\\flxprog\\sha256_nonce_scan.flxprog",
+    "metadata": {
+      "program_format": "flxprog",
+      "instruction_count": 4
+    }
+  },
+  "selected_engine": "sha_accel",
+  "fallback_engine": "ukernel_vm",
+  "reason": "SHA-256 nonce scan matches the fixed SHA accelerator; VM remains the adaptability fallback",
+  "commands": [
+    "sha-reset",
+    "sha-config <nonce_start> <nonce_count>",
+    "sha-load-header <idx> <word>",
+    "sha-start",
+    "sha-status"
+  ],
+  "evidence_tags": [
+    "adaptive_dispatch",
+    "sha256",
+    "sha_accel"
+  ],
+  "warnings": [],
+  "contract": "flx_adaptive_dispatcher_v1"
+}

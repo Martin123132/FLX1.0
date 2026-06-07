@@ -1,0 +1,19 @@
+{
+  "result_category": "mts_1d",
+  "dimension_kind": "mts_1d",
+  "source": "fpga",
+  "classification": "candidate_bit_exact",
+  "kernel_contract": "a7_mts_full_physics_kernel_v2_q16",
+  "kernel_contract_word": 1297371954,
+  "particles": 1,
+  "timesteps": 2,
+  "logical_shape": [1024, 1, 1],
+  "requested_lanes": 1,
+  "actual_lanes": 1,
+  "caps": 1297371954,
+  "cycles": 52480,
+  "active_points": 1024,
+  "field_csv": "field.csv",
+  "field_bin": "field.bin",
+  "density_csv": "dens.csv"
+}

@@ -1,0 +1,12 @@
+Particle3D field comparison summary
+label: initial
+reference_source: architecture_reference
+fpga_source: fpga
+passed: True
+mismatches: 0
+max_abs_delta_q16: 0
+max_abs_delta_float: 0.0
+normalized_overlap: 0.9999999999999085
+density_integral_relative_error: 3.323224883124812e-07
+center_of_mass_delta: 4.656388456164581e-07
+peak_location_delta: 0.0

@@ -4,6 +4,8 @@ The FLX1.0 prototype completed a full hardware acceptance run on **6 June 2026**
 
 The acceptance run tested the fabric as a deterministic processing system, not as a single fixed demo. It covered field workloads, particle workloads, recovery behavior, adaptive dispatch, reporting, plotting, and CPU-reference comparison.
 
+The generated evidence archive is stored in [evidence/acceptance_20260606_full](evidence/acceptance_20260606_full/).
+
 ## Summary Table
 
 | Test Area | What Was Tested | Result |

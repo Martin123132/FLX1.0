@@ -1,0 +1,127 @@
+{
+  "label": "final",
+  "reference_source": "architecture_reference",
+  "fpga_source": "fpga",
+  "reference_field": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\particle3d_438\\architecture_reference\\field_reference.csv",
+  "fpga_field": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\particle3d_438\\field.csv",
+  "reference_metrics": {
+    "metadata": {
+      "source": "architecture_reference",
+      "experiment_name": null,
+      "input_field": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\particle3d_438\\architecture_reference\\field_reference.csv",
+      "grid_shape": [
+        8,
+        8,
+        8
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "d_volume": 1.0,
+      "steps": null,
+      "dt": null,
+      "q_format": "q16.16"
+    },
+    "density_integral": 169720133096.95367,
+    "field_l2_norm": 411971.03429361834,
+    "field_sum": 1972118.288925171,
+    "peak_psi": -32336.57354736328,
+    "peak_psi_abs": 32336.57354736328,
+    "peak_density": 1045653988.7840347,
+    "peak_site": 471,
+    "peak_xyz": [
+      7,
+      2,
+      7
+    ],
+    "center_of_mass_xyz": [
+      3.500000000477068,
+      3.500000001993767,
+      3.5000000006001324
+    ],
+    "rms_radius": 3.9577521997002214,
+    "density_min": 2267902.765445525,
+    "density_max": 1045653988.7840347,
+    "psi_min": -32336.57354736328,
+    "psi_max": 24282.918533325195
+  },
+  "fpga_metrics": {
+    "metadata": {
+      "source": "fpga",
+      "experiment_name": null,
+      "input_field": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\particle3d_438\\field.csv",
+      "grid_shape": [
+        8,
+        8,
+        8
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "d_volume": 1.0,
+      "steps": null,
+      "dt": null,
+      "q_format": "q16.16"
+    },
+    "density_integral": 169720133096.95367,
+    "field_l2_norm": 411971.03429361834,
+    "field_sum": 1972118.288925171,
+    "peak_psi": -32336.5735473633,
+    "peak_psi_abs": 32336.5735473633,
+    "peak_density": 1045653988.7840359,
+    "peak_site": 471,
+    "peak_xyz": [
+      7,
+      2,
+      7
+    ],
+    "center_of_mass_xyz": [
+      3.500000000477068,
+      3.500000001993767,
+      3.500000000600133
+    ],
+    "rms_radius": 3.957752199700222,
+    "density_min": 2267902.7654455015,
+    "density_max": 1045653988.7840359,
+    "psi_min": -32336.5735473633,
+    "psi_max": 24282.9185333252
+  },
+  "comparison": {
+    "mismatches": 0,
+    "max_abs_delta_q16": 0,
+    "max_abs_delta_float": 0.0,
+    "first_mismatching_sites": [],
+    "field_overlap_integral": 169720133096.95367,
+    "normalized_overlap": 1.0,
+    "density_l1_error": 0.0003998344764113426,
+    "density_l2_error": 2.2714530228725143e-05,
+    "density_max_abs_error": 3.0994415283203125e-06,
+    "density_integral_relative_error": 0.0,
+    "center_of_mass_delta": 4.440892098500626e-16,
+    "peak_location_delta": 0.0
+  },
+  "outputs": {
+    "compare_report_json": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\particle3d_438\\compare_final_reference_vs_fpga\\compare_report.json",
+    "compare_summary_txt": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\particle3d_438\\compare_final_reference_vs_fpga\\compare_summary.txt",
+    "density_error_csv": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\particle3d_438\\compare_final_reference_vs_fpga\\density_error.csv"
+  },
+  "pass_fail": {
+    "passed": true,
+    "checks": {
+      "normalized_overlap": true,
+      "density_integral_relative_error": true,
+      "center_of_mass_delta": true,
+      "peak_location_delta": true
+    },
+    "thresholds": {
+      "normalized_overlap_min": 0.99,
+      "density_integral_relative_error_max": 0.02,
+      "center_of_mass_delta_max": 0.25,
+      "peak_location_delta_max": 1.0
+    }
+  }
+}

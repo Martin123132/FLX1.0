@@ -1,0 +1,7 @@
+Running: xsim.dir/tb_mts_dimensional_kernel_sim/xsimk.exe -runall -simmode gui -wdb tb_mts_dimensional_kernel_sim.wdb -simrunnum 0 -socket 60216
+Design successfully loaded
+Design Loading Memory Usage: 8592 KB (Peak: 8592 KB)
+Design Loading reference model Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 10708 KB (Peak: 10708 KB)
+Simulation reference model Usage: 843 ms

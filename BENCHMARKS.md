@@ -1,5 +1,7 @@
 # Benchmarks
 
+The benchmark evidence is used here as validation evidence, not as a throughput claim. The important result is repeatable agreement between the hardware path and the CPU/reference model for the validated cases.
+
 ## Acceptance Benchmark Summary
 
 | Case | Workload Class | Public Scale | Result |
@@ -42,6 +44,8 @@ The benchmark suite reports:
 
 ## Interpretation
 
-The useful benchmark result is not just throughput. The important property is that the prototype can run hardware workloads and prove that the result matches the CPU-reference path exactly for the validated cases.
+The useful benchmark result is not just throughput. The important property is that the prototype can run hardware workloads and show that the result matches the CPU-reference path exactly for the validated cases.
 
 That matters for physical-world simulation, robotics, factory-state replay, digital twins, and fault-recoverable processing, where being able to replay and validate state can be as important as raw execution speed.
+
+The generated benchmark artefacts are stored in [evidence/acceptance_20260606_full/benchmark_reports](evidence/acceptance_20260606_full/benchmark_reports).

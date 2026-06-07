@@ -1,6 +1,8 @@
 # Architecture Overview
 
-FLX1.0 is a deterministic field-state processing fabric. It is built around the idea that hardware workloads should be:
+FLX1.0 is a deterministic FPGA lattice and field-state processing fabric. It is built around a simple operating model: define a workload, run it through the hardware path, compare it with a CPU/reference model, and retain evidence for review.
+
+The current prototype is designed around workloads that should be:
 
 - explicitly configured;
 - deterministic;
@@ -8,7 +10,7 @@ FLX1.0 is a deterministic field-state processing fabric. It is built around the 
 - capable of producing evidence;
 - recoverable through controlled state restoration.
 
-## Public Architecture Model
+## Architecture Model
 
 ```mermaid
 flowchart TB
@@ -29,21 +31,21 @@ flowchart TB
 
 ## Execution Model
 
-At a public level, a FLX1.0 run follows this pattern:
+At a system level, a FLX1.0 run follows this pattern:
 
 ```mermaid
 sequenceDiagram
     participant User
     participant FLX as FLX1.0 prototype
-    participant CPU as CPU reference
+    participant REF as CPU/reference model
     participant Evidence
 
     User->>FLX: define workload
-    User->>CPU: define same workload
+    User->>REF: define same workload
     FLX->>FLX: run hardware path
-    CPU->>CPU: run reference path
+    REF->>REF: run reference path
     FLX->>Evidence: export hardware result
-    CPU->>Evidence: export reference result
+    REF->>Evidence: export reference result
     Evidence->>Evidence: compare outputs
     Evidence->>User: report pass/fail and metrics
 ```
@@ -62,7 +64,7 @@ The current prototype has validated:
 
 ## Direction
 
-The same architecture direction can be extended toward:
+The same lattice and state-processing approach can be extended toward:
 
 - deterministic robotics simulation;
 - factory-state replay;

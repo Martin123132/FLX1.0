@@ -4,33 +4,41 @@
 
 FLX1.0 stands for Finite Lattice maXimus.
 
-FLX1.0 is a prototype deterministic processing fabric for workloads where the important question is not only "did it run?", but:
+FLX1.0 is a prototype hardware execution path for finite-lattice and field-state workloads. The project is focused on a practical question: can a hardware run be validated, replayed, restored, and inspected with evidence?
 
-- did the hardware result match the reference model exactly?
-- can the run be replayed?
-- can the state be checkpointed and restored?
-- can the same fabric handle field, particle, world-state, and programmable workloads?
+The current prototype has completed a hardware acceptance run covering field simulation, particle accumulation, restore/recovery, adaptive workload dispatch, and evidence/report generation. This repository collects the customer-facing summary plus the generated evidence archive for that run.
 
-The current FLX1.0 prototype has completed a hardware acceptance run covering field simulation, particle accumulation, restore/recovery, adaptive workload dispatch, and evidence/report generation.
+## At A Glance
 
-## Why This Exists
+| Area | Current evidence status |
+|---|---:|
+| Hardware acceptance run | Pass, 6 June 2026 |
+| Deterministic field-state workload execution | Demonstrated |
+| CPU-reference comparison | Pass |
+| Controlled restore/recovery | Pass |
+| Adaptive workload dispatch | Pass |
+| Evidence/report generation | Pass |
 
-Ordinary CPU/GPU software stacks are powerful, but many physical-world systems need more than raw throughput:
+## What This Repository Contains
 
-- deterministic replay;
-- fixed-contract validation against a reference model;
-- state persistence;
-- controlled restore after interruption;
-- repeatable world-state evolution;
-- hardware-assisted execution for grid, field, and local-state workloads.
+- summary documents for technical and commercial review;
+- validation results and benchmark summaries;
+- the generated hardware acceptance evidence archive;
+- raw logs, comparison outputs, plots, JSON summaries, and file-integrity hashes.
 
-FLX1.0 explores that space: a deterministic field-state processing fabric that can run workloads, compare them against a CPU reference, and preserve evidence about what happened.
+The raw evidence archive is here:
+
+- [evidence/acceptance_20260606_full](evidence/acceptance_20260606_full/)
+- [acceptance_report.md](evidence/acceptance_20260606_full/acceptance_report.md)
+- [acceptance_summary.json](evidence/acceptance_20260606_full/acceptance_summary.json)
+- [manifest.json](evidence/acceptance_20260606_full/manifest.json)
+- [flx_evidence_file_hashes_sha256.txt](evidence/acceptance_20260606_full/flx_evidence_file_hashes_sha256.txt)
 
 ## What Has Been Demonstrated
 
-The latest hardware acceptance run passed on **6 June 2026**.
+The latest hardware acceptance run completed on **6 June 2026**.
 
-Validated public results:
+Validated results:
 
 | Area | Result |
 |---|---:|
@@ -57,12 +65,25 @@ The 10,000,000-particle 3D regression matched the CPU-reference output with:
 - maximum fixed-point delta: **0**
 - normalized overlap: **1.0**
 
+## Why This Exists
+
+Ordinary CPU/GPU software stacks are powerful, but some physical-world systems need more than raw throughput:
+
+- deterministic replay;
+- fixed-contract validation against a reference model;
+- state persistence;
+- controlled restore after interruption;
+- repeatable world-state evolution;
+- hardware-assisted execution for grid, field, and local-state workloads.
+
+FLX1.0 explores that space: a deterministic field-state processing fabric that can run workloads, compare them against a CPU/reference model, and preserve evidence about what happened.
+
 ## Evidence Flow
 
 ```mermaid
 flowchart LR
     A["Workload definition"] --> B["FPGA hardware run"]
-    A --> C["CPU reference run"]
+    A --> C["CPU/reference model run"]
     B --> D["Hardware output"]
     C --> E["Reference output"]
     D --> F["Comparison"]
@@ -98,13 +119,13 @@ flowchart TB
 - **Adaptive workload routing:** field, SHA-style, robotics-style, and generic programmable workload classes.
 - **Recovery proof:** controlled restore path compared against baseline and CPU-reference output.
 
-## Why It Matters
+## Evidence-Based Claim
 
-The core claim demonstrated by this prototype is:
+The claim supported by the current evidence is:
 
 > A deterministic FPGA-based field-state processing fabric can run multiple validated grid/world-state workloads, compare hardware results against a CPU-reference model, preserve evidence, and demonstrate controlled recovery behavior.
 
-That is relevant to:
+Potential application areas include:
 
 - robotics simulation and replay;
 - factory/digital-twin state engines;
@@ -115,7 +136,9 @@ That is relevant to:
 
 ## Read More
 
+- [RESULT_SUMMARY.md](RESULT_SUMMARY.md)
 - [VALIDATION_RESULTS.md](VALIDATION_RESULTS.md)
+- [VALIDATION_CARD.md](VALIDATION_CARD.md)
 - [BENCHMARKS.md](BENCHMARKS.md)
 - [ARCHITECTURE_OVERVIEW.md](ARCHITECTURE_OVERVIEW.md)
 - [APPLICATIONS.md](APPLICATIONS.md)

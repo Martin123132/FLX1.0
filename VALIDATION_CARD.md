@@ -38,8 +38,8 @@ Final status: **PASS**
 
 ## Supported Public Claim
 
-The FLX1.0 prototype has demonstrated deterministic field-state and world-state workload execution, exact CPU-reference comparison for the validated cases, controlled restore behavior, and public-reportable evidence generation.
+The FLX1.0 prototype has demonstrated deterministic field-state and world-state workload execution, exact CPU-reference comparison for the validated cases, controlled restore behavior, adaptive workload dispatch, and evidence/report generation.
 
 ## Scope
 
-This validation card summarizes the measured prototype result and the acceptance evidence generated from that run.
+This validation card summarizes the measured prototype result and the acceptance evidence generated from that run. The full evidence archive is stored in [evidence/acceptance_20260606_full](evidence/acceptance_20260606_full/).

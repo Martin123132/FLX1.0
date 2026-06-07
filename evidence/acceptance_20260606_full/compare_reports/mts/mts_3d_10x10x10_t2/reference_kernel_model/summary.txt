@@ -1,0 +1,5 @@
+=== MTS Full Physics reference model Summary ===
+mode: mts_3d
+logical_shape: 10x10x10
+timesteps: 2
+kernel_contract: a7_mts_full_physics_kernel_v2_q16

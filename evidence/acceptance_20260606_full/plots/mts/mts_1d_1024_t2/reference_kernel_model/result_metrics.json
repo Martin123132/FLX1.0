@@ -1,0 +1,27 @@
+{
+  "result_category": "mts_1d",
+  "dimension_kind": "mts_1d",
+  "source": "architecture_reference_full_q16_model",
+  "classification": "bit_exact_kernel_reference",
+  "kernel_contract": "a7_mts_full_physics_kernel_v2_q16",
+  "kernel_contract_word": 1297371954,
+  "fixed_point": "q16_16_complex_i32_field_i64_result",
+  "logical_shape": [
+    1024,
+    1,
+    1
+  ],
+  "active_points": 1024,
+  "particles": 1,
+  "particle_base": 0,
+  "timesteps": 2,
+  "coeff_dt": 16384,
+  "coeff_diffusion": 52429,
+  "coeff_vcoeff": 39321,
+  "uniform_potential": 8192,
+  "normalize": true,
+  "reference_time_s": 0.031868599995505065,
+  "field_bin": "field.bin",
+  "field_csv": "field.csv",
+  "density_csv": "density.csv"
+}

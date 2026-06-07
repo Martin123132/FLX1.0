@@ -1,0 +1,213 @@
+
+$ python -u <workspace>\\tools\z7_sd_manager.py push-experiment --experiment <workspace>\\results\acceptance\20260606_full_final_acceptance\mts\mts_2d_32x32_t2\staged\mbt_mts_generated.toml --boot <workspace>\\experiments\sd_card\BOOT.bin --xsct E:\AMD\2025.2.1\Vitis\bin\xsct.bat --run
+[uart] [SD] SD card mounted OK.
+Staged config: <workspace>\\results\acceptance\20260606_full_final_acceptance\mts\mts_2d_32x32_t2\staged\mbt_mts_generated.toml -> <workspace>\\experiments\sd_card_particle3d\mbt.cfg
+Staging BOOT.bin too: <workspace>\\experiments\sd_card\BOOT.bin
+
+Running JTAG SD staging:
+  python <workspace>\\tools\_z7_sd_backend\jtag_upload.py <workspace>\\experiments\sd_card_particle3d --xsct E:\AMD\2025.2.1\Vitis\bin\xsct.bat --boot <workspace>\\experiments\sd_card\BOOT.bin --run
+Using XSCT: E:\AMD\2025.2.1\Vitis\bin\xsct.bat
+
+Uploading to Z7 via JTAG (DDR to SD):
+  mbt.cfg (1076 bytes)
+  state.bin (6144 bytes)
+  lambda_r.bin (2048 bytes)
+  BOOT.bin (4,541,468 bytes) <- <workspace>\\experiments\sd_card\BOOT.bin
+  + Program existing bitstream + ELF + start
+
+Running: E:\AMD\2025.2.1\Vitis\bin\xsct.bat <workspace>/tools/_z7_sd_backend/jtag_upload.tcl <workspace>/experiments/sd_card_particle3d --run --boot <workspace>/experiments/sd_card/BOOT.bin
+
+============================================================
+
+****** Software Commandline Tool (XSCT) v2025.2.1
+  **** SW Build 6403652 on Thu Mar 19 19:48:24 GMT 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+Warning: XSCT is deprecated and will be removed in future releases.
+We recommend using the new Python command-line tool for project management and debugging:
+- Run "vitis -i" for interactive mode.
+- Run "vitis -s <script>" for script mode.
+Reading experiment from: <workspace>/experiments/sd_card_particle3d
+  config (mbt.cfg): 1016 bytes
+  state: 6144 bytes
+  initial_state.bin: 6144 bytes
+  lambda_r.bin: 2048 bytes
+  BOOT.bin: 4541468 bytes (<workspace>/experiments/sd_card/BOOT.bin)
+
+Connecting to JTAG target...
+Programming FPGA...
+FPGA programmed.
+
+Writing to DDR staging area at 0x1F000000...
+  Writing config (1016 bytes)...
+  Writing state (6144 bytes)...
+  Writing lambda_r.bin (2048 bytes)...
+  Writing BOOT.bin (4541468 bytes) — this may take a moment...
+  BOOT.bin written.
+  Magic written — staging area committed.
+
+Loading ELF: <workspace>/arty_a7_fabric/z7_new/platform_set/orch/build/orch.elf
+Starting execution...
+Z7 orchestrator running.  Open serial console at 115200 baud.
+
+Done.
+============================================================
+
+Upload complete. All files are staged in DDR.
+Z7 is running. Firmware will copy DDR to SD and follow the loaded experiment firmware flow.
+[uart] [DDR] Staged data found! toml=1016  state=6144  lambda=2048  boot=4541468
+[uart] [SD] Wrote '0:/BOOT.bin' (4541468 bytes)
+[uart] [SD] Wrote '0:/mbt.cfg' (1016 bytes)
+[uart] [SD] Wrote '0:/state.bin' (6144 bytes)
+[uart] [SD] Wrote '0:/lambda_r.bin' (2048 bytes)
+[uart] [DDR] Copied 4 file(s) to SD card.  Staging area cleared.
+[uart] [MAIN] 4 experiment file(s) copied from DDR to SD.
+[uart] [SD] Read '0:/mbt.cfg' (1016 bytes)
+[uart] [CONFIG] Parsing SD/JTAG config buffer directly...
+[uart] [CONFIG] Loaded experiment 'generated_mts_2d_1' from direct buffer parser
+[uart] [SD] Experiment config loaded from SD.
+[uart] [SD] MTS mode: ignoring optional state.bin/lambda_r.bin; command/config path loads field and potential.
+[uart] Z7 Orchestrator v2.0
+[uart] === Experiment Configuration ===
+[uart] Name:          generated_mts_2d_1
+[uart] Lattice:       512 sites (8x8x8)
+[uart] Mode:          mts_2d (0)
+[uart] Auto-run:      no
+[uart] Dimension:     kind=mts_2d packing=dense_compressed min_thickness=state_words
+[uart] logical=32x32x1 physical=8x8x8 channels/tile=1 layers=1
+[uart] Layering:      capacity=512 items/layer=512 total_layers=1
+[uart] grid/item=1 timesteps/layer=0 used/spare=512/0
+[uart] A7 coeffs:     v2=0x00010000 eta=0x00000666 zeta=0x00008000
+[uart] lambda=0x00004000 gamma=0x00002000 cg2=0x00010000
+[uart] epsilon=0x00000100 step_period=0
+[uart] spi3_push=7 spi3_sites=512
+[uart] Cmod coeffs:   tau_low=0x00100000 tau_high=0x00400000
+[uart] tau_block=0x01000000 w_e=0x00008000 w_g=0x00008000
+[uart] eta_psi=0x00000666
+[uart] Timing:        tau_div=49999999  steps=0  ckpt_every=100  poll=10000 µs
+[uart] Logging:       energy=no  snapshot_every=0  wal_stream=no
+[uart] Recovery:      snapshot_fields=6  depth=128  restore_audit=yes
+[uart] IC (cold):     sigma=32.0  amplitude=1.000
+[uart] Robustness:    max_consec_errors=5  wal_stream_floor=5000 µs
+[uart] ================================
+[uart] [SD] output dir ready: 0:/output
+[uart] === Z7 Orchestrator Early Startup ===
+[uart] [STARTUP] PL version: 0x00010001
+[uart] [STARTUP] SPI dividers: SPI1=9 (5 MHz), SPI0=31 (~1.56 MHz)
+[uart] [STARTUP] Cmod SHUTDOWN_FLAG = 0xFF
+[uart] [S�C��>> EARLY PRESTART: adjust/debug before A7/Cmod config or restore
+[uart-raw]     Commands: status, regs, spi-health, set spi1-div <n>, set spi0-div <n>
+              a7-debug, layer-status, particle-load, mts-config/load/status, bp-recover, sd-ls, cold-start, restore, wal-bypass on/off, help
+    'go' continues only after cold-sta
+[uart-raw] rt or restore succeeds. 'stop' exits.
+
+
+>> cold-start
+[uart] cold-start
+[uart] === COLD START: Configuring A7 and Cmod from defaults/config ===
+[uart] [STARTUP] Configuring A7 ...
+[uart] A7 layer descriptor <- mode=mbt_3d_lattice layer=0 item_start=0 items=512 grid=1 steps=0
+[uart] [STARTUP] Writing Î»R for 512 sites ...
+[uart] [STARTUP] MTS mode: skipping physical 512-site IC load; MTS kernel loads logical field/potential.
+[uart] [STARTUP] A7 configured OK.
+[uart] [STARTUP] Capturing initial A7 field RAM ...
+[uart] [A7] Dumping 512 sites 0 64 128 192 256 320 384 448 done
+[uart] [STARTUP] Initial A7 field captured in PS RAM.
+[uart] [STARTUP] Initial A7 field SD output deferred to final evidence bundle.
+[uart] [STARTUP] Configuring Cmod ...
+[uart] [STARTUP] Cmod recovery: fields=6 policy=0x0000000F depth=128
+[uart] [STARTUP] Cmod WAL control: logging=on repair=on
+[uart] [STARTUP] Cmod configured OK.
+[uart] === Cold Start Complete - Hardware Ready (tau NOT started) ===
+>> go
+[uart] go
+[uart] >
+[uart] ========================================
+[uart] Experiment "generated_mts_2d_1" loaded from SD card.
+[uart] Steps: 0   tau_div: 49999999   snapshot_every: 0
+[uart] ========================================
+[uart] === Pre-start health check ===
+[uart] SPI1 (A7):   OK  (spi_st=0xAC val=0x00000000)
+[uart] A7 heartbeat: 0x07E8 -> 0x07EA  [ALIVE]
+[uart] SPI0 (Cmod): OK  (magic=0x4D54 [OK]  flags=0x000290A0)
+[uart] Z7 STATUS:   0x40
+[uart] Sticky flags cleared.
+[uart] ==============================
+[uart] >>> Pre-start: type commands then press ENTER alone (or 'go') to start.
+[uart-raw]     wal-bypass on/off  |  set tau-rate <hz>  |  status  |  regs  |  a7-debug  |  layer-status
+    particle-load/start/status  |  mts-config/load/start/status/read/dump/bench/clear/reset  |  help
+
+
+>> go
+[uart] go
+[uart] >
+[uart] === Starting with ===
+[uart] tau_div    = 49999999  (~1.0 Hz)
+[uart] steps      = 0 (infinite)
+[uart] wal-bypass = OFF
+[uart] energy_log = OFF
+[uart] wal_stream = OFF
+[uart] ====================
+[uart] [MAIN] GO.
+[uart] [MAIN] MTS full-physics run: using A7 logical Q16 kernel; tau/evolution loop skipped.
+[uart] [MTS] Configuring A7 full-physics kernel: mode=mts_2d particles=1 grid=32x32x1 steps=2 lanes=1
+[uart] [MTS] Coefficients: dt=0x00004000 diffusion=0x0000CCCD v_coeff=0x00009999 potential=0x00002000 normalize=on
+[uart] MTS layer loaded: particle_base=0 count=1 active_points=1024 as Q16 occupancy field
+[uart] MTS potential loaded: q16=0x00002000 active_points=1024
+[uart] WAL active engine: none -> mts (automatic MTS run)
+[uart] [MTS] Full-physics kernel done: cycles=64770 active_points=1024 shape=32x32x1 contract=0x4D545332
+[uart] [DDR] Bundled memory result 'field.bin' (32768 bytes)
+[uart] [DDR] Bundled memory result 'field.csv' (52460 bytes)
+[uart] [DDR] Bundled memory result 'dens.csv' (2169 bytes)
+[uart] [DDR] Bundled memory result 'summ.jsn' (487 bytes)
+[uart] [DDR] Bundled memory result 'metrics.jsn' (487 bytes)
+[uart] [DDR] Bundled memory result 'result.jsn' (487 bytes)
+[uart] [DDR] Bundled memory result 'summary.txt' (197 bytes)
+[uart] [DDR] MTS result bundle ready at 0x1F000000: 7 file(s), 93160 bytes
+[uart] [MTS] Wrote dimensional result contract to 0:/output
+[uart] === Output Complete ===
+
+$ python <workspace>\\tools\_z7_sd_backend\jtag_pull_results.py --dest <workspace>\\results\acceptance\20260606_full_final_acceptance\mts\mts_2d_32x32_t2 --xsct E:\AMD\2025.2.1\Vitis\bin\xsct.bat
+Pulling result bundle over JTAG:
+  E:\AMD\2025.2.1\Vitis\bin\xsct.bat <workspace>\\tools\_z7_sd_backend\jtag_pull_results.tcl <workspace>\\codex_io\tmp\z7_result_bundle_g_nfuhxj.bin
+
+****** Software Commandline Tool (XSCT) v2025.2.1
+  **** SW Build 6403652 on Thu Mar 19 19:48:24 GMT 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+Warning: XSCT is deprecated and will be removed in future releases.
+We recommend using the new Python command-line tool for project management and debugging:
+- Run "vitis -i" for interactive mode.
+- Run "vitis -s <script>" for script mode.
+Connecting to JTAG target...
+Reading DDR result bundle from 0x1F000000 (8388608 bytes)...
+Wrote <workspace>\\codex_io\tmp\z7_result_bundle_g_nfuhxj.bin
+OK DDR:field.bin -> <workspace>\\results\acceptance\20260606_full_final_acceptance\mts\mts_2d_32x32_t2\field.bin (32768 bytes)
+OK DDR:field.csv -> <workspace>\\results\acceptance\20260606_full_final_acceptance\mts\mts_2d_32x32_t2\field.csv (52460 bytes)
+OK DDR:dens.csv -> <workspace>\\results\acceptance\20260606_full_final_acceptance\mts\mts_2d_32x32_t2\dens.csv (2169 bytes)
+OK DDR:summ.jsn -> <workspace>\\results\acceptance\20260606_full_final_acceptance\mts\mts_2d_32x32_t2\summ.jsn (487 bytes)
+OK DDR:metrics.jsn -> <workspace>\\results\acceptance\20260606_full_final_acceptance\mts\mts_2d_32x32_t2\metrics.jsn (487 bytes)
+OK DDR:result.jsn -> <workspace>\\results\acceptance\20260606_full_final_acceptance\mts\mts_2d_32x32_t2\result.jsn (487 bytes)
+OK DDR:summary.txt -> <workspace>\\results\acceptance\20260606_full_final_acceptance\mts\mts_2d_32x32_t2\summary.txt (197 bytes)
+Pulled 7 result file(s) to <workspace>\\results\acceptance\20260606_full_final_acceptance\mts\mts_2d_32x32_t2
+
+$ python <workspace>\\tools\mts_full_physics_q16.py --dimension 2d --particles 1 --timesteps 2 --gx 32 --gy 32 --gz 1 --dt-q16 0x00004000 --diffusion-q16 0x0000CCCD --vcoeff-q16 0x00009999 --uniform-potential-q16 0x00002000 --dx-q16 0x000339CE --dy-q16 0x000339CE --dz-q16 0x00010000 --inv-dx2-q16 0x0000189A --inv-dy2-q16 0x0000189A --inv-dz2-q16 0x00010000 --normalize --out <workspace>\\results\acceptance\20260606_full_final_acceptance\mts\mts_2d_32x32_t2\reference_kernel_model
+[MTS-FULL-reference-model] dimension=2d shape=32x32x1 points=1024 elapsed_s=0.053164
+[MTS-FULL-reference-model] output=<workspace>\\results\acceptance\20260606_full_final_acceptance\mts\mts_2d_32x32_t2\reference_kernel_model
+
+$ python <workspace>\\tools\compare_mts_dimensional_results.py --reference-model <workspace>\\results\acceptance\20260606_full_final_acceptance\mts\mts_2d_32x32_t2\reference_kernel_model --fpga <workspace>\\results\acceptance\20260606_full_final_acceptance\mts\mts_2d_32x32_t2 --out <workspace>\\results\acceptance\20260606_full_final_acceptance\mts\mts_2d_32x32_t2\compare_reference_kernel_vs_fpga
+pass=True
+mismatches=0
+max_abs_delta_q16=0
+normalized_overlap=1.0000000000000002
+
+$ python <workspace>\\tools\plot_mts_results.py <workspace>\\results\acceptance\20260606_full_final_acceptance\mts\mts_2d_32x32_t2
+[MTS-PLOT] source=<workspace>\\results\acceptance\20260606_full_final_acceptance\mts\mts_2d_32x32_t2
+[MTS-PLOT] output=<workspace>\\results\acceptance\20260606_full_final_acceptance\mts\mts_2d_32x32_t2
+[MTS-PLOT] plot=<workspace>\\results\acceptance\20260606_full_final_acceptance\mts\mts_2d_32x32_t2\mts_2d_density.png
+[MTS-PLOT] plot=<workspace>\\results\acceptance\20260606_full_final_acceptance\mts\mts_2d_32x32_t2\mts_2d_real.png
+[MTS-PLOT] report=<workspace>\\results\acceptance\20260606_full_final_acceptance\mts\mts_2d_32x32_t2\mts_report.md

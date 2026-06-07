@@ -1,0 +1,2 @@
+# Preserve generated evidence bytes so recorded SHA-256 hashes stay meaningful.
+evidence/acceptance_20260606_full/** -text

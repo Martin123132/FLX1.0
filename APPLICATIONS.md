@@ -1,6 +1,6 @@
 # Applications
 
-FLX1.0 is aimed at deterministic workloads where state, replay, and validation matter.
+FLX1.0 is aimed at deterministic workloads where state, replay, and validation matter. These are application directions suggested by the current evidence, not claims of production deployment.
 
 ## Robotics And Control
 

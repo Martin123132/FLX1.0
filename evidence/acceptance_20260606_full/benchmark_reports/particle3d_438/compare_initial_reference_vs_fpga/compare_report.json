@@ -1,0 +1,128 @@
+{
+  "label": "initial",
+  "reference_source": "architecture_reference",
+  "fpga_source": "fpga",
+  "reference_field": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\particle3d_438\\architecture_reference\\initial_field_reference.csv",
+  "fpga_field": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\particle3d_438\\initial_field_a7.csv",
+  "reference_metrics": {
+    "metadata": {
+      "source": "architecture_reference",
+      "experiment_name": null,
+      "input_field": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\particle3d_438\\architecture_reference\\initial_field_reference.csv",
+      "grid_shape": [
+        8,
+        8,
+        8
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "d_volume": 1.0,
+      "steps": null,
+      "dt": null,
+      "q_format": "q16.16"
+    },
+    "density_integral": 3.146938979625702e-06,
+    "field_l2_norm": 0.0017739613805338892,
+    "field_sum": 0.038055419921875,
+    "peak_psi": 0.0001220703125,
+    "peak_psi_abs": 0.0001220703125,
+    "peak_density": 1.4901161193847656e-08,
+    "peak_site": 217,
+    "peak_xyz": [
+      1,
+      3,
+      3
+    ],
+    "center_of_mass_xyz": [
+      3.3295353654927493,
+      3.282406037289139,
+      3.050088783663806
+    ],
+    "rms_radius": 3.5351613476631742,
+    "density_min": 2.3283064365386963e-10,
+    "density_max": 1.4901161193847656e-08,
+    "psi_min": 1.52587890625e-05,
+    "psi_max": 0.0001220703125
+  },
+  "fpga_metrics": {
+    "metadata": {
+      "source": "fpga",
+      "experiment_name": null,
+      "input_field": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\particle3d_438\\initial_field_a7.csv",
+      "grid_shape": [
+        8,
+        8,
+        8
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "d_volume": 1.0,
+      "steps": null,
+      "dt": null,
+      "q_format": "q16.16"
+    },
+    "density_integral": 3.1469379338271096e-06,
+    "field_l2_norm": 0.0017739610857702346,
+    "field_sum": 0.0380554169,
+    "peak_psi": 0.0001220703,
+    "peak_psi_abs": 0.0001220703,
+    "peak_density": 1.4901158142089998e-08,
+    "peak_site": 217,
+    "peak_xyz": [
+      1,
+      3,
+      3
+    ],
+    "center_of_mass_xyz": [
+      3.3295353743019307,
+      3.2824060782723805,
+      3.050089247411913
+    ],
+    "rms_radius": 3.5351616186182238,
+    "density_min": 2.3283097744e-10,
+    "density_max": 1.4901158142089998e-08,
+    "psi_min": 1.52588e-05,
+    "psi_max": 0.0001220703
+  },
+  "comparison": {
+    "mismatches": 0,
+    "max_abs_delta_q16": 0,
+    "max_abs_delta_float": 0.0,
+    "first_mismatching_sites": [],
+    "field_overlap_integral": 3.1469384567260746e-06,
+    "normalized_overlap": 0.9999999999999085,
+    "density_l1_error": 2.5805472193523153e-12,
+    "density_l2_error": 1.2069078010764182e-13,
+    "density_max_abs_error": 6.9141367397252766e-15,
+    "density_integral_relative_error": 3.323224883124812e-07,
+    "center_of_mass_delta": 4.656388456164581e-07,
+    "peak_location_delta": 0.0
+  },
+  "outputs": {
+    "compare_report_json": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\particle3d_438\\compare_initial_reference_vs_fpga\\compare_report.json",
+    "compare_summary_txt": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\particle3d_438\\compare_initial_reference_vs_fpga\\compare_summary.txt",
+    "density_error_csv": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\particle3d_438\\compare_initial_reference_vs_fpga\\density_error.csv"
+  },
+  "pass_fail": {
+    "passed": true,
+    "checks": {
+      "q16_exact_match": true,
+      "normalized_overlap": true,
+      "density_integral_relative_error": true,
+      "center_of_mass_delta": true,
+      "peak_location_delta": true
+    },
+    "thresholds": {
+      "normalized_overlap_min": 0.99,
+      "density_integral_relative_error_max": 0.02,
+      "center_of_mass_delta_max": 0.25,
+      "peak_location_delta_max": 1.0
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "date_time": "2026-06-06T22:07:17+0100",
+  "python_version": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "port": "COM5",
+  "baud": 115200,
+  "kernel_contract_words": [
+    "0x4D545332"
+  ],
+  "final_pass": true,
+  "boot_bin_path": "E:\\FLX\\experiments\\sd_card\\BOOT.bin",
+  "source_hashes": {
+    "fpga\\arty_a7\\src\\a7_mts_dimensional_kernel.sv": "0f42613d1d8e8b46d9802de00b2dd6a1142d961787bc00bcfd8be127f908c0f4",
+    "fpga\\arty_a7\\src\\top_arty_a7_tile.sv": "72e6a0dd9599ac1f446fef5ebe4f534f2a4024c156ea5dd2d741b6de92d0d51e",
+    "arty_a7_fabric\\z7_new\\platform_set\\orch\\main.c": "03fa3f176ec4c990bfa6fbcf01ffc4d0a363fe46b821c53f426f1be2b50c10bf",
+    "tools\\mts_full_physics_q16.py": "063dbc4cbe359e576d1d96561c90d6f630cfd1be572e6f9876f5d280ca8ea5fa",
+    "tools\\mts_metrics.py": "bacd63fb6aa5cf644e1e65a7308963bd1ca955a72b0350faa52db0d634bfbca7",
+    "tools\\flx_adaptive_dispatcher.py": "ba50b76c6e1940a0169cf5c492989b8adf372d912b7fa9cacd68bf25cb312b76",
+    "run_flx_wave_restore_demo.py": "8238b09dd39ebadf5d92c8cec80940748f951d6be6fec18fbbd98dfd2507164d",
+    "run_flx_workload.py": "db12f2713d6907dedec4913276ec184679577bfe1bfaceb02b69bd3006996bac",
+    "run_flx_acceptance.py": "8e1d3ab5fa1c449fbb3278056c7a92e88077e5d2152a076846fb28169c7f4cef"
+  }
+}

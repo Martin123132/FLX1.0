@@ -1,0 +1,463 @@
+[host] running controlled MTS WAL_VAR recovery proof
+$ python <workspace>\\run_flx_wave_restore_demo.py --port COM5 --baud 115200 --out <workspace>\\results\acceptance\20260606_full_final_acceptance\fault_recovery\mts_wal_var_recovery --gx 4 --gy 4 --timesteps 32 --timeout-s 600 --wal-bypass on
+>> monitor off
+  [uart] monitor off
+  [uart]   Monitor OFF
+>> wal-bypass on
+  [uart] wal-bypass on
+  [uart]   WAL bypass ON â€” step_done_cmod ignored, A7-only operation.
+>> mts-reset
+  [uart] mts-reset
+  [uart]   MTS reset sent.
+>> mts-clear
+  [uart] mts-clear
+  [uart]   MTS clear/done-clear sent.
+>> mts-config 2d 1 4 4 32
+  [uart] mts-config 2d 1 4 4 32
+  [uart]   MTS configured: mode=mts_2d particles=1 gx=4 gy=4 gz=1 lanes=4 timesteps=32 contract=0x4D545332
+>> mts-coeff 0x00004000 0x0000CCCD 0x00000000
+  [uart] mts-coeff 0x00004000 0x0000CCCD 0x00000000
+  [uart]   MTS coeff staged: dt=0x00004000 diffusion=0x0000CCCD v_coeff=0x00000000
+>> mts-normalize on
+  [uart] mts-normalize on
+  [uart]   MTS normalize on staged.
+>> mts-load-layer 0 1
+  [uart] mts-load-layer 0 1
+  [uart]   MTS layer loaded: particle_base=0 count=1 active_points=16 as Q16 occupancy field
+>> mts-load-field 0 0x00000000 0x00000000
+  [uart] mts-load-field 0 0x00000000 0x00000000
+  [uart]   MTS field[0] loaded real=0x00000000 imag=0x00000000.
+>> mts-load-field 10 0x00010000 0x00000000
+  [uart] mts-load-field 10 0x00010000 0x00000000
+  [uart]   MTS field[10] loaded real=0x00010000 imag=0x00000000.
+>> wal-var-write 0 0x5753544D
+  [uart] wal-var-write 0 0x5753544D
+  [uart]   WAL_VAR[0] <- 0x5753544D
+>> wal-var-write 1 0x00000001
+  [uart] wal-var-write 1 0x00000001
+  [uart]   WAL_VAR[1] <- 0x00000001
+>> wal-var-write 2 0x00000002
+  [uart] wal-var-write 2 0x00000002
+  [uart]   WAL_VAR[2] <- 0x00000002
+>> wal-var-write 3 0x00000001
+  [uart] wal-var-write 3 0x00000001
+  [uart]   WAL_VAR[3] <- 0x00000001
+>> wal-var-write 4 0x00000004
+  [uart] wal-var-write 4 0x00000004
+  [uart]   WAL_VAR[4] <- 0x00000004
+>> wal-var-write 5 0x00000004
+  [uart] wal-var-write 5 0x00000004
+  [uart]   WAL_VAR[5] <- 0x00000004
+>> wal-var-write 6 0x00000001
+  [uart] wal-var-write 6 0x00000001
+  [uart]   WAL_VAR[6] <- 0x00000001
+>> wal-var-write 7 0x00000020
+  [uart] wal-var-write 7 0x00000020
+  [uart]   WAL_VAR[7] <- 0x00000020
+>> wal-var-write 8 0x00000304
+  [uart] wal-var-write 8 0x00000304
+  [uart]   WAL_VAR[8] <- 0x00000304
+>> wal-var-write 9 0x00004000
+  [uart] wal-var-write 9 0x00004000
+  [uart]   WAL_VAR[9] <- 0x00004000
+>> wal-var-write 10 0x0000CCCD
+  [uart] wal-var-write 10 0x0000CCCD
+  [uart]   WAL_VAR[10] <- 0x0000CCCD
+>> wal-var-write 11 0x00000000
+  [uart] wal-var-write 11 0x00000000
+  [uart]   WAL_VAR[11] <- 0x00000000
+>> wal-var-write 12 0x00215555
+  [uart] wal-var-write 12 0x00215555
+  [uart]   WAL_VAR[12] <- 0x00215555
+>> wal-var-write 13 0x00215555
+  [uart] wal-var-write 13 0x00215555
+  [uart]   WAL_VAR[13] <- 0x00215555
+>> wal-var-write 14 0x00010000
+  [uart] wal-var-write 14 0x00010000
+  [uart]   WAL_VAR[14] <- 0x00010000
+>> wal-var-write 15 0x0000003B
+  [uart] wal-var-write 15 0x0000003B
+  [uart]   WAL_VAR[15] <- 0x0000003B
+>> wal-var-write 16 0x0000003B
+  [uart] wal-var-write 16 0x0000003B
+  [uart]   WAL_VAR[16] <- 0x0000003B
+>> wal-var-write 17 0x00010000
+  [uart] wal-var-write 17 0x00010000
+  [uart]   WAL_VAR[17] <- 0x00010000
+>> wal-var-write 18 0x00000010
+  [uart] wal-var-write 18 0x00000010
+  [uart]   WAL_VAR[18] <- 0x00000010
+>> wal-var-write 19 0x00000000
+  [uart] wal-var-write 19 0x00000000
+  [uart]   WAL_VAR[19] <- 0x00000000
+>> wal-var-write 20 0x00000000
+  [uart] wal-var-write 20 0x00000000
+  [uart]   WAL_VAR[20] <- 0x00000000
+>> wal-var-write 21 0x00000000
+  [uart] wal-var-write 21 0x00000000
+  [uart]   WAL_VAR[21] <- 0x00000000
+>> wal-var-write 22 0x00000000
+  [uart] wal-var-write 22 0x00000000
+  [uart]   WAL_VAR[22] <- 0x00000000
+>> wal-var-write 23 0x00000000
+  [uart] wal-var-write 23 0x00000000
+  [uart]   WAL_VAR[23] <- 0x00000000
+>> wal-var-write 24 0x00000000
+  [uart] wal-var-write 24 0x00000000
+  [uart]   WAL_VAR[24] <- 0x00000000
+>> wal-var-write 25 0x00000000
+  [uart] wal-var-write 25 0x00000000
+  [uart]   WAL_VAR[25] <- 0x00000000
+>> wal-var-write 26 0x00000000
+  [uart] wal-var-write 26 0x00000000
+  [uart]   WAL_VAR[26] <- 0x00000000
+>> wal-var-write 27 0x00000000
+  [uart] wal-var-write 27 0x00000000
+  [uart]   WAL_VAR[27] <- 0x00000000
+>> wal-var-write 28 0x00000000
+  [uart] wal-var-write 28 0x00000000
+  [uart]   WAL_VAR[28] <- 0x00000000
+>> wal-var-write 29 0x00000000
+  [uart] wal-var-write 29 0x00000000
+  [uart]   WAL_VAR[29] <- 0x00000000
+>> wal-var-write 30 0x00000000
+  [uart] wal-var-write 30 0x00000000
+  [uart]   WAL_VAR[30] <- 0x00000000
+>> wal-var-write 31 0x00000000
+  [uart] wal-var-write 31 0x00000000
+  [uart]   WAL_VAR[31] <- 0x00000000
+>> wal-var-write 32 0x00000000
+  [uart] wal-var-write 32 0x00000000
+  [uart]   WAL_VAR[32] <- 0x00000000
+>> wal-var-write 33 0x00000000
+  [uart] wal-var-write 33 0x00000000
+  [uart]   WAL_VAR[33] <- 0x00000000
+>> wal-var-write 34 0x00000000
+  [uart] wal-var-write 34 0x00000000
+  [uart]   WAL_VAR[34] <- 0x00000000
+>> wal-var-write 35 0x00000000
+  [uart] wal-var-write 35 0x00000000
+  [uart]   WAL_VAR[35] <- 0x00000000
+>> wal-var-write 36 0x00000000
+  [uart] wal-var-write 36 0x00000000
+  [uart]   WAL_VAR[36] <- 0x00000000
+>> wal-var-write 37 0x00000000
+  [uart] wal-var-write 37 0x00000000
+  [uart]   WAL_VAR[37] <- 0x00000000
+>> wal-var-write 38 0x00000000
+  [uart] wal-var-write 38 0x00000000
+  [uart]   WAL_VAR[38] <- 0x00000000
+>> wal-var-write 39 0x00000000
+  [uart] wal-var-write 39 0x00000000
+  [uart]   WAL_VAR[39] <- 0x00000000
+>> wal-var-write 40 0x00000000
+  [uart] wal-var-write 40 0x00000000
+  [uart]   WAL_VAR[40] <- 0x00000000
+>> wal-var-write 41 0x00000000
+  [uart] wal-var-write 41 0x00000000
+  [uart]   WAL_VAR[41] <- 0x00000000
+>> wal-var-write 42 0x00000000
+  [uart] wal-var-write 42 0x00000000
+  [uart]   WAL_VAR[42] <- 0x00000000
+>> wal-var-write 43 0x00000000
+  [uart] wal-var-write 43 0x00000000
+  [uart]   WAL_VAR[43] <- 0x00000000
+>> wal-var-write 44 0x00000000
+  [uart] wal-var-write 44 0x00000000
+  [uart]   WAL_VAR[44] <- 0x00000000
+>> wal-var-write 45 0x00000000
+  [uart] wal-var-write 45 0x00000000
+  [uart]   WAL_VAR[45] <- 0x00000000
+>> wal-var-write 46 0x00000000
+  [uart] wal-var-write 46 0x00000000
+  [uart]   WAL_VAR[46] <- 0x00000000
+>> wal-var-write 47 0x00000000
+  [uart] wal-var-write 47 0x00000000
+  [uart]   WAL_VAR[47] <- 0x00000000
+>> wal-var-write 48 0x00000000
+  [uart] wal-var-write 48 0x00000000
+  [uart]   WAL_VAR[48] <- 0x00000000
+>> wal-var-write 49 0x00010000
+  [uart] wal-var-write 49 0x00010000
+  [uart]   WAL_VAR[49] <- 0x00010000
+>> wal-var-write 50 0x00000000
+  [uart] wal-var-write 50 0x00000000
+  [uart]   WAL_VAR[50] <- 0x00000000
+>> wal-var-write 51 0x00000000
+  [uart] wal-var-write 51 0x00000000
+  [uart]   WAL_VAR[51] <- 0x00000000
+>> wal-var-write 52 0x00000000
+  [uart] wal-var-write 52 0x00000000
+  [uart]   WAL_VAR[52] <- 0x00000000
+>> wal-var-write 53 0x00000000
+  [uart] wal-var-write 53 0x00000000
+  [uart]   WAL_VAR[53] <- 0x00000000
+>> wal-var-write 54 0x00000000
+  [uart] wal-var-write 54 0x00000000
+  [uart]   WAL_VAR[54] <- 0x00000000
+>> wal-var-write 55 0x00000000
+  [uart] wal-var-write 55 0x00000000
+  [uart]   WAL_VAR[55] <- 0x00000000
+>> wal-var-write 56 0x00000000
+  [uart] wal-var-write 56 0x00000000
+  [uart]   WAL_VAR[56] <- 0x00000000
+>> wal-var-write 57 0x00000000
+  [uart] wal-var-write 57 0x00000000
+  [uart]   WAL_VAR[57] <- 0x00000000
+>> wal-var-write 58 0x00000000
+  [uart] wal-var-write 58 0x00000000
+  [uart]   WAL_VAR[58] <- 0x00000000
+>> wal-var-write 59 0x00000000
+  [uart] wal-var-write 59 0x00000000
+  [uart]   WAL_VAR[59] <- 0x00000000
+>> wal-var-write 60 0x00000000
+  [uart] wal-var-write 60 0x00000000
+  [uart]   WAL_VAR[60] <- 0x00000000
+>> wal-var-write 61 0x00000000
+  [uart] wal-var-write 61 0x00000000
+  [uart]   WAL_VAR[61] <- 0x00000000
+>> wal-var-write 62 0x00000000
+  [uart] wal-var-write 62 0x00000000
+  [uart]   WAL_VAR[62] <- 0x00000000
+>> wal-var-write 63 0x00000000
+  [uart] wal-var-write 63 0x00000000
+  [uart]   WAL_VAR[63] <- 0x00000000
+>> wal-var-write 64 0x00000000
+  [uart] wal-var-write 64 0x00000000
+  [uart]   WAL_VAR[64] <- 0x00000000
+>> wal-var-write 65 0x00000000
+  [uart] wal-var-write 65 0x00000000
+  [uart]   WAL_VAR[65] <- 0x00000000
+>> wal-var-write 66 0x00000000
+  [uart] wal-var-write 66 0x00000000
+  [uart]   WAL_VAR[66] <- 0x00000000
+>> mts-start-field-dump 16
+  [uart] mts-start-field-dump 16
+  [uart]   MTS configured: mode=mts_2d particles=1 gx=4 gy=4 gz=1 lanes=4 timesteps=32 contract=0x4D545332
+  [uart] MTS started.
+  [uart] MTS command run done: cycles=20514 active_points=16 contract=0x4D545332
+  [uart] field[0] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+  [uart] field[1] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+  [uart] field[2] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+  [uart] field[3] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+  [uart] field[4] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+  [uart] field[5] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+  [uart] field[6] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+  [uart] field[7] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+  [uart] field[8] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+  [uart] field[9] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+  [uart] field[10] real=1989 imag=0 real_hex=0x000007C5 imag_hex=0x00000000
+  [uart] field[11] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+  [uart] field[12] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+  [uart] field[13] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+  [uart] field[14] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+  [uart] field[15] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+>> wal-var-mts-restore-start-field-dump 67 0x5752DBB7 16
+  [uart] wal-var-mts-restore-start-field-dump 67 0x5752DBB7 16
+  [uart]   MTS WAL_VAR restored to A7: points=16 words=67 checksum=0x5752DBB7
+  [uart] MTS configured: mode=mts_2d particles=1 gx=4 gy=4 gz=1 lanes=4 timesteps=32 contract=0x4D545332
+  [uart] MTS started.
+  [uart] MTS command run done: cycles=20514 active_points=16 contract=0x4D545332
+  [uart] field[0] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+  [uart] field[1] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+  [uart] field[2] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+  [uart] field[3] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+  [uart] field[4] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+  [uart] field[5] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+  [uart] field[6] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+  [uart] field[7] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+  [uart] field[8] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+  [uart] field[9] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+  [uart] field[10] real=1989 imag=0 real_hex=0x000007C5 imag_hex=0x00000000
+  [uart] field[11] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+  [uart] field[12] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+  [uart] field[13] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+  [uart] field[14] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+  [uart] field[15] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+$ python <workspace>\\tools\mts_full_physics_q16.py --dimension 2d --gx 4 --gy 4 --timesteps 32 --dt-q16 0x00004000 --diffusion-q16 0x0000CCCD --vcoeff-q16 0x00000000 --uniform-potential-q16 0x00000000 --dx-q16 0x00215555 --dy-q16 0x00215555 --dz-q16 0x00010000 --inv-dx2-q16 0x0000003B --inv-dy2-q16 0x0000003B --inv-dz2-q16 0x00010000 --field-csv <workspace>\\results\acceptance\20260606_full_final_acceptance\fault_recovery\mts_wal_var_recovery\initial_field.csv --normalize --out <workspace>\\results\acceptance\20260606_full_final_acceptance\fault_recovery\mts_wal_var_recovery\reference_model
+[MTS-FULL-reference-model] dimension=2d shape=4x4x1 points=16 elapsed_s=0.013699
+[MTS-FULL-reference-model] output=<workspace>\\results\acceptance\20260606_full_final_acceptance\fault_recovery\mts_wal_var_recovery\reference_model
+$ python <workspace>\\tools\compare_mts_dimensional_results.py --reference-model <workspace>\\results\acceptance\20260606_full_final_acceptance\fault_recovery\mts_wal_var_recovery\reference_model --fpga <workspace>\\results\acceptance\20260606_full_final_acceptance\fault_recovery\mts_wal_var_recovery\fpga_baseline --out <workspace>\\results\acceptance\20260606_full_final_acceptance\fault_recovery\mts_wal_var_recovery\compare_reference_baseline
+pass=True
+mismatches=0
+max_abs_delta_q16=0
+normalized_overlap=1
+$ python <workspace>\\tools\compare_mts_dimensional_results.py --reference-model <workspace>\\results\acceptance\20260606_full_final_acceptance\fault_recovery\mts_wal_var_recovery\reference_model --fpga <workspace>\\results\acceptance\20260606_full_final_acceptance\fault_recovery\mts_wal_var_recovery\fpga_restored --out <workspace>\\results\acceptance\20260606_full_final_acceptance\fault_recovery\mts_wal_var_recovery\compare_reference_restored
+pass=True
+mismatches=0
+max_abs_delta_q16=0
+normalized_overlap=1
+$ python <workspace>\\tools\compare_mts_dimensional_results.py --reference-model <workspace>\\results\acceptance\20260606_full_final_acceptance\fault_recovery\mts_wal_var_recovery\fpga_baseline --fpga <workspace>\\results\acceptance\20260606_full_final_acceptance\fault_recovery\mts_wal_var_recovery\fpga_restored --out <workspace>\\results\acceptance\20260606_full_final_acceptance\fault_recovery\mts_wal_var_recovery\compare_baseline_restored
+pass=True
+mismatches=0
+max_abs_delta_q16=0
+normalized_overlap=1
+$ python <workspace>\\tools\plot_mts_results.py <workspace>\\results\acceptance\20260606_full_final_acceptance\fault_recovery\mts_wal_var_recovery\fpga_restored
+[MTS-PLOT] source=<workspace>\\results\acceptance\20260606_full_final_acceptance\fault_recovery\mts_wal_var_recovery\fpga_restored
+[MTS-PLOT] output=<workspace>\\results\acceptance\20260606_full_final_acceptance\fault_recovery\mts_wal_var_recovery\fpga_restored
+[MTS-PLOT] plot=<workspace>\\results\acceptance\20260606_full_final_acceptance\fault_recovery\mts_wal_var_recovery\fpga_restored\mts_2d_density.png
+[MTS-PLOT] plot=<workspace>\\results\acceptance\20260606_full_final_acceptance\fault_recovery\mts_wal_var_recovery\fpga_restored\mts_2d_real.png
+[MTS-PLOT] report=<workspace>\\results\acceptance\20260606_full_final_acceptance\fault_recovery\mts_wal_var_recovery\fpga_restored\mts_report.md
+{
+  "final_pass": true,
+  "dry_run": false,
+  "shape": [
+    4,
+    4,
+    1
+  ],
+  "timesteps": 32,
+  "center_index": 10,
+  "hardware": {
+    "baseline": {
+      "status": {
+        "mode": 2,
+        "busy": 0,
+        "done": 1,
+        "error": 0,
+        "overflow": 0,
+        "grid_x": 4,
+        "grid_y": 4,
+        "grid_z": 1,
+        "lanes": 4,
+        "timesteps_low": 32,
+        "cycles": 20514,
+        "active_points": 16
+      },
+      "elapsed_s": 1.1297229000047082,
+      "path": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\fault_recovery\\mts_wal_var_recovery\\fpga_baseline"
+    },
+    "restored": {
+      "status": {
+        "mode": 2,
+        "busy": 0,
+        "done": 1,
+        "error": 0,
+        "overflow": 0,
+        "grid_x": 4,
+        "grid_y": 4,
+        "grid_z": 1,
+        "lanes": 4,
+        "timesteps_low": 32,
+        "cycles": 20514,
+        "active_points": 16
+      },
+      "elapsed_s": 1.2313511999964248,
+      "path": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\fault_recovery\\mts_wal_var_recovery\\fpga_restored"
+    }
+  },
+  "reference_vs_baseline": {
+    "reference_field": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\fault_recovery\\mts_wal_var_recovery\\reference_model\\field.csv",
+    "fpga_field": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\fault_recovery\\mts_wal_var_recovery\\fpga_baseline\\field.csv",
+    "dimension": "2d",
+    "shape": [
+      4,
+      4
+    ],
+    "mismatches": 0,
+    "max_abs_delta_q16": 0,
+    "normalized_overlap": 1.0,
+    "density_integral_reference": 1.0234513320028784,
+    "density_integral_fpga": 1.0234513320028784,
+    "density_integral_relative_error": 0.0,
+    "density_l1_error": 0.0,
+    "density_l2_error": 0.0,
+    "density_max_abs_error": 0.0,
+    "peak_location_reference": [
+      2,
+      2
+    ],
+    "peak_location_fpga": [
+      2,
+      2
+    ],
+    "peak_location_delta": 0.0,
+    "center_of_mass_reference": [
+      66.66666666666667,
+      66.66666666666667
+    ],
+    "center_of_mass_fpga": [
+      66.66666666666667,
+      66.66666666666667
+    ],
+    "center_of_mass_delta": 0.0,
+    "first_mismatches": [],
+    "pass": true
+  },
+  "reference_vs_restored": {
+    "reference_field": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\fault_recovery\\mts_wal_var_recovery\\reference_model\\field.csv",
+    "fpga_field": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\fault_recovery\\mts_wal_var_recovery\\fpga_restored\\field.csv",
+    "dimension": "2d",
+    "shape": [
+      4,
+      4
+    ],
+    "mismatches": 0,
+    "max_abs_delta_q16": 0,
+    "normalized_overlap": 1.0,
+    "density_integral_reference": 1.0234513320028784,
+    "density_integral_fpga": 1.0234513320028784,
+    "density_integral_relative_error": 0.0,
+    "density_l1_error": 0.0,
+    "density_l2_error": 0.0,
+    "density_max_abs_error": 0.0,
+    "peak_location_reference": [
+      2,
+      2
+    ],
+    "peak_location_fpga": [
+      2,
+      2
+    ],
+    "peak_location_delta": 0.0,
+    "center_of_mass_reference": [
+      66.66666666666667,
+      66.66666666666667
+    ],
+    "center_of_mass_fpga": [
+      66.66666666666667,
+      66.66666666666667
+    ],
+    "center_of_mass_delta": 0.0,
+    "first_mismatches": [],
+    "pass": true
+  },
+  "baseline_vs_restored": {
+    "reference_field": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\fault_recovery\\mts_wal_var_recovery\\fpga_baseline\\field.csv",
+    "fpga_field": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\fault_recovery\\mts_wal_var_recovery\\fpga_restored\\field.csv",
+    "dimension": "2d",
+    "shape": [
+      4,
+      4
+    ],
+    "mismatches": 0,
+    "max_abs_delta_q16": 0,
+    "normalized_overlap": 1.0,
+    "density_integral_reference": 1.0234513320028784,
+    "density_integral_fpga": 1.0234513320028784,
+    "density_integral_relative_error": 0.0,
+    "density_l1_error": 0.0,
+    "density_l2_error": 0.0,
+    "density_max_abs_error": 0.0,
+    "peak_location_reference": [
+      2,
+      2
+    ],
+    "peak_location_fpga": [
+      2,
+      2
+    ],
+    "peak_location_delta": 0.0,
+    "center_of_mass_reference": [
+      66.66666666666667,
+      66.66666666666667
+    ],
+    "center_of_mass_fpga": [
+      66.66666666666667,
+      66.66666666666667
+    ],
+    "center_of_mass_delta": 0.0,
+    "first_mismatches": [],
+    "pass": true
+  }
+}

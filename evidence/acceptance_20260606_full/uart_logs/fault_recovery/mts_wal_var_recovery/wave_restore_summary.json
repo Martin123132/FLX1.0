@@ -1,0 +1,163 @@
+{
+  "final_pass": true,
+  "dry_run": false,
+  "shape": [
+    4,
+    4,
+    1
+  ],
+  "timesteps": 32,
+  "center_index": 10,
+  "hardware": {
+    "baseline": {
+      "status": {
+        "mode": 2,
+        "busy": 0,
+        "done": 1,
+        "error": 0,
+        "overflow": 0,
+        "grid_x": 4,
+        "grid_y": 4,
+        "grid_z": 1,
+        "lanes": 4,
+        "timesteps_low": 32,
+        "cycles": 20514,
+        "active_points": 16
+      },
+      "elapsed_s": 1.1297229000047082,
+      "path": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\fault_recovery\\mts_wal_var_recovery\\fpga_baseline"
+    },
+    "restored": {
+      "status": {
+        "mode": 2,
+        "busy": 0,
+        "done": 1,
+        "error": 0,
+        "overflow": 0,
+        "grid_x": 4,
+        "grid_y": 4,
+        "grid_z": 1,
+        "lanes": 4,
+        "timesteps_low": 32,
+        "cycles": 20514,
+        "active_points": 16
+      },
+      "elapsed_s": 1.2313511999964248,
+      "path": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\fault_recovery\\mts_wal_var_recovery\\fpga_restored"
+    }
+  },
+  "reference_vs_baseline": {
+    "reference_field": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\fault_recovery\\mts_wal_var_recovery\\reference_model\\field.csv",
+    "fpga_field": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\fault_recovery\\mts_wal_var_recovery\\fpga_baseline\\field.csv",
+    "dimension": "2d",
+    "shape": [
+      4,
+      4
+    ],
+    "mismatches": 0,
+    "max_abs_delta_q16": 0,
+    "normalized_overlap": 1.0,
+    "density_integral_reference": 1.0234513320028784,
+    "density_integral_fpga": 1.0234513320028784,
+    "density_integral_relative_error": 0.0,
+    "density_l1_error": 0.0,
+    "density_l2_error": 0.0,
+    "density_max_abs_error": 0.0,
+    "peak_location_reference": [
+      2,
+      2
+    ],
+    "peak_location_fpga": [
+      2,
+      2
+    ],
+    "peak_location_delta": 0.0,
+    "center_of_mass_reference": [
+      66.66666666666667,
+      66.66666666666667
+    ],
+    "center_of_mass_fpga": [
+      66.66666666666667,
+      66.66666666666667
+    ],
+    "center_of_mass_delta": 0.0,
+    "first_mismatches": [],
+    "pass": true
+  },
+  "reference_vs_restored": {
+    "reference_field": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\fault_recovery\\mts_wal_var_recovery\\reference_model\\field.csv",
+    "fpga_field": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\fault_recovery\\mts_wal_var_recovery\\fpga_restored\\field.csv",
+    "dimension": "2d",
+    "shape": [
+      4,
+      4
+    ],
+    "mismatches": 0,
+    "max_abs_delta_q16": 0,
+    "normalized_overlap": 1.0,
+    "density_integral_reference": 1.0234513320028784,
+    "density_integral_fpga": 1.0234513320028784,
+    "density_integral_relative_error": 0.0,
+    "density_l1_error": 0.0,
+    "density_l2_error": 0.0,
+    "density_max_abs_error": 0.0,
+    "peak_location_reference": [
+      2,
+      2
+    ],
+    "peak_location_fpga": [
+      2,
+      2
+    ],
+    "peak_location_delta": 0.0,
+    "center_of_mass_reference": [
+      66.66666666666667,
+      66.66666666666667
+    ],
+    "center_of_mass_fpga": [
+      66.66666666666667,
+      66.66666666666667
+    ],
+    "center_of_mass_delta": 0.0,
+    "first_mismatches": [],
+    "pass": true
+  },
+  "baseline_vs_restored": {
+    "reference_field": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\fault_recovery\\mts_wal_var_recovery\\fpga_baseline\\field.csv",
+    "fpga_field": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\fault_recovery\\mts_wal_var_recovery\\fpga_restored\\field.csv",
+    "dimension": "2d",
+    "shape": [
+      4,
+      4
+    ],
+    "mismatches": 0,
+    "max_abs_delta_q16": 0,
+    "normalized_overlap": 1.0,
+    "density_integral_reference": 1.0234513320028784,
+    "density_integral_fpga": 1.0234513320028784,
+    "density_integral_relative_error": 0.0,
+    "density_l1_error": 0.0,
+    "density_l2_error": 0.0,
+    "density_max_abs_error": 0.0,
+    "peak_location_reference": [
+      2,
+      2
+    ],
+    "peak_location_fpga": [
+      2,
+      2
+    ],
+    "peak_location_delta": 0.0,
+    "center_of_mass_reference": [
+      66.66666666666667,
+      66.66666666666667
+    ],
+    "center_of_mass_fpga": [
+      66.66666666666667,
+      66.66666666666667
+    ],
+    "center_of_mass_delta": 0.0,
+    "first_mismatches": [],
+    "pass": true
+  }
+}

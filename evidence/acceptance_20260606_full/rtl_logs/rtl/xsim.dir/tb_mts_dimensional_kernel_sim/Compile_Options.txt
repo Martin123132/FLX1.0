@@ -1,0 +1,1 @@
+--debug "typical" "tb_mts_dimensional_kernel" -s "tb_mts_dimensional_kernel_sim" -log "xelab.log" 

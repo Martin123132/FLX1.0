@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "source": "fpga",
+    "experiment_name": "notebook_10M_particles",
+    "input_field": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\particle3d_438\\field.csv",
+    "grid_shape": [
+      8,
+      8,
+      8
+    ],
+    "spacing": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "d_volume": 1.0,
+    "steps": 438,
+    "dt": 0.08,
+    "q_format": "q16.16"
+  },
+  "density_integral": 169720133096.95367,
+  "field_l2_norm": 411971.03429361834,
+  "field_sum": 1972118.288925171,
+  "peak_psi": -32336.5735473633,
+  "peak_psi_abs": 32336.5735473633,
+  "peak_density": 1045653988.7840359,
+  "peak_site": 471,
+  "peak_xyz": [
+    7,
+    2,
+    7
+  ],
+  "center_of_mass_xyz": [
+    3.500000000477068,
+    3.500000001993767,
+    3.500000000600133
+  ],
+  "rms_radius": 3.957752199700222,
+  "density_min": 2267902.7654455015,
+  "density_max": 1045653988.7840359,
+  "psi_min": -32336.5735473633,
+  "psi_max": 24282.9185333252,
+  "outputs": {
+    "result_metrics_json": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\particle3d_438\\result_metrics.json",
+    "field_csv": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\particle3d_438\\field.csv",
+    "density_csv": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\particle3d_438\\density.csv",
+    "slice_xy_png": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\particle3d_438\\slice_xy.png",
+    "source_field": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\particle3d_438\\field.csv"
+  }
+}

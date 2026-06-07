@@ -1,0 +1,32 @@
+{
+  "workload": {
+    "name": "unknown_control_program",
+    "kind": "generic_program",
+    "active_points": 1,
+    "dimension": null,
+    "shape": [],
+    "particles": 1,
+    "timesteps": 1,
+    "requires_restore": true,
+    "prefer_accelerator": true,
+    "source": null,
+    "metadata": {}
+  },
+  "selected_engine": "ukernel_vm",
+  "fallback_engine": null,
+  "reason": "generic deterministic program uses the programmable universal kernel",
+  "commands": [
+    "ukernel-reset",
+    "ukernel-load-prog <slot|path>",
+    "ukernel-config 1 <gx> <gy> <gz> <flags>",
+    "ukernel-start",
+    "ukernel-status",
+    "ukernel-dump"
+  ],
+  "evidence_tags": [
+    "adaptive_dispatch",
+    "ukernel_vm"
+  ],
+  "warnings": [],
+  "contract": "flx_adaptive_dispatcher_v1"
+}

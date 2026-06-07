@@ -1,0 +1,5 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "<workspace>/fpga/arty_a7/src/a7_mts_dimensional_kernel.sv" into library work
+INFO: [VRFC 10-311] analyzing module a7_mts_dimensional_kernel
+INFO: [VRFC 10-311] analyzing module dist_ram_1kx32
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "<workspace>/fpga/arty_a7/src/sim/tb_mts_dimensional_kernel.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_mts_dimensional_kernel

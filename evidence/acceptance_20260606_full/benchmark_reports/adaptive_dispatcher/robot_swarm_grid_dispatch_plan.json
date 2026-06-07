@@ -1,0 +1,40 @@
+{
+  "workload": {
+    "name": "robot_swarm_grid",
+    "kind": "robot_grid",
+    "active_points": 1024,
+    "dimension": "2d",
+    "shape": [
+      32,
+      32,
+      1
+    ],
+    "particles": 1,
+    "timesteps": 1,
+    "requires_restore": true,
+    "prefer_accelerator": true,
+    "source": "E:\\FLX\\programs\\flxprog\\robot_swarm_grid.flxprog",
+    "metadata": {
+      "program_format": "flxprog",
+      "instruction_count": 4
+    }
+  },
+  "selected_engine": "robotics_accel",
+  "fallback_engine": "ukernel_vm",
+  "reason": "local-neighbour world-state rules match the robotics/grid accelerator; VM remains the programmable fallback",
+  "commands": [
+    "robot-reset",
+    "robot-clear",
+    "robot-config 1024 32 32 1 0",
+    "robot-load <idx> <word>",
+    "robot-start",
+    "robot-status"
+  ],
+  "evidence_tags": [
+    "adaptive_dispatch",
+    "robotics",
+    "robotics_accel"
+  ],
+  "warnings": [],
+  "contract": "flx_adaptive_dispatcher_v1"
+}

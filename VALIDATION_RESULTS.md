@@ -8,6 +8,8 @@ Final result: **PASS**
 
 The prototype was tested through a full hardware acceptance flow. The result was compared against CPU-reference outputs for the validated workloads.
 
+The generated reports, logs, plots, summaries, and file-integrity hashes are stored in [evidence/acceptance_20260606_full](evidence/acceptance_20260606_full/).
+
 ## Field Workloads
 
 | Workload | Public Scale | Comparison Result | Mismatches | Max Delta |
@@ -50,4 +52,4 @@ The prototype was tested through a full hardware acceptance flow. The result was
 
 ## Overall Statement
 
-The validated prototype demonstrated deterministic field-state workload execution, exact CPU-reference agreement for the tested cases, controlled restore behavior, adaptive workload dispatch, and evidence generation.
+The validated prototype demonstrated deterministic field-state workload execution, exact CPU-reference agreement for the tested cases, controlled restore behavior, adaptive workload dispatch, and evidence/report generation.

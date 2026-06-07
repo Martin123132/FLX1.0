@@ -1,0 +1,33 @@
+{
+  "reference_field": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\mts\\mts_1d_100_t140\\reference_kernel_model\\field.csv",
+  "fpga_field": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\mts\\mts_1d_100_t140\\field.csv",
+  "dimension": "1d",
+  "shape": [
+    100
+  ],
+  "mismatches": 0,
+  "max_abs_delta_q16": 0,
+  "normalized_overlap": 1.0000000000000002,
+  "density_integral_reference": 1.0077336262158973,
+  "density_integral_fpga": 1.0077336262158973,
+  "density_integral_relative_error": 0.0,
+  "density_l1_error": 0.0,
+  "density_l2_error": 0.0,
+  "density_max_abs_error": 0.0,
+  "peak_location_reference": [
+    0
+  ],
+  "peak_location_fpga": [
+    0
+  ],
+  "peak_location_delta": 0.0,
+  "center_of_mass_reference": [
+    2.8866173949533165
+  ],
+  "center_of_mass_fpga": [
+    2.8866173949533165
+  ],
+  "center_of_mass_delta": 0.0,
+  "first_mismatches": [],
+  "pass": true
+}

@@ -1,0 +1,49 @@
+{
+  "summary": {
+    "points": 16,
+    "density_sum": 0.0009211061988025904,
+    "density_max": 0.0009211061988025904,
+    "density_min": 0.0,
+    "peak_index": 10,
+    "peak_density": 0.0009211061988025904,
+    "real_min": 0.0,
+    "real_max": 0.0303497314453125,
+    "imag_min": 0.0,
+    "imag_max": 0.0
+  },
+  "q16_metrics": {
+    "source_dir": "E:\\FLX\\results\\acceptance\\20260606_full_final_acceptance\\fault_recovery\\mts_wal_var_recovery\\fpga_restored",
+    "metric_name": "field_norm_energy_q16",
+    "dimension": "mts_2d",
+    "logical_shape": [
+      4,
+      4,
+      1
+    ],
+    "active_points": 16,
+    "particles": 1,
+    "timesteps": 32,
+    "cycles": 20514,
+    "wall_elapsed_s": 1.2313511999964248,
+    "cycles_per_point": 1282.125,
+    "cycles_per_point_step": 40.06640625,
+    "density_energy_q16": 0.0009211061988025904,
+    "density_l2": 0.0009211061988025904,
+    "density_max": 0.0009211061988025904,
+    "density_min": 0.0,
+    "peak_index": 10,
+    "peak_density": 0.0009211061988025904,
+    "real_min": 0.0,
+    "real_max": 0.0303497314453125,
+    "imag_min": 0.0,
+    "imag_max": 0.0,
+    "kernel_contract": "a7_mts_full_physics_kernel_v2_q16",
+    "kernel_contract_word": 1297371954,
+    "kernel_contract_word_hex": "0x4D545332",
+    "compare": null
+  },
+  "plots": [
+    "mts_2d_density.png",
+    "mts_2d_real.png"
+  ]
+}

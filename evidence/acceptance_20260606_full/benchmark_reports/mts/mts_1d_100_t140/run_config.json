@@ -1,0 +1,21 @@
+{
+  "dimension": "1d",
+  "particles": 1,
+  "grid_x": 100,
+  "grid_y": 1,
+  "grid_z": 1,
+  "lanes": 4,
+  "timesteps": 140,
+  "dt_q16": "0x00004000",
+  "diffusion_q16": "0x0000CCCD",
+  "vcoeff_q16": "0x00009999",
+  "uniform_potential_q16": "0x00002000",
+  "normalize": true,
+  "auto_run": false,
+  "dx_q16": "0x00010296",
+  "dy_q16": "0x00010000",
+  "dz_q16": "0x00010000",
+  "inv_dx2_q16": "0x0000FAE8",
+  "inv_dy2_q16": "0x00010000",
+  "inv_dz2_q16": "0x00010000"
+}

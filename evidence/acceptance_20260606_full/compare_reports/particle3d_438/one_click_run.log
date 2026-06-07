@@ -1,0 +1,528 @@
+One-click FPGA 10M Particle3D run, JTAG-only
+Results:    <workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438
+Experiment: <workspace>\\experiments\notebook_10M_particles.toml
+BOOT:       <workspace>\\experiments\sd_card\BOOT.bin
+XSCT:       E:\AMD\2025.2.1\Vitis\bin\xsct.bat
+Lane-modified experiment: <workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438\lane4_autorun_experiment.toml
+
+$ python <workspace>\\tools\z7_sd_manager.py push-experiment --experiment <workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438\lane4_autorun_experiment.toml --run --boot <workspace>\\experiments\sd_card\BOOT.bin --xsct E:\AMD\2025.2.1\Vitis\bin\xsct.bat
+Using XSCT: E:\AMD\2025.2.1\Vitis\bin\xsct.bat
+
+Uploading to Z7 via JTAG (DDR to SD):
+  mbt.cfg (1787 bytes)
+  state.bin (6144 bytes)
+  lambda_r.bin (2048 bytes)
+  BOOT.bin (4,541,468 bytes) <- <workspace>\\experiments\sd_card\BOOT.bin
+  + Program existing bitstream + ELF + start
+
+Running: E:\AMD\2025.2.1\Vitis\bin\xsct.bat <workspace>/tools/_z7_sd_backend/jtag_upload.tcl <workspace>/experiments/sd_card_particle3d --run --boot <workspace>/experiments/sd_card/BOOT.bin
+
+============================================================
+
+****** Software Commandline Tool (XSCT) v2025.2.1
+  **** SW Build 6403652 on Thu Mar 19 19:48:24 GMT 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+Warning: XSCT is deprecated and will be removed in future releases.
+We recommend using the new Python command-line tool for project management and debugging:
+- Run "vitis -i" for interactive mode.
+- Run "vitis -s <script>" for script mode.
+Reading experiment from: <workspace>/experiments/sd_card_particle3d
+  config (mbt.cfg): 1698 bytes
+  state: 6144 bytes
+  initial_state.bin: 6144 bytes
+  lambda_r.bin: 2048 bytes
+  BOOT.bin: 4541468 bytes (<workspace>/experiments/sd_card/BOOT.bin)
+
+Connecting to JTAG target...
+Programming FPGA...
+FPGA programmed.
+
+Writing to DDR staging area at 0x1F000000...
+  Writing config (1698 bytes)...
+  Writing state (6144 bytes)...
+  Writing lambda_r.bin (2048 bytes)...
+  Writing BOOT.bin (4541468 bytes) — this may take a moment...
+  BOOT.bin written.
+  Magic written — staging area committed.
+
+Loading ELF: <workspace>/arty_a7_fabric/z7_new/platform_set/orch/build/orch.elf
+Starting execution...
+Z7 orchestrator running.  Open serial console at 115200 baud.
+
+Done.
+============================================================
+
+Upload complete. All files are staged in DDR.
+Z7 is running. Firmware will copy DDR to SD and follow the loaded experiment firmware flow.
+Staged config: <workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438\lane4_autorun_experiment.toml -> <workspace>\\experiments\sd_card_particle3d\mbt.cfg
+Staging BOOT.bin too: <workspace>\\experiments\sd_card\BOOT.bin
+
+Running JTAG SD staging:
+  python <workspace>\\tools\_z7_sd_backend\jtag_upload.py <workspace>\\experiments\sd_card_particle3d --xsct E:\AMD\2025.2.1\Vitis\bin\xsct.bat --boot <workspace>\\experiments\sd_card\BOOT.bin --run
+[host->uart] cold-start
+
+[uart] MIRROR START port=COM5 baud=115200
+[uart] [SD] SD card mounted OK.
+[uart] [DDR] Staged data found! toml=1698  state=6144  lambda=2048  boot=4541468
+[uart] [SD] Wrote '0:/BOOT.bin' (4541468 bytes)
+[uart] [SD] Wrote '0:/mbt.cfg' (1698 bytes)
+[uart] [SD] Wrote '0:/state.bin' (6144 bytes)
+[uart] [SD] Wrote '0:/lambda_r.bin' (2048 bytes)
+[uart] [DDR] Copied 4 file(s) to SD card.  Staging area cleared.
+[uart] [MAIN] 4 experiment file(s) copied from DDR to SD.
+[uart] [SD] Read '0:/mbt.cfg' (1698 bytes)
+[uart] [CONFIG] Parsing SD/JTAG config buffer directly...
+[uart] [CONFIG] Loaded experiment 'notebook_10M_particles' from direct buffer parser
+[uart] [SD] Experiment config loaded from SD.
+[uart] [SD] Particle3D mode: ignoring optional state.bin/lambda_r.bin; using generated Particle3D field.
+[uart] Z7 Orchestrator v2.0
+[uart] === Experiment Configuration ===
+[uart]   Name:          notebook_10M_particles
+[uart]   Lattice:       512 sites (8x8x8)
+[uart]   Mode:          particle_superposition_3d (2)
+[uart]   Auto-run:      yes
+[uart]   Dimension:     kind=particle_superposition_3d packing=dense_compressed min_thickness=state_words
+[uart]                  logical=8x8x8 physical=8x8x8 channels/tile=1 layers=1000
+[uart]   Layering:      capacity=512 items/layer=10000 total_layers=1000
+[uart]                  grid/item=512 timesteps/layer=438 used/spare=512/0
+[uart]   Particle3D:    particles=10000000 batch=10000 seed=42 steps=438
+[uart]                  D=0.800 V=0.600 T=35.000 dt=0.080 sigma=0.500
+[uart]                  accum_mode=full_512 lanes=4 site_lanes=1 wal_policy=full bin_first=no
+[uart]   A7 coeffs:     v2=0x00001062 eta=0x00000000 zeta=0x00000000
+[uart]                  lambda=0x00000000 gamma=0x00000000 cg2=0x00010000
+[uart]                  epsilon=0x00000000 step_period=0
+[uart]                  spi3_push=7 spi3_sites=512
+[uart]   Cmod coeffs:   tau_low=0x00100000 tau_high=0x00400000
+[uart]                  tau_block=0x01000000 w_e=0x00008000 w_g=0x00008000
+[uart]                  eta_psi=0x00000666
+[uart]   Timing:        tau_div=49999999  steps=438  ckpt_every=100  poll=10000 µs
+[uart]   Logging:       energy=yes  snapshot_every=0  wal_stream=yes
+[uart]   Recovery:      snapshot_fields=6  depth=128  restore_audit=yes
+[uart]   IC (cold):     sigma=32.0  amplitude=1.000
+[uart]   Robustness:    max_consec_errors=5  wal_stream_floor=5000 µs
+[uart] ================================
+[uart] [SD] output dir ready: 0:/output
+[uart] === Z7 Orchestrator Early Startup ===
+[uart] [STARTUP] PL version: 0x00010001
+[uart] [STARTUP] SPI dividers: SPI1=9 (5 MHz), SPI0=31 (~1.56 MHz)
+[uart] [STARTUP] Cmod SHUTDOWN_FLAG = 0x00
+[uart] [STARTUP] Cle�PU��iE
+[uart] i���V���V�W�.W��]]�%չ���Օ�z��ɅѽɁB����J́*���ɍ���J�����́2�ɵ݅ɕ�jR��E�����R/�Y�Z[Y�� is staged, but no run will start until UART 'go'/'start'.
+[uart] 
+[uart] >>> EARLY PRESTART: adjust/debug before A7/Cmod config or restore
+[uart]     Commands: status, regs, spi-health, set spi1-div <n>, set spi0-div <n>
+[uart]               a7-debug, layer-status, particle-load, mts-config/load/status, bp-recover, sd-ls, cold-start, restore, wal-bypass on/off, help
+[uart]     'go' continues only after cold-start or restore succeeds. 'stop' exits.
+[uart] 
+[uart] cold-start
+[uart] > === COLD START: Configuring A7 and Cmod from defaults/config ===
+[uart] [STARTUP] Configuring A7 ...
+[uart]   A7 layer descriptor <- mode=particle_superposition_3d layer=0 item_start=0 items=10000 grid=512 steps=438
+[uart] [STARTUP] Writing notebook-equivalent per-site lambdaR for 512 sites ...
+[uart]   A7 layer descriptor <- mode=particle_superposition_3d layer=0 item_start=0 items=10000 grid=512 steps=438
+[uart] [STARTUP] Particle3D accelerator: implementation=A7 hardware accumulator
+[uart] [STARTUP] Particle3D config: particles=10000000 grid=8x8x8 seed=42 sigma=0x00008000 scale=0x000001AD
+[uart] [STARTUP] Particle3D accel: mode=full_512 accum_lanes=4 site_lanes=1 wal_policy=full binary_first=no
+[uart] [STARTUP] Setup console active. Type 'setup-help' for safe diagnostic commands during accumulation.
+[uart] 
+[uart] [STARTUP] Particle3D accelerator progress 101396/10000000 site=187
+[uart] [STARTUP] Particle3D accelerator progress 201508/10000000 site=122
+[uart] [STARTUP] Particle3D accelerator progress 301620/10000000 site=127
+[uart] [STARTUP] Particle3D accelerator progress 401732/10000000 site=135
+[uart] [STARTUP] Particle3D accelerator progress 501844/10000000 site=145
+[uart] [STARTUP] Particle3D accelerator progress 601956/10000000 site=153
+[uart] [STARTUP] Particle3D accelerator progress 702068/10000000 site=166
+[uart] [STARTUP] Particle3D accelerator progress 802180/10000000 site=177
+[uart] [STARTUP] Particle3D accelerator progress 902292/10000000 site=186
+[uart] [STARTUP] Particle3D accelerator progress 1002404/10000000 site=192
+[uart] [STARTUP] Particle3D accelerator progress 1102528/10000000 site=406
+[uart] [STARTUP] Particle3D accelerator progress 1202656/10000000 site=97
+[uart] [STARTUP] Particle3D accelerator progress 1302768/10000000 site=108
+[uart] [STARTUP] Particle3D accelerator progress 1402892/10000000 site=316
+[uart] [STARTUP] Particle3D accelerator progress 1503016/10000000 site=7
+[uart] [STARTUP] Particle3D accelerator progress 1603116/10000000 site=330
+[uart] [STARTUP] Particle3D accelerator progress 1703240/10000000 site=30
+[uart] [STARTUP] Particle3D accelerator progress 1803352/10000000 site=34
+[uart] [STARTUP] Particle3D accelerator progress 1903464/10000000 site=42
+[uart] [STARTUP] Particle3D accelerator progress 2003580/10000000 site=58
+[uart] [STARTUP] Particle3D accelerator progress 2103692/10000000 site=72
+[uart] [STARTUP] Particle3D accelerator progress 2203804/10000000 site=70
+[uart] [STARTUP] Particle3D accelerator progress 2303916/10000000 site=92
+[uart] [STARTUP] Particle3D accelerator progress 2404028/10000000 site=96
+[uart] [STARTUP] Particle3D accelerator progress 2504140/10000000 site=116
+[uart] [STARTUP] Particle3D accelerator progress 2604264/10000000 site=319
+[uart] [STARTUP] Particle3D accelerator progress 2704388/10000000 site=13
+[uart] [STARTUP] Particle3D accelerator progress 2804500/10000000 site=15
+[uart] [STARTUP] Particle3D accelerator progress 2904612/10000000 site=42
+[uart] [STARTUP] Particle3D accelerator progress 3004724/10000000 site=40
+[uart] [STARTUP] Particle3D accelerator progress 3104836/10000000 site=56
+[uart] [STARTUP] Particle3D accelerator progress 3204948/10000000 site=56
+[uart] [STARTUP] Particle3D accelerator progress 3305064/10000000 site=72
+[uart] [STARTUP] Particle3D accelerator progress 3405176/10000000 site=88
+[uart] [STARTUP] Particle3D accelerator progress 3505288/10000000 site=96
+[uart] [STARTUP] Particle3D accelerator progress 3605400/10000000 site=103
+[uart] [STARTUP] Particle3D accelerator progress 3705524/10000000 site=313
+[uart] [STARTUP] Particle3D accelerator progress 3805648/10000000 site=1
+[uart] [STARTUP] Particle3D accelerator progress 3905748/10000000 site=334
+[uart] [STARTUP] Particle3D accelerator progress 4005872/10000000 site=25
+[uart] [STARTUP] Particle3D accelerator progress 4105984/10000000 site=40
+[uart] [STARTUP] Particle3D accelerator progress 4206096/10000000 site=49
+[uart] [STARTUP] Particle3D accelerator progress 4306208/10000000 site=51
+[uart] [STARTUP] Particle3D accelerator progress 4406324/10000000 site=68
+[uart] [STARTUP] Particle3D accelerator progress 4506436/10000000 site=82
+[uart] [STARTUP] Particle3D accelerator progress 4606548/10000000 site=94
+[uart] [STARTUP] Particle3D accelerator progress 4706660/10000000 site=94
+[uart] [STARTUP] Particle3D accelerator progress 4806772/10000000 site=108
+[uart] [STARTUP] Particle3D accelerator progress 4906896/10000000 site=312
+[uart] [STARTUP] Particle3D accelerator progress 5007020/10000000 site=8
+[uart] [STARTUP] Particle3D accelerator progress 5107120/10000000 site=344
+[uart] [STARTUP] Particle3D accelerator progress 5207244/10000000 site=31
+[uart] [STARTUP] Particle3D accelerator progress 5307356/10000000 site=36
+[host] matched post-cold-start marker: Cold Start Complete - Hardware Ready
+[host->uart] go
+
+$ python <workspace>\\tools\_z7_sd_backend\jtag_pull_results.py --dest <workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438 --xsct E:\AMD\2025.2.1\Vitis\bin\xsct.bat
+[uart] [STARTUP] Particle3D accelerator progress 5407468/10000000 site=46
+[uart] [STARTUP] Particle3D accelerator progress 5507584/10000000 site=68
+[uart] [STARTUP] Particle3D accelerator progress 5607696/10000000 site=77
+[uart] [STARTUP] Particle3D accelerator progress 5707808/10000000 site=83
+[uart] [STARTUP] Particle3D accelerator progress 5807920/10000000 site=96
+[uart] [STARTUP] Particle3D accelerator progress 5908032/10000000 site=103
+[uart] [STARTUP] Particle3D accelerator progress 6008156/10000000 site=312
+[uart] [STARTUP] Particle3D accelerator progress 6108280/10000000 site=2
+[uart] [STARTUP] Particle3D accelerator progress 6208380/10000000 site=329
+[uart] [STARTUP] Particle3D accelerator progress 6308504/10000000 site=28
+[uart] [STARTUP] Particle3D accelerator progress 6408616/10000000 site=25
+[uart] [STARTUP] Particle3D accelerator progress 6508728/10000000 site=37
+[uart] [STARTUP] Particle3D accelerator progress 6608840/10000000 site=53
+[uart] [STARTUP] Particle3D accelerator progress 6708956/10000000 site=64
+[uart] [STARTUP] Particle3D accelerator progress 6809068/10000000 site=68
+[uart] [STARTUP] Particle3D accelerator progress 6909180/10000000 site=82
+[uart] [STARTUP] Particle3D accelerator progress 7009292/10000000 site=95
+[uart] [STARTUP] Particle3D accelerator progress 7109404/10000000 site=119
+[uart] [STARTUP] Particle3D accelerator progress 7209528/10000000 site=312
+[uart] [STARTUP] Particle3D accelerator progress 7309652/10000000 site=11
+[uart] [STARTUP] Particle3D accelerator progress 7409764/10000000 site=14
+[uart] [STARTUP] Particle3D accelerator progress 7509876/10000000 site=32
+[uart] [STARTUP] Particle3D accelerator progress 7609988/10000000 site=35
+[uart] [STARTUP] Particle3D accelerator progress 7710100/10000000 site=47
+[uart] [STARTUP] Particle3D accelerator progress 7810216/10000000 site=58
+[uart] [STARTUP] Particle3D accelerator progress 7910328/10000000 site=68
+[uart] [STARTUP] Particle3D accelerator progress 8010440/10000000 site=75
+[uart] [STARTUP] Particle3D accelerator progress 8110552/10000000 site=89
+[uart] [STARTUP] Particle3D accelerator progress 8210664/10000000 site=99
+[uart] [STARTUP] Particle3D accelerator progress 8310776/10000000 site=111
+[uart] [STARTUP] Particle3D accelerator progress 8410900/10000000 site=320
+[uart] [STARTUP] Particle3D accelerator progress 8511024/10000000 site=9
+[uart] [STARTUP] Particle3D accelerator progress 8611124/10000000 site=342
+[uart] [STARTUP] Particle3D accelerator progress 8711248/10000000 site=31
+[uart] [STARTUP] Particle3D accelerator progress 8811360/10000000 site=43
+[uart] [STARTUP] Particle3D accelerator progress 8911472/10000000 site=48
+[uart] [STARTUP] Particle3D accelerator progress 9011588/10000000 site=63
+[uart] [STARTUP] Particle3D accelerator progress 9111700/10000000 site=72
+[uart] [STARTUP] Particle3D accelerator progress 9211812/10000000 site=87
+[uart] [STARTUP] Particle3D accelerator progress 9311924/10000000 site=86
+[uart] [STARTUP] Particle3D accelerator progress 9412036/10000000 site=106
+[uart] [STARTUP] Particle3D accelerator progress 9512160/10000000 site=309
+[uart] [STARTUP] Particle3D accelerator progress 9612284/10000000 site=1
+[uart] [STARTUP] Particle3D accelerator progress 9712384/10000000 site=333
+[uart] [STARTUP] Particle3D accelerator progress 9812508/10000000 site=23
+[uart] [STARTUP] Particle3D accelerator progress 9912620/10000000 site=33
+[uart] [STARTUP] Particle3D accelerator progress 10000000/10000000 site=233
+[uart] [STARTUP] Particle3D accumulation done on A7 in 64.236 s; evolution steps=438.
+[uart]   Accel: mode=full_512 req_lanes=4 req_site_lanes=1 actual_lanes=4 actual_site_lanes=1 wal=full bin_first=0
+[uart]          caps=0x0010F414 cycles accum=2127533216 finalize=3072 active=0x00014140
+[uart] [STARTUP] A7 configured OK.
+[uart] [STARTUP] Capturing initial A7 field RAM ...
+[uart] [A7] Dumping 512 sites 0 64 128 192 256 320 384 448 done
+[uart] [STARTUP] Initial A7 field captured in PS RAM.
+[uart] [STARTUP] Initial A7 field SD output deferred to final evidence bundle.
+[uart] [STARTUP] Configuring Cmod ...
+[uart] [STARTUP] Cmod recovery: fields=6 policy=0x0000000F depth=128
+[uart] [STARTUP] Cmod WAL control: logging=on repair=on
+[uart] [STARTUP] Cmod configured OK.
+[uart] === Cold Start Complete - Hardware Ready (tau NOT started) ===
+[uart] go
+[uart] > 
+[uart] ========================================
+[uart]   Experiment "notebook_10M_particles" loaded from SD card.
+[uart]   Steps: 438   tau_div: 49999999   snapshot_every: 0
+[uart] ========================================
+[uart] 
+[uart] === Pre-start health check ===
+[uart]   SPI1 (A7):   OK  (spi_st=0xAC val=0x00000000)
+[uart]   A7 heartbeat: 0x005D -> 0x005E  [ALIVE]
+[uart]   SPI0 (Cmod): OK  (magic=0x4D54 [OK]  flags=0x000290A0)
+[uart]   Z7 STATUS:   0x40
+[uart]   Sticky flags cleared.
+[uart] ==============================
+[uart] 
+[uart] >>> Pre-start: type commands then press ENTER alone (or 'go') to start.
+[uart]     wal-bypass on/off  |  set tau-rate <hz>  |  status  |  regs  |  a7-debug  |  layer-status
+[uart]     particle-load/start/status  |  mts-config/load/start/status/read/dump/bench/clear/reset  |  help
+[uart] 
+[uart] 
+[uart] > 
+[uart] === Starting with ===
+[uart]   tau_div    = 49999999  (~1.0 Hz)
+[uart]   steps      = 438
+[uart]   wal-bypass = OFF
+[uart]   energy_log = ON
+[uart]   wal_stream = ON
+[uart] ====================
+[uart] 
+[uart] [MAIN] GO.
+[uart] [SDLOG] INFO: bare-metal SD energy log disabled; host metrics/report will be generated from DDR evidence.
+[uart] === Exact Finite Run Loop ===
+[uart]   Requested steps: 438  controlled steps: 438  tau_div=49999999  wal_stream=on-final-only  driver=a7-single-step
+[uart] [RUNLOOP] Restoring captured initial A7 field before exact finite run.
+[uart] [RUNLOOP] Controlled tau edge 1/438 complete (time_idx=1)
+[uart] [RUNLOOP] Controlled tau edge 50/438 complete (time_idx=50)
+[uart] [RUNLOOP] Controlled tau edge 100/438 complete (time_idx=100)
+[uart] [RUNLOOP] Controlled tau edge 150/438 complete (time_idx=150)
+[uart] [RUNLOOP] Controlled tau edge 200/438 complete (time_idx=200)
+[uart] [RUNLOOP] Controlled tau edge 250/438 complete (time_idx=250)
+[uart] [RUNLOOP] Controlled tau edge 300/438 complete (time_idx=300)
+[uart] [RUNLOOP] Controlled tau edge 350/438 complete (time_idx=350)
+[uart] [RUNLOOP] Controlled tau edge 400/438 complete (time_idx=400)
+[uart] [RUNLOOP] Controlled tau edge 438/438 complete (time_idx=438)
+[uart] [RUNLOOP] Exact finite run complete: requested=438 controlled_tau_edges=438 in 0.848 s
+[uart] [RUNLOOP] Tau paused for final output.
+[uart] [OUTPUT] Forcing final A7->Cmod SPI3 state push ...
+[uart] [OUTPUT] Final SPI3 state push complete.
+[uart] [OUTPUT] Cmod SPI3 rx: frames=36 -> 37  site_writes=18432 -> 18944  last_sites=512
+[uart] [OUTPUT] Writing captured initial A7 field outputs ...
+[uart] [OUTPUT] Initial A7 field SD files skipped on bare-metal; DDR bundle will carry them.
+[uart] [A7] Dumping 512 sites 0 64 128 192 256 320 384 448 done
+[uart] === Cmod Mirror Verification ===
+[uart]   Cmod raw mirror non-zero records: 512/512
+[uart]   CMOD MIRROR PASS: all 512 raw mirrored sites match A7.
+[uart] [OUTPUT] Final snapshot SD write skipped on bare-metal; DDR bundle will carry final state.
+[uart] [OUTPUT] Forcing final Cmod checkpoint/drain before WAL output ...
+[uart]   Checkpoint staged in Cmod mirror/BRAM (0.7 ms, flags=0x000292A0); waiting for flash commit ...
+[uart]   Checkpoint flash commit completed (104.0 ms, flags=0x000294A0).
+[uart] [OUTPUT] WAL dump SD write skipped on bare-metal; Cmod WAL was checkpointed and DDR evidence remains active.
+[uart] [OUTPUT] A7 CSV SD write skipped on bare-metal; DDR bundle will carry field.csv.
+[uart] [OUTPUT] Final field binary SD write skipped on bare-metal; DDR bundle will carry field.bin.
+[uart] [OUTPUT] Final field CSV SD write skipped on bare-metal; DDR bundle will carry field.csv.
+[uart] [OUTPUT] Progress metadata SD write skipped on bare-metal.
+[uart] [OUTPUT] WAL CSV SD write skipped on bare-metal.
+[uart] === Compact WAL History Check ===
+Pulling result bundle over JTAG:
+  E:\AMD\2025.2.1\Vitis\bin\xsct.bat <workspace>\\tools\_z7_sd_backend\jtag_pull_results.tcl <workspace>\\codex_io\tmp\z7_result_bundle_qsu6_ob1.bin
+
+****** Software Commandline Tool (XSCT) v2025.2.1
+  **** SW Build 6403652 on Thu Mar 19 19:48:24 GMT 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+Warning: XSCT is deprecated and will be removed in future releases.
+We recommend using the new Python command-line tool for project management and debugging:
+- Run "vitis -i" for interactive mode.
+- Run "vitis -s <script>" for script mode.
+Connecting to JTAG target...
+Reading DDR result bundle from 0x1F000000 (8388608 bytes)...
+Wrote <workspace>\\codex_io\tmp\z7_result_bundle_qsu6_ob1.bin
+OK DDR:initial_field_a7.bin -> <workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438\initial_field_a7.bin (6144 bytes)
+OK DDR:initial_field_a7.csv -> <workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438\initial_field_a7.csv (41955 bytes)
+OK DDR:field.bin -> <workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438\field.bin (6144 bytes)
+OK DDR:field.csv -> <workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438\field.csv (46155 bytes)
+Pulled 4 result file(s) to <workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438
+
+$ python <workspace>\\tools\particle3d_result_metrics.py <workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438\field.csv --out <workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438 --source fpga --experiment-name notebook_10M_particles --steps 438 --dt 0.08
+result_metrics: <workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438\result_metrics.json
+density_integral: 169720133097
+normalized source: fpga
+
+$ python <workspace>\\run_10m_particle3d_reference.py --config <workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438\lane4_autorun_experiment.toml --out <workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438\architecture_reference --accum-lanes 4 --compare-hardware-csv <workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438\field.csv --compare-initial-hardware-csv <workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438\initial_field_a7.csv
+[reference model] reference-model-only architecture-equivalent Particle3D run
+[reference model] config=<workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438\lane4_autorun_experiment.toml
+[reference model] particles=10000000 steps=438 batch=10000 seed=42 accum_lanes=4 v2=0x00001062
+[reference model] Particle accumulation 100000/10000000 (35,751 particles/s)
+[reference model] Particle accumulation 200000/10000000 (35,522 particles/s)
+[reference model] Particle accumulation 300000/10000000 (34,706 particles/s)
+[reference model] Particle accumulation 400000/10000000 (33,544 particles/s)
+[reference model] Particle accumulation 500000/10000000 (32,963 particles/s)
+[reference model] Particle accumulation 600000/10000000 (32,944 particles/s)
+[reference model] Particle accumulation 700000/10000000 (32,961 particles/s)
+[reference model] Particle accumulation 800000/10000000 (33,009 particles/s)
+[reference model] Particle accumulation 900000/10000000 (32,912 particles/s)
+[reference model] Particle accumulation 1000000/10000000 (32,957 particles/s)
+[reference model] Particle accumulation 1100000/10000000 (32,967 particles/s)
+[reference model] Particle accumulation 1200000/10000000 (32,939 particles/s)
+[reference model] Particle accumulation 1300000/10000000 (32,913 particles/s)
+[reference model] Particle accumulation 1400000/10000000 (32,750 particles/s)
+[reference model] Particle accumulation 1500000/10000000 (32,771 particles/s)
+[reference model] Particle accumulation 1600000/10000000 (32,650 particles/s)
+[reference model] Particle accumulation 1700000/10000000 (32,638 particles/s)
+[reference model] Particle accumulation 1800000/10000000 (32,664 particles/s)
+[reference model] Particle accumulation 1900000/10000000 (32,626 particles/s)
+[reference model] Particle accumulation 2000000/10000000 (32,618 particles/s)
+[reference model] Particle accumulation 2100000/10000000 (32,574 particles/s)
+[reference model] Particle accumulation 2200000/10000000 (32,597 particles/s)
+[reference model] Particle accumulation 2300000/10000000 (32,543 particles/s)
+[reference model] Particle accumulation 2400000/10000000 (32,601 particles/s)
+[reference model] Particle accumulation 2500000/10000000 (32,630 particles/s)
+[reference model] Particle accumulation 2600000/10000000 (32,651 particles/s)
+[reference model] Particle accumulation 2700000/10000000 (32,629 particles/s)
+[reference model] Particle accumulation 2800000/10000000 (32,602 particles/s)
+[reference model] Particle accumulation 2900000/10000000 (32,610 particles/s)
+[reference model] Particle accumulation 3000000/10000000 (32,679 particles/s)
+[reference model] Particle accumulation 3100000/10000000 (32,692 particles/s)
+[reference model] Particle accumulation 3200000/10000000 (32,643 particles/s)
+[reference model] Particle accumulation 3300000/10000000 (32,648 particles/s)
+[reference model] Particle accumulation 3400000/10000000 (32,662 particles/s)
+[reference model] Particle accumulation 3500000/10000000 (32,709 particles/s)
+[reference model] Particle accumulation 3600000/10000000 (32,738 particles/s)
+[reference model] Particle accumulation 3700000/10000000 (32,760 particles/s)
+[reference model] Particle accumulation 3800000/10000000 (32,753 particles/s)
+[reference model] Particle accumulation 3900000/10000000 (32,738 particles/s)
+[reference model] Particle accumulation 4000000/10000000 (32,770 particles/s)
+[reference model] Particle accumulation 4100000/10000000 (32,820 particles/s)
+[reference model] Particle accumulation 4200000/10000000 (32,834 particles/s)
+[reference model] Particle accumulation 4300000/10000000 (32,770 particles/s)
+[reference model] Particle accumulation 4400000/10000000 (32,768 particles/s)
+[reference model] Particle accumulation 4500000/10000000 (32,754 particles/s)
+[reference model] Particle accumulation 4600000/10000000 (32,769 particles/s)
+[reference model] Particle accumulation 4700000/10000000 (32,781 particles/s)
+[reference model] Particle accumulation 4800000/10000000 (32,771 particles/s)
+[reference model] Particle accumulation 4900000/10000000 (32,765 particles/s)
+[reference model] Particle accumulation 5000000/10000000 (32,740 particles/s)
+[reference model] Particle accumulation 5100000/10000000 (32,781 particles/s)
+[reference model] Particle accumulation 5200000/10000000 (32,784 particles/s)
+[reference model] Particle accumulation 5300000/10000000 (32,747 particles/s)
+[reference model] Particle accumulation 5400000/10000000 (32,692 particles/s)
+[reference model] Particle accumulation 5500000/10000000 (32,708 particles/s)
+[reference model] Particle accumulation 5600000/10000000 (32,720 particles/s)
+[reference model] Particle accumulation 5700000/10000000 (32,744 particles/s)
+[reference model] Particle accumulation 5800000/10000000 (32,756 particles/s)
+[reference model] Particle accumulation 5900000/10000000 (32,744 particles/s)
+[reference model] Particle accumulation 6000000/10000000 (32,710 particles/s)
+[reference model] Particle accumulation 6100000/10000000 (32,712 particles/s)
+[reference model] Particle accumulation 6200000/10000000 (32,733 particles/s)
+[reference model] Particle accumulation 6300000/10000000 (32,725 particles/s)
+[reference model] Particle accumulation 6400000/10000000 (32,718 particles/s)
+[reference model] Particle accumulation 6500000/10000000 (32,707 particles/s)
+[reference model] Particle accumulation 6600000/10000000 (32,717 particles/s)
+[reference model] Particle accumulation 6700000/10000000 (32,728 particles/s)
+[reference model] Particle accumulation 6800000/10000000 (32,741 particles/s)
+[reference model] Particle accumulation 6900000/10000000 (32,736 particles/s)
+[reference model] Particle accumulation 7000000/10000000 (32,707 particles/s)
+[reference model] Particle accumulation 7100000/10000000 (32,723 particles/s)
+[reference model] Particle accumulation 7200000/10000000 (32,727 particles/s)
+[reference model] Particle accumulation 7300000/10000000 (32,727 particles/s)
+[reference model] Particle accumulation 7400000/10000000 (32,734 particles/s)
+[reference model] Particle accumulation 7500000/10000000 (32,741 particles/s)
+[reference model] Particle accumulation 7600000/10000000 (32,732 particles/s)
+[reference model] Particle accumulation 7700000/10000000 (32,731 particles/s)
+[reference model] Particle accumulation 7800000/10000000 (32,739 particles/s)
+[reference model] Particle accumulation 7900000/10000000 (32,758 particles/s)
+[reference model] Particle accumulation 8000000/10000000 (32,743 particles/s)
+[reference model] Particle accumulation 8100000/10000000 (32,741 particles/s)
+[reference model] Particle accumulation 8200000/10000000 (32,751 particles/s)
+[reference model] Particle accumulation 8300000/10000000 (32,738 particles/s)
+[reference model] Particle accumulation 8400000/10000000 (32,752 particles/s)
+[reference model] Particle accumulation 8500000/10000000 (32,757 particles/s)
+[reference model] Particle accumulation 8600000/10000000 (32,756 particles/s)
+[reference model] Particle accumulation 8700000/10000000 (32,751 particles/s)
+[reference model] Particle accumulation 8800000/10000000 (32,739 particles/s)
+[reference model] Particle accumulation 8900000/10000000 (32,760 particles/s)
+[reference model] Particle accumulation 9000000/10000000 (32,765 particles/s)
+[reference model] Particle accumulation 9100000/10000000 (32,769 particles/s)
+[reference model] Particle accumulation 9200000/10000000 (32,752 particles/s)
+[reference model] Particle accumulation 9300000/10000000 (32,752 particles/s)
+[reference model] Particle accumulation 9400000/10000000 (32,755 particles/s)
+[reference model] Particle accumulation 9500000/10000000 (32,758 particles/s)
+[reference model] Particle accumulation 9600000/10000000 (32,771 particles/s)
+[reference model] Particle accumulation 9700000/10000000 (32,778 particles/s)
+[reference model] Particle accumulation 9800000/10000000 (32,777 particles/s)
+[reference model] Particle accumulation 9900000/10000000 (32,764 particles/s)
+[reference model] Particle accumulation 10000000/10000000 (32,781 particles/s)
+[reference model] initial hardware comparison: mismatches=0 max_abs_delta_q16=0
+[reference model] step 1/438 peak=0x00000008
+[reference model] step 25/438 peak=0x00000146
+[reference model] step 50/438 peak=0x00000A59
+[reference model] step 75/438 peak=0x000042DE
+[reference model] step 100/438 peak=0x0001AB3E
+[reference model] step 125/438 peak=0x000AACE1
+[reference model] step 150/438 peak=0x0044470D
+[reference model] step 175/438 peak=0x01B4B3BD
+[reference model] step 200/438 peak=0x0AE92692
+[reference model] step 225/438 peak=0x45C90113
+[reference model] step 250/438 peak=0x7F561066
+[reference model] step 275/438 peak=0x7E3E4DBC
+[reference model] step 300/438 peak=0x60227191
+[reference model] step 325/438 peak=0x6097AEC6
+[reference model] step 350/438 peak=0x7F93B68F
+[reference model] step 375/438 peak=0x748E5A81
+[reference model] step 400/438 peak=0x7F38960B
+[reference model] step 425/438 peak=0x790AA5AA
+[reference model] step 438/438 peak=0x7E5092D4
+[reference model] hardware comparison: mismatches=0 max_abs_delta_q16=0
+[reference model] complete
+[reference model] initial_field_csv=<workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438\architecture_reference\initial_field_reference.csv
+[reference model] field_csv=<workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438\architecture_reference\field_reference.csv
+[reference model] result_metrics=<workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438\architecture_reference\result_metrics.json
+[reference model] metrics=<workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438\architecture_reference\metrics.json
+[reference model] total_seconds=306.080
+
+$ python <workspace>\\tools\compare_particle3d_fields.py --reference-model-field <workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438\architecture_reference\initial_field_reference.csv --fpga-field <workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438\initial_field_a7.csv --out <workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438\compare_initial_reference_vs_fpga --label initial
+label=initial
+passed=True
+mismatches=0
+max_abs_delta_q16=0
+normalized_overlap=1
+density_integral_relative_error=3.32322488312e-07
+report=<workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438\compare_initial_reference_vs_fpga\compare_report.json
+
+$ python <workspace>\\tools\compare_particle3d_fields.py --reference-model-field <workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438\architecture_reference\field_reference.csv --fpga-field <workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438\field.csv --out <workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438\compare_final_reference_vs_fpga --label final
+label=final
+passed=True
+mismatches=0
+max_abs_delta_q16=0
+normalized_overlap=1
+density_integral_relative_error=0
+report=<workspace>\\results\acceptance\20260606_full_final_acceptance\particle3d_438\compare_final_reference_vs_fpga\compare_report.json
+[uart]   WAL history latest row: 32/32 records non-zero.
+[uart]   WAL[0]: psi=0xFA1E0B46 dpsi=0xEFB9D61B M=0x00000000
+[uart]   WAL[1]: psi=0xBC586555 dpsi=0x0AF02903 M=0x00000000
+[uart]   WAL[2]: psi=0xBC586562 dpsi=0x0AF0290F M=0x00000000
+[uart]   WAL[3]: psi=0xC3E9D924 dpsi=0xF14AE682 M=0x00000000
+[uart]   WAL[4]: psi=0x81AF6D2E dpsi=0x2C47F9DE M=0x00000000
+[uart] === Expanded Verification ===
+[uart]   PEAK_PSI PASS: SW=0x7E5092D4 == HW=0x7E5092D4
+[uart]   ENERGY: kinetic=726309367591  field=701326791539  total=1427636159130  repair_count=0
+[uart]   READBACK PASS: 64 random sites verified.
+[uart] [OUTPUT] Result JSON SD write skipped on bare-metal; host report is generated from DDR bundle.
+[uart] [OUTPUT] Run summary SD write skipped on bare-metal; DDR bundle will carry generated summary/report data.
+[uart] [OUTPUT] Capturing final A7 field RAM for DDR bundle ...
+[uart] [A7] Dumping 512 sites 0 64 128 192 256 320 384 448 done
+[uart] [OUTPUT] Final A7 field captured in PS RAM.
+[uart] [DDR] Bundled memory result 'initial_field_a7.bin' (6144 bytes)
+[uart] [DDR] Bundled memory result 'initial_field_a7.csv' (41955 bytes)
+[uart] [DDR] Bundled memory result 'field.bin' (6144 bytes)
+[uart] [DDR] Bundled memory result 'field.csv' (46155 bytes)
+[uart] [DDR] Result bundle ready at 0x1F000000: 4 file(s), 104496 bytes
+[uart] 
+[uart] === Output Complete ===
+[uart]   0:/output/inita7.bin          - initial A7 field/state binary
+[uart]   0:/output/inita7.csv          - initial A7 field CSV
+[uart]   0:/output/field.bin           - final A7 field/state binary
+[uart]   0:/output/field.csv           - final A7 field CSV
+[uart]   0:/output/progress.bin        - progress/checkpoint metadata
+[uart]   0:/output/result.jsn          â€” full results
+[uart]   0:/output/fs000438.csv  â€” A7 field (512 sites)
+[uart]   0:/output/walst.csv           â€” WAL state (32 sites)
+[uart]   0:/output/energy.csv          â€” energy trajectory
+[uart]   0:/output/summary.txt         â€” human summary
+[uart] 
+[uart] >>> POST-RUN SD PULL SHELL
+[uart]     Results are on SD and hardware is being held alive for UART pull.
+[uart]     Safe commands: sd-ls, sd-get-dir, sd-get, sd-cat, status, regs, spi-health.
+[uart]     Host pull tool may now connect over USB-UART. Type 'stop' or 'shutdown' for clean shutdown.
+[uart] 
+[uart] MIRROR STOP

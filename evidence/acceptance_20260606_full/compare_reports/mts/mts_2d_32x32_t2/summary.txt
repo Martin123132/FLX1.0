@@ -1,0 +1,9 @@
+=== MTS Full Physics Run Summary ===
+mode: mts_2d
+particles: 1
+logical_shape: 32x32x1
+timesteps: 2
+lanes: 1
+contract: 0x4D545332
+cycles: 64770
+classification_candidate: bit_exact_after_reference_compare
