@@ -1,0 +1,748 @@
+
+>>> spi-health
+spi-health
+>   SPI1 (Z7->A7): status=0xAC  data=0x00000000  [OK]
+  SPI0 (Z7->Cmod): data=0x000290A0
+  Cmod flag decode: any=0 fault=0 repair_fail=0 buf0_full=0 buf1_full=0 buf0_active=1 fifo_full=0 fifo_empty=1
+  Cmod SPI3 rx: frames=0  site_writes=0  last_sites=0
+
+>>> ukernel-caps
+ukernel-caps
+>   UKERNEL status=0x00000000 caps=0x554B0400 contract=0x474D5755
+          active=1 shape=1x1x1 flags=0x00000000 pc=0 cycles=0 retires=0
+          program_hash=0x00001363 state_hash=0x00000000
+
+>>> robot-status
+robot-status
+>   Robot status=0x00000000 caps=0x524F0400 active=1 grid=1x1 steps=1 flags=0x00000000
+        hash=0x9E3779B9 cycles=0 moved=0 blocked=0 collisions=0
+
+>>> ukernel-reset
+ukernel-reset
+>   UKERNEL reset sent.
+
+>>> ukernel-config 2 2 1 1 0
+ukernel-config 2 2 1 1 0
+>   WAL active engine: robot -> ukernel (ukernel-config)
+  UKERNEL configured: active=2 shape=2x1x1 flags=0x00000000
+
+>>> ukernel-load-prog 1 101F0000
+ukernel-load-prog 1 101F0000
+>   UKERNEL prog[1] <- 0x101F0000
+
+>>> ukernel-load-prog 2 102F0001
+ukernel-load-prog 2 102F0001
+>   UKERNEL prog[2] <- 0x102F0001
+
+>>> ukernel-load-prog 3 23312000
+ukernel-load-prog 3 23312000
+>   UKERNEL prog[3] <- 0x23312000
+
+>>> ukernel-load-prog 4 113F0000
+ukernel-load-prog 4 113F0000
+>   UKERNEL prog[4] <- 0x113F0000
+
+>>> ukernel-load-prog 5 01000000
+ukernel-load-prog 5 01000000
+>   UKERNEL prog[5] <- 0x01000000
+
+>>> ukernel-load-prog 0 02F00000
+ukernel-load-prog 0 02F00000
+>   UKERNEL prog[0] <- 0x02F00000
+
+>>> ukernel-load-data 0 A5A5A5A5
+ukernel-load-data 0 A5A5A5A5
+>   UKERNEL data[0] <- 0xA5A5A5A5
+
+>>> ukernel-load-data 1 12345678
+ukernel-load-data 1 12345678
+>   UKERNEL data[1] <- 0x12345678
+
+>>> ukernel-start
+ukernel-start
+>   UKERNEL started.
+
+>>> ukernel-status
+ukernel-status
+>   UKERNEL status=0x00008006 caps=0x554B0400 contract=0x474D5755
+          active=2 shape=2x1x1 flags=0x00000000 pc=6 cycles=34 retires=6
+          program_hash=0x5C17B551 state_hash=0x00000000
+
+>>> ukernel-read 0 1
+ukernel-read 0 1
+>   UKERNEL data[0] = 0xB791F3DD (-1215171619)
+
+>>> ukernel-status
+ukernel-status
+>   UKERNEL status=0x00008006 caps=0x554B0400 contract=0x474D5755
+          active=2 shape=2x1x1 flags=0x00000000 pc=6 cycles=34 retires=6
+          program_hash=0x5C17B551 state_hash=0x00000000
+
+>>> ukernel-reset
+ukernel-reset
+>   UKERNEL reset sent.
+
+>>> ukernel-config 2 2 1 1 0
+ukernel-config 2 2 1 1 0
+>   UKERNEL configured: active=2 shape=2x1x1 flags=0x00000000
+
+>>> ukernel-load-prog 1 101F0000
+ukernel-load-prog 1 101F0000
+>   UKERNEL prog[1] <- 0x101F0000
+
+>>> ukernel-load-prog 2 102F0001
+ukernel-load-prog 2 102F0001
+>   UKERNEL prog[2] <- 0x102F0001
+
+>>> ukernel-load-prog 3 32312000
+ukernel-load-prog 3 32312000
+>   UKERNEL prog[3] <- 0x32312000
+
+>>> ukernel-load-prog 4 113F0000
+ukernel-load-prog 4 113F0000
+>   UKERNEL prog[4] <- 0x113F0000
+
+>>> ukernel-load-prog 5 01000000
+ukernel-load-prog 5 01000000
+>   UKERNEL prog[5] <- 0x01000000
+
+>>> ukernel-load-prog 0 02F00000
+ukernel-load-prog 0 02F00000
+>   UKERNEL prog[0] <- 0x02F00000
+
+>>> ukernel-load-data 0 00018000
+ukernel-load-data 0 00018000
+>   UKERNEL data[0] <- 0x00018000
+
+>>> ukernel-load-data 1 FFFFC000
+ukernel-load-data 1 FFFFC000
+>   UKERNEL data[1] <- 0xFFFFC000
+
+>>> ukernel-start
+ukernel-start
+>   UKERNEL started.
+
+>>> ukernel-status
+ukernel-status
+>   UKERNEL status=0x00008006 caps=0x554B0400 contract=0x474D5755
+          active=2 shape=2x1x1 flags=0x00000000 pc=6 cycles=37 retires=6
+          program_hash=0x5C16A551 state_hash=0x00000000
+
+>>> ukernel-read 0 1
+ukernel-read 0 1
+>   UKERNEL data[0] = 0xFFFFA000 (-24576)
+
+>>> ukernel-status
+ukernel-status
+>   UKERNEL status=0x00008006 caps=0x554B0400 contract=0x474D5755
+          active=2 shape=2x1x1 flags=0x00000000 pc=6 cycles=37 retires=6
+          program_hash=0x5C16A551 state_hash=0x00000000
+
+>>> ukernel-reset
+ukernel-reset
+>   UKERNEL reset sent.
+
+>>> ukernel-config 1 1 1 1 0
+ukernel-config 1 1 1 1 0
+>   UKERNEL configured: active=1 shape=1x1x1 flags=0x00000000
+
+>>> ukernel-load-prog 1 101F0000
+ukernel-load-prog 1 101F0000
+>   UKERNEL prog[1] <- 0x101F0000
+
+>>> ukernel-load-prog 2 02200008
+ukernel-load-prog 2 02200008
+>   UKERNEL prog[2] <- 0x02200008
+
+>>> ukernel-load-prog 3 29312000
+ukernel-load-prog 3 29312000
+>   UKERNEL prog[3] <- 0x29312000
+
+>>> ukernel-load-prog 4 113F0000
+ukernel-load-prog 4 113F0000
+>   UKERNEL prog[4] <- 0x113F0000
+
+>>> ukernel-load-prog 5 01000000
+ukernel-load-prog 5 01000000
+>   UKERNEL prog[5] <- 0x01000000
+
+>>> ukernel-load-prog 0 02F00000
+ukernel-load-prog 0 02F00000
+>   UKERNEL prog[0] <- 0x02F00000
+
+>>> ukernel-load-data 0 12345678
+ukernel-load-data 0 12345678
+>   UKERNEL data[0] <- 0x12345678
+
+>>> ukernel-start
+ukernel-start
+>   UKERNEL started.
+
+>>> ukernel-status
+ukernel-status
+>   UKERNEL status=0x00008006 caps=0x554B0400 contract=0x474D5755
+          active=1 shape=1x1x1 flags=0x00000000 pc=6 cycles=33 retires=6
+          program_hash=0x4E330B51 state_hash=0x00000000
+
+>>> ukernel-read 0 1
+ukernel-read 0 1
+>   UKERNEL data[0] = 0x78123456 (2014458966)
+
+>>> ukernel-status
+ukernel-status
+>   UKERNEL status=0x00008006 caps=0x554B0400 contract=0x474D5755
+          active=1 shape=1x1x1 flags=0x00000000 pc=6 cycles=33 retires=6
+          program_hash=0x4E330B51 state_hash=0x00000000
+
+>>> ukernel-reset
+ukernel-reset
+>   UKERNEL reset sent.
+
+>>> ukernel-config 8 8 1 1 0
+ukernel-config 8 8 1 1 0
+>   UKERNEL configured: active=8 shape=8x1x1 flags=0x00000000
+
+>>> ukernel-load-prog 1 71000000
+ukernel-load-prog 1 71000000
+>   UKERNEL prog[1] <- 0x71000000
+
+>>> ukernel-load-prog 2 11010000
+ukernel-load-prog 2 11010000
+>   UKERNEL prog[2] <- 0x11010000
+
+>>> ukernel-load-prog 3 01000000
+ukernel-load-prog 3 01000000
+>   UKERNEL prog[3] <- 0x01000000
+
+>>> ukernel-load-prog 0 02100000
+ukernel-load-prog 0 02100000
+>   UKERNEL prog[0] <- 0x02100000
+
+>>> ukernel-load-data 0 00000001
+ukernel-load-data 0 00000001
+>   UKERNEL data[0] <- 0x00000001
+
+>>> ukernel-load-data 1 00000000
+ukernel-load-data 1 00000000
+>   UKERNEL data[1] <- 0x00000000
+
+>>> ukernel-load-data 2 00000001
+ukernel-load-data 2 00000001
+>   UKERNEL data[2] <- 0x00000001
+
+>>> ukernel-load-data 3 00000001
+ukernel-load-data 3 00000001
+>   UKERNEL data[3] <- 0x00000001
+
+>>> ukernel-load-data 4 00000000
+ukernel-load-data 4 00000000
+>   UKERNEL data[4] <- 0x00000000
+
+>>> ukernel-load-data 5 00000001
+ukernel-load-data 5 00000001
+>   UKERNEL data[5] <- 0x00000001
+
+>>> ukernel-load-data 6 00000000
+ukernel-load-data 6 00000000
+>   UKERNEL data[6] <- 0x00000000
+
+>>> ukernel-load-data 7 00000000
+ukernel-load-data 7 00000000
+>   UKERNEL data[7] <- 0x00000000
+
+>>> ukernel-start
+ukernel-start
+>   UKERNEL started.
+
+>>> ukernel-status
+ukernel-status
+>   UKERNEL status=0x00008004 caps=0x554B0400 contract=0x474D5755
+          active=8 shape=8x1x1 flags=0x00000000 pc=4 cycles=34 retires=5
+          program_hash=0xF4261485 state_hash=0x00000000
+
+>>> ukernel-read 0 1
+ukernel-read 0 1
+>   UKERNEL data[0] = 0x00000004 (4)
+
+>>> ukernel-status
+ukernel-status
+>   UKERNEL status=0x00008004 caps=0x554B0400 contract=0x474D5755
+          active=8 shape=8x1x1 flags=0x00000000 pc=4 cycles=34 retires=5
+          program_hash=0xF4261485 state_hash=0x00000000
+
+>>> ukernel-reset
+ukernel-reset
+>   UKERNEL reset sent.
+
+>>> ukernel-config 4 4 1 1 0
+ukernel-config 4 4 1 1 0
+>   UKERNEL configured: active=4 shape=4x1x1 flags=0x00000000
+
+>>> ukernel-load-prog 1 70000000
+ukernel-load-prog 1 70000000
+>   UKERNEL prog[1] <- 0x70000000
+
+>>> ukernel-load-prog 2 11010000
+ukernel-load-prog 2 11010000
+>   UKERNEL prog[2] <- 0x11010000
+
+>>> ukernel-load-prog 3 01000000
+ukernel-load-prog 3 01000000
+>   UKERNEL prog[3] <- 0x01000000
+
+>>> ukernel-load-prog 0 02100000
+ukernel-load-prog 0 02100000
+>   UKERNEL prog[0] <- 0x02100000
+
+>>> ukernel-load-data 0 A5A5A5A5
+ukernel-load-data 0 A5A5A5A5
+>   UKERNEL data[0] <- 0xA5A5A5A5
+
+>>> ukernel-load-data 1 12345678
+ukernel-load-data 1 12345678
+>   UKERNEL data[1] <- 0x12345678
+
+>>> ukernel-load-data 2 0F0F0F0F
+ukernel-load-data 2 0F0F0F0F
+>   UKERNEL data[2] <- 0x0F0F0F0F
+
+>>> ukernel-load-data 3 DEADBEEF
+ukernel-load-data 3 DEADBEEF
+>   UKERNEL data[3] <- 0xDEADBEEF
+
+>>> ukernel-start
+ukernel-start
+>   UKERNEL started.
+
+>>> ukernel-status
+ukernel-status
+>   UKERNEL status=0x00008004 caps=0x554B0400 contract=0x474D5755
+          active=4 shape=4x1x1 flags=0x00000000 pc=4 cycles=26 retires=5
+          program_hash=0xF4260485 state_hash=0x00000000
+
+>>> ukernel-read 0 1
+ukernel-read 0 1
+>   UKERNEL data[0] = 0x6633423D (1714635325)
+
+>>> ukernel-status
+ukernel-status
+>   UKERNEL status=0x00008004 caps=0x554B0400 contract=0x474D5755
+          active=4 shape=4x1x1 flags=0x00000000 pc=4 cycles=26 retires=5
+          program_hash=0xF4260485 state_hash=0x00000000
+
+>>> ukernel-reset
+ukernel-reset
+>   UKERNEL reset sent.
+
+>>> ukernel-config 4 4 1 1 0
+ukernel-config 4 4 1 1 0
+>   UKERNEL configured: active=4 shape=4x1x1 flags=0x00000000
+
+>>> ukernel-load-prog 1 72000000
+ukernel-load-prog 1 72000000
+>   UKERNEL prog[1] <- 0x72000000
+
+>>> ukernel-load-prog 2 11010000
+ukernel-load-prog 2 11010000
+>   UKERNEL prog[2] <- 0x11010000
+
+>>> ukernel-load-prog 3 01000000
+ukernel-load-prog 3 01000000
+>   UKERNEL prog[3] <- 0x01000000
+
+>>> ukernel-load-prog 0 02100000
+ukernel-load-prog 0 02100000
+>   UKERNEL prog[0] <- 0x02100000
+
+>>> ukernel-load-data 0 00000003
+ukernel-load-data 0 00000003
+>   UKERNEL data[0] <- 0x00000003
+
+>>> ukernel-load-data 1 FFFFFFF9
+ukernel-load-data 1 FFFFFFF9
+>   UKERNEL data[1] <- 0xFFFFFFF9
+
+>>> ukernel-load-data 2 00000005
+ukernel-load-data 2 00000005
+>   UKERNEL data[2] <- 0x00000005
+
+>>> ukernel-load-data 3 FFFFFFEC
+ukernel-load-data 3 FFFFFFEC
+>   UKERNEL data[3] <- 0xFFFFFFEC
+
+>>> ukernel-start
+ukernel-start
+>   UKERNEL started.
+
+>>> ukernel-status
+ukernel-status
+>   UKERNEL status=0x00008004 caps=0x554B0400 contract=0x474D5755
+          active=4 shape=4x1x1 flags=0x00000000 pc=4 cycles=26 retires=5
+          program_hash=0xF4262485 state_hash=0x00000000
+
+>>> ukernel-read 0 1
+ukernel-read 0 1
+>   UKERNEL data[0] = 0xFFFFFFEC (-20)
+
+>>> ukernel-status
+ukernel-status
+>   UKERNEL status=0x00008004 caps=0x554B0400 contract=0x474D5755
+          active=4 shape=4x1x1 flags=0x00000000 pc=4 cycles=26 retires=5
+          program_hash=0xF4262485 state_hash=0x00000000
+
+>>> ukernel-reset
+ukernel-reset
+>   UKERNEL reset sent.
+
+>>> ukernel-config 4 4 1 1 0
+ukernel-config 4 4 1 1 0
+>   UKERNEL configured: active=4 shape=4x1x1 flags=0x00000000
+
+>>> ukernel-load-prog 1 73000000
+ukernel-load-prog 1 73000000
+>   UKERNEL prog[1] <- 0x73000000
+
+>>> ukernel-load-prog 2 11010000
+ukernel-load-prog 2 11010000
+>   UKERNEL prog[2] <- 0x11010000
+
+>>> ukernel-load-prog 3 01000000
+ukernel-load-prog 3 01000000
+>   UKERNEL prog[3] <- 0x01000000
+
+>>> ukernel-load-prog 0 02100000
+ukernel-load-prog 0 02100000
+>   UKERNEL prog[0] <- 0x02100000
+
+>>> ukernel-load-data 0 00000003
+ukernel-load-data 0 00000003
+>   UKERNEL data[0] <- 0x00000003
+
+>>> ukernel-load-data 1 FFFFFFF9
+ukernel-load-data 1 FFFFFFF9
+>   UKERNEL data[1] <- 0xFFFFFFF9
+
+>>> ukernel-load-data 2 00000005
+ukernel-load-data 2 00000005
+>   UKERNEL data[2] <- 0x00000005
+
+>>> ukernel-load-data 3 FFFFFFEC
+ukernel-load-data 3 FFFFFFEC
+>   UKERNEL data[3] <- 0xFFFFFFEC
+
+>>> ukernel-start
+ukernel-start
+>   UKERNEL started.
+
+>>> ukernel-status
+ukernel-status
+>   UKERNEL status=0x00008004 caps=0x554B0400 contract=0x474D5755
+          active=4 shape=4x1x1 flags=0x00000000 pc=4 cycles=26 retires=5
+          program_hash=0xF4263485 state_hash=0x00000000
+
+>>> ukernel-read 0 1
+ukernel-read 0 1
+>   UKERNEL data[0] = 0x00000005 (5)
+
+>>> ukernel-status
+ukernel-status
+>   UKERNEL status=0x00008004 caps=0x554B0400 contract=0x474D5755
+          active=4 shape=4x1x1 flags=0x00000000 pc=4 cycles=26 retires=5
+          program_hash=0xF4263485 state_hash=0x00000000
+
+>>> ukernel-reset
+ukernel-reset
+>   UKERNEL reset sent.
+
+>>> ukernel-config 64 8 8 1 0
+ukernel-config 64 8 8 1 0
+>   UKERNEL configured: active=64 shape=8x8x1 flags=0x00000000
+
+>>> ukernel-load-prog 1 101F0000
+ukernel-load-prog 1 101F0000
+>   UKERNEL prog[1] <- 0x101F0000
+
+>>> ukernel-load-prog 2 60210001
+ukernel-load-prog 2 60210001
+>   UKERNEL prog[2] <- 0x60210001
+
+>>> ukernel-load-prog 3 112F0000
+ukernel-load-prog 3 112F0000
+>   UKERNEL prog[3] <- 0x112F0000
+
+>>> ukernel-load-prog 4 01000000
+ukernel-load-prog 4 01000000
+>   UKERNEL prog[4] <- 0x01000000
+
+>>> ukernel-load-prog 0 02F00000
+ukernel-load-prog 0 02F00000
+>   UKERNEL prog[0] <- 0x02F00000
+
+>>> ukernel-load-data 0 0000000A
+ukernel-load-data 0 0000000A
+>   UKERNEL data[0] <- 0x0000000A
+
+>>> ukernel-start
+ukernel-start
+>   UKERNEL started.
+
+>>> ukernel-status
+ukernel-status
+>   UKERNEL status=0x00008005 caps=0x554B0400 contract=0x474D5755
+          active=64 shape=8x8x1 flags=0x00000000 pc=5 cycles=28 retires=5
+          program_hash=0x1A17A4A5 state_hash=0x00000000
+
+>>> ukernel-read 0 1
+ukernel-read 0 1
+>   UKERNEL data[0] = 0x0000000B (11)
+
+>>> ukernel-status
+ukernel-status
+>   UKERNEL status=0x00008005 caps=0x554B0400 contract=0x474D5755
+          active=64 shape=8x8x1 flags=0x00000000 pc=5 cycles=28 retires=5
+          program_hash=0x1A17A4A5 state_hash=0x00000000
+
+>>> robot-reset
+robot-reset
+>   Robot grid reset sent.
+  Robot status=0x00000000 caps=0x524F0400 active=1 grid=1x1 steps=1 flags=0x00000000
+        hash=0x9E3779B9 cycles=0 moved=0 blocked=0 collisions=0
+
+>>> robot-clear
+robot-clear
+>   Robot grid clear started.
+  Robot status=0x00008000 caps=0x524F0400 active=1 grid=1x1 steps=1 flags=0x00000000
+        hash=0x9E3779B9 cycles=0 moved=0 blocked=0 collisions=0
+
+>>> robot-config 64 8 8 12 0
+robot-config 64 8 8 12 0
+>   WAL active engine: ukernel -> robot (robot-config)
+  Robot grid configured: active=64 grid=8x8 steps=12 flags=0x00000000
+
+>>> robot-load 1 00000201
+robot-load 1 00000201
+>   Robot cell[1] <- 0x00000201
+
+>>> robot-load 2 00000202
+robot-load 2 00000202
+>   Robot cell[2] <- 0x00000202
+
+>>> robot-load 3 00000203
+robot-load 3 00000203
+>   Robot cell[3] <- 0x00000203
+
+>>> robot-load 9 00000204
+robot-load 9 00000204
+>   Robot cell[9] <- 0x00000204
+
+>>> robot-load 10 00000205
+robot-load 10 00000205
+>   Robot cell[10] <- 0x00000205
+
+>>> robot-load 17 00000206
+robot-load 17 00000206
+>   Robot cell[17] <- 0x00000206
+
+>>> robot-load 18 00000207
+robot-load 18 00000207
+>   Robot cell[18] <- 0x00000207
+
+>>> robot-load 25 00000208
+robot-load 25 00000208
+>   Robot cell[25] <- 0x00000208
+
+>>> robot-load 56 000000FF
+robot-load 56 000000FF
+>   Robot cell[56] <- 0x000000FF
+
+>>> robot-load 57 000000FF
+robot-load 57 000000FF
+>   Robot cell[57] <- 0x000000FF
+
+>>> robot-load 58 000000FF
+robot-load 58 000000FF
+>   Robot cell[58] <- 0x000000FF
+
+>>> robot-load 59 000000FF
+robot-load 59 000000FF
+>   Robot cell[59] <- 0x000000FF
+
+>>> robot-load 60 000000FF
+robot-load 60 000000FF
+>   Robot cell[60] <- 0x000000FF
+
+>>> robot-load 61 000000FF
+robot-load 61 000000FF
+>   Robot cell[61] <- 0x000000FF
+
+>>> robot-load 62 000000FF
+robot-load 62 000000FF
+>   Robot cell[62] <- 0x000000FF
+
+>>> robot-load 63 000000FF
+robot-load 63 000000FF
+>   Robot cell[63] <- 0x000000FF
+
+>>> robot-start
+robot-start
+>   Robot grid accelerator started.
+
+>>> robot-status
+robot-status
+>   Robot status=0x00008000 caps=0x524F0400 active=64 grid=8x8 steps=12 flags=0x00000000
+        hash=0x9E3779B9 cycles=4610 moved=47 blocked=0 collisions=0
+
+>>> robot-hash-state
+robot-hash-state
+>   Robot grid hash started.
+  Robot status=0x00008000 caps=0x524F0400 active=64 grid=8x8 steps=12 flags=0x00000000
+        hash=0x0534C9FA cycles=4802 moved=47 blocked=0 collisions=0
+
+>>> robot-status
+robot-status
+>   Robot status=0x00008000 caps=0x524F0400 active=64 grid=8x8 steps=12 flags=0x00000000
+        hash=0x0534C9FA cycles=4802 moved=47 blocked=0 collisions=0
+
+>>> robot-reset
+robot-reset
+>   Robot grid reset sent.
+  Robot status=0x00000000 caps=0x524F0400 active=64 grid=8x8 steps=12 flags=0x00000000
+        hash=0x9E3779B9 cycles=4802 moved=47 blocked=0 collisions=0
+
+>>> robot-clear
+robot-clear
+>   Robot grid clear started.
+  Robot status=0x00008000 caps=0x524F0400 active=64 grid=8x8 steps=12 flags=0x00000000
+        hash=0x9E3779B9 cycles=4802 moved=47 blocked=0 collisions=0
+
+>>> robot-config 64 8 8 20 0
+robot-config 64 8 8 20 0
+>   Robot grid configured: active=64 grid=8x8 steps=20 flags=0x00000000
+
+>>> robot-load 0 00000001
+robot-load 0 00000001
+>   Robot cell[0] <- 0x00000001
+
+>>> robot-load 7 000000FF
+robot-load 7 000000FF
+>   Robot cell[7] <- 0x000000FF
+
+>>> robot-load 8 00000002
+robot-load 8 00000002
+>   Robot cell[8] <- 0x00000002
+
+>>> robot-load 15 000000FF
+robot-load 15 000000FF
+>   Robot cell[15] <- 0x000000FF
+
+>>> robot-load 16 00000003
+robot-load 16 00000003
+>   Robot cell[16] <- 0x00000003
+
+>>> robot-load 23 000000FF
+robot-load 23 000000FF
+>   Robot cell[23] <- 0x000000FF
+
+>>> robot-load 24 00000004
+robot-load 24 00000004
+>   Robot cell[24] <- 0x00000004
+
+>>> robot-load 31 000000FF
+robot-load 31 000000FF
+>   Robot cell[31] <- 0x000000FF
+
+>>> robot-load 32 00000005
+robot-load 32 00000005
+>   Robot cell[32] <- 0x00000005
+
+>>> robot-load 39 000000FF
+robot-load 39 000000FF
+>   Robot cell[39] <- 0x000000FF
+
+>>> robot-load 40 00000006
+robot-load 40 00000006
+>   Robot cell[40] <- 0x00000006
+
+>>> robot-load 48 00000007
+robot-load 48 00000007
+>   Robot cell[48] <- 0x00000007
+
+>>> robot-start
+robot-start
+>   Robot grid accelerator started.
+
+>>> robot-status
+robot-status
+>   Robot status=0x00008000 caps=0x524F0400 active=64 grid=8x8 steps=20 flags=0x00000000
+        hash=0x9E3779B9 cycles=7682 moved=49 blocked=26 collisions=0
+
+>>> robot-hash-state
+robot-hash-state
+>   Robot grid hash started.
+  Robot status=0x00008000 caps=0x524F0400 active=64 grid=8x8 steps=20 flags=0x00000000
+        hash=0x5C4FA6A5 cycles=7874 moved=49 blocked=26 collisions=0
+
+>>> robot-status
+robot-status
+>   Robot status=0x00008000 caps=0x524F0400 active=64 grid=8x8 steps=20 flags=0x00000000
+        hash=0x5C4FA6A5 cycles=7874 moved=49 blocked=26 collisions=0
+
+>>> robot-reset
+robot-reset
+>   Robot grid reset sent.
+  Robot status=0x00000000 caps=0x524F0400 active=64 grid=8x8 steps=20 flags=0x00000000
+        hash=0x9E3779B9 cycles=7874 moved=49 blocked=26 collisions=0
+
+>>> robot-clear
+robot-clear
+>   Robot grid clear started.
+  Robot status=0x00008000 caps=0x524F0400 active=64 grid=8x8 steps=20 flags=0x00000000
+        hash=0x9E3779B9 cycles=7874 moved=49 blocked=26 collisions=0
+
+>>> robot-config 64 8 8 18 1
+robot-config 64 8 8 18 1
+>   Robot grid configured: active=64 grid=8x8 steps=18 flags=0x00000001
+
+>>> robot-load 0 00000102
+robot-load 0 00000102
+>   Robot cell[0] <- 0x00000102
+
+>>> robot-load 3 00000304
+robot-load 3 00000304
+>   Robot cell[3] <- 0x00000304
+
+>>> robot-load 7 00000001
+robot-load 7 00000001
+>   Robot cell[7] <- 0x00000001
+
+>>> robot-load 27 00000005
+robot-load 27 00000005
+>   Robot cell[27] <- 0x00000005
+
+>>> robot-load 28 00000106
+robot-load 28 00000106
+>   Robot cell[28] <- 0x00000106
+
+>>> robot-load 56 00000203
+robot-load 56 00000203
+>   Robot cell[56] <- 0x00000203
+
+>>> robot-start
+robot-start
+>   Robot grid accelerator started.
+
+>>> robot-status
+robot-status
+>   Robot status=0x00008000 caps=0x524F0400 active=64 grid=8x8 steps=18 flags=0x00000001
+        hash=0x9E3779B9 cycles=6914 moved=93 blocked=2 collisions=2
+
+>>> robot-hash-state
+robot-hash-state
+>   Robot grid hash started.
+  Robot status=0x00008000 caps=0x524F0400 active=64 grid=8x8 steps=18 flags=0x00000001
+        hash=0x894C99C6 cycles=7106 moved=93 blocked=2 collisions=2
+
+>>> robot-status
+robot-status
+>   Robot status=0x00008000 caps=0x524F0400 active=64 grid=8x8 steps=18 flags=0x00000001
+        hash=0x894C99C6 cycles=7106 moved=93 blocked=2 collisions=2

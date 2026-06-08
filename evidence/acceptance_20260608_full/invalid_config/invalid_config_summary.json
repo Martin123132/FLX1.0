@@ -1,0 +1,17 @@
+{
+  "pass": true,
+  "checks": {
+    "1d_oversize": true,
+    "2d_oversize": true,
+    "3d_oversize": true,
+    "zero_particles": true,
+    "zero_timesteps": true
+  },
+  "uart_logs": {
+    "1d_oversize": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\invalid_config\\1d_oversize\\uart_invalid_config.log",
+    "2d_oversize": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\invalid_config\\2d_oversize\\uart_invalid_config.log",
+    "3d_oversize": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\invalid_config\\3d_oversize\\uart_invalid_config.log",
+    "zero_particles": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\invalid_config\\zero_particles\\uart_invalid_config.log",
+    "zero_timesteps": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\invalid_config\\zero_timesteps\\uart_invalid_config.log"
+  }
+}

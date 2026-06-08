@@ -1,0 +1,62 @@
+{
+  "evidence_set": "FLX1.0 3D generality hardware/reference evidence",
+  "description": "Four dense 512-point 3D field workloads copied into this repo as evidence-local CSV and compare artefacts.",
+  "cases": [
+    {
+      "name": "delta_field",
+      "shape": [
+        8,
+        8,
+        8
+      ],
+      "active_points": 512,
+      "mismatches": 0,
+      "max_abs_delta_q16": 0,
+      "normalized_overlap": 0.9999999999999998,
+      "passed": true,
+      "evidence_path": "evidence/flx3d_generality_20260524/delta_field"
+    },
+    {
+      "name": "gaussian_field",
+      "shape": [
+        8,
+        8,
+        8
+      ],
+      "active_points": 512,
+      "mismatches": 0,
+      "max_abs_delta_q16": 0,
+      "normalized_overlap": 1.0,
+      "passed": true,
+      "evidence_path": "evidence/flx3d_generality_20260524/gaussian_field"
+    },
+    {
+      "name": "plane_wave_field",
+      "shape": [
+        8,
+        8,
+        8
+      ],
+      "active_points": 512,
+      "mismatches": 0,
+      "max_abs_delta_q16": 0,
+      "normalized_overlap": 0.9999999999999999,
+      "passed": true,
+      "evidence_path": "evidence/flx3d_generality_20260524/plane_wave_field"
+    },
+    {
+      "name": "random_field",
+      "shape": [
+        8,
+        8,
+        8
+      ],
+      "active_points": 512,
+      "mismatches": 0,
+      "max_abs_delta_q16": 0,
+      "normalized_overlap": 1.0000000000000002,
+      "passed": true,
+      "evidence_path": "evidence/flx3d_generality_20260524/random_field"
+    }
+  ]
+}

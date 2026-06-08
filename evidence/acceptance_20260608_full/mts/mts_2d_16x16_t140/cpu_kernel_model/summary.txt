@@ -1,0 +1,5 @@
+=== MTS Full Physics CPU Summary ===
+mode: mts_2d
+logical_shape: 16x16x1
+timesteps: 140
+kernel_contract: a7_mts_full_physics_kernel_v2_q16

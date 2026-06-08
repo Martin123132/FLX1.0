@@ -1,0 +1,60 @@
+[meta]
+name = "generated_mts_2d_1"
+description = "Generated from mts_2d_1000.toml by run_fpga_mts_dimensional_one_click.py"
+
+[experiment]
+mode = "mts_2d"
+auto_run = false
+dimension_kind = "mts_2d"
+gmw_min_thickness = "state_words"
+packing = "dense_compressed"
+logical_shape = "16x16"
+physical_shape = "8x8x8"
+
+[lattice]
+num_sites = 512
+nx = 8
+ny = 8
+nz = 8
+
+[mts_dimensional]
+n_particles = 1
+grid_points = 16
+grid_x = 16
+grid_y = 16
+grid_z = 1
+timesteps = 140
+dt_q16 = "0x00004000"
+diffusion_q16 = "0x0000CCCD"
+vcoeff_q16 = "0x00009999"
+uniform_potential_q16 = "0x00002000"
+dt = 0.05
+width = 4.0
+
+[particle_batch_1d]
+grid_size = 16
+timesteps = 140
+dt = 0.25
+width = 0.1
+n_particles = 1
+
+[timing]
+tau_divider = 49999999
+num_steps = 0
+checkpoint_every = 100
+poll_interval_us = 10000
+
+[logging]
+energy_log = false
+snapshot_every = 0
+wal_stream = false
+wal_stream_min_interval_us = 5000
+
+[recovery]
+snapshot_fields = 6
+depth = 128
+restore_audit = true
+checkpoint_every_layers = 1000
+
+[robustness]
+max_consecutive_errors = 5

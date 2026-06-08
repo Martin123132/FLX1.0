@@ -1,0 +1,264 @@
+
+>>> spi-health
+spi-health
+>   SPI1 (Z7->A7): status=0xAC  data=0x0000000D  [OK]
+  SPI0 (Z7->Cmod): data=0x000290A0
+  Cmod flag decode: any=0 fault=0 repair_fail=0 buf0_full=0 buf1_full=0 buf0_active=1 fifo_full=0 fifo_empty=1
+  Cmod SPI3 rx: frames=0  site_writes=0  last_sites=0
+
+>>> accel-caps
+accel-caps
+>   Particle3D caps=0x0010F414 accum_lanes_max=4 site_lanes_max=1 banks=4 modes=0xF abi=1
+
+>>> ukernel-reset
+ukernel-reset
+>   UKERNEL reset sent.
+
+>>> ukernel-config 4 4 1 1 0
+ukernel-config 4 4 1 1 0
+>   UKERNEL configured: active=4 shape=4x1x1 flags=0x00000000
+
+>>> ukernel-load-prog 1 71000000
+ukernel-load-prog 1 71000000
+>   UKERNEL prog[1] <- 0x71000000
+
+>>> ukernel-load-prog 2 11010000
+ukernel-load-prog 2 11010000
+>   UKERNEL prog[2] <- 0x11010000
+
+>>> ukernel-load-prog 3 01000000
+ukernel-load-prog 3 01000000
+>   UKERNEL prog[3] <- 0x01000000
+
+>>> ukernel-load-prog 0 02100000
+ukernel-load-prog 0 02100000
+>   UKERNEL prog[0] <- 0x02100000
+
+>>> ukernel-load-data 0 00000005
+ukernel-load-data 0 00000005
+>   UKERNEL data[0] <- 0x00000005
+
+>>> ukernel-load-data 1 00000007
+ukernel-load-data 1 00000007
+>   UKERNEL data[1] <- 0x00000007
+
+>>> ukernel-load-data 2 0000000B
+ukernel-load-data 2 0000000B
+>   UKERNEL data[2] <- 0x0000000B
+
+>>> ukernel-load-data 3 0000000D
+ukernel-load-data 3 0000000D
+>   UKERNEL data[3] <- 0x0000000D
+
+>>> ukernel-start
+ukernel-start
+>   UKERNEL started.
+
+>>> ukernel-status
+ukernel-status
+>   UKERNEL status=0x00008005 caps=0x554B0400 contract=0x474D5755
+          active=4 shape=4x1x1 flags=0x00000000 pc=5 cycles=27 retires=6
+          program_hash=0xF4261485 state_hash=0x00000000
+
+>>> ukernel-read 0 1
+ukernel-read 0 1
+>   UKERNEL data[0] = 0x00000024 (36)
+
+>>> ukernel-status
+ukernel-status
+>   UKERNEL status=0x00008005 caps=0x554B0400 contract=0x474D5755
+          active=4 shape=4x1x1 flags=0x00000000 pc=5 cycles=27 retires=6
+          program_hash=0xF4261485 state_hash=0x00000000
+
+>>> sha-reset
+sha-reset
+>   SHA reset sent.
+  SHA status=0x000000BF caps=0x53480450 nonce=0 hashes=0 cycles=0
+  SHA best_hash=FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+
+>>> sha-config 0 4096
+sha-config 0 4096
+>   WAL active engine: ukernel -> sha (sha-config)
+  SHA configured: nonce_start=0 count=4096
+
+>>> sha-load-header 0 01000000
+sha-load-header 0 01000000
+>   SHA header[0] <- 0x01000000
+
+>>> sha-load-header 1 00000000
+sha-load-header 1 00000000
+>   SHA header[1] <- 0x00000000
+
+>>> sha-load-header 2 00000000
+sha-load-header 2 00000000
+>   SHA header[2] <- 0x00000000
+
+>>> sha-load-header 3 00000000
+sha-load-header 3 00000000
+>   SHA header[3] <- 0x00000000
+
+>>> sha-load-header 4 00000000
+sha-load-header 4 00000000
+>   SHA header[4] <- 0x00000000
+
+>>> sha-load-header 5 00000000
+sha-load-header 5 00000000
+>   SHA header[5] <- 0x00000000
+
+>>> sha-load-header 6 00000000
+sha-load-header 6 00000000
+>   SHA header[6] <- 0x00000000
+
+>>> sha-load-header 7 00000000
+sha-load-header 7 00000000
+>   SHA header[7] <- 0x00000000
+
+>>> sha-load-header 8 00000000
+sha-load-header 8 00000000
+>   SHA header[8] <- 0x00000000
+
+>>> sha-load-header 9 3BA3EDFD
+sha-load-header 9 3BA3EDFD
+>   SHA header[9] <- 0x3BA3EDFD
+
+>>> sha-load-header 10 7A7B12B2
+sha-load-header 10 7A7B12B2
+>   SHA header[10] <- 0x7A7B12B2
+
+>>> sha-load-header 11 7AC72C3E
+sha-load-header 11 7AC72C3E
+>   SHA header[11] <- 0x7AC72C3E
+
+>>> sha-load-header 12 67768F61
+sha-load-header 12 67768F61
+>   SHA header[12] <- 0x67768F61
+
+>>> sha-load-header 13 7FC81BC3
+sha-load-header 13 7FC81BC3
+>   SHA header[13] <- 0x7FC81BC3
+
+>>> sha-load-header 14 888A5132
+sha-load-header 14 888A5132
+>   SHA header[14] <- 0x888A5132
+
+>>> sha-load-header 15 3A9FB8AA
+sha-load-header 15 3A9FB8AA
+>   SHA header[15] <- 0x3A9FB8AA
+
+>>> sha-load-header 16 4B1E5E4A
+sha-load-header 16 4B1E5E4A
+>   SHA header[16] <- 0x4B1E5E4A
+
+>>> sha-load-header 17 29AB5F49
+sha-load-header 17 29AB5F49
+>   SHA header[17] <- 0x29AB5F49
+
+>>> sha-load-header 18 FFFF001D
+sha-load-header 18 FFFF001D
+>   SHA header[18] <- 0xFFFF001D
+
+>>> sha-load-header 19 00000000
+sha-load-header 19 00000000
+>   SHA header[19] <- 0x00000000
+
+>>> sha-start
+sha-start
+>   SHA accelerator started.
+
+>>> sha-status
+sha-status
+>   SHA status=0x000400BF caps=0x53480450 nonce=1873 hashes=4096 cycles=493809
+  SHA best_hash=0016C727E06739B501FE81F1439646558171B58220155443BE90C410AB871E0D
+
+>>> robot-reset
+robot-reset
+>   Robot grid reset sent.
+  Robot status=0x00000000 caps=0x524F0400 active=64 grid=8x8 steps=32 flags=0x00000000
+        hash=0x9E3779B9 cycles=12482 moved=20 blocked=180 collisions=56
+
+>>> robot-clear
+robot-clear
+>   Robot grid clear started.
+  Robot status=0x00008000 caps=0x524F0400 active=64 grid=8x8 steps=32 flags=0x00000000
+        hash=0x9E3779B9 cycles=12482 moved=20 blocked=180 collisions=56
+
+>>> robot-config 64 8 8 32 0
+robot-config 64 8 8 32 0
+>   WAL active engine: sha -> robot (robot-config)
+  Robot grid configured: active=64 grid=8x8 steps=32 flags=0x00000000
+
+>>> robot-load 0 00000001
+robot-load 0 00000001
+>   Robot cell[0] <- 0x00000001
+
+>>> robot-load 3 00000202
+robot-load 3 00000202
+>   Robot cell[3] <- 0x00000202
+
+>>> robot-load 5 000000FF
+robot-load 5 000000FF
+>   Robot cell[5] <- 0x000000FF
+
+>>> robot-load 8 00000103
+robot-load 8 00000103
+>   Robot cell[8] <- 0x00000103
+
+>>> robot-load 9 000000FF
+robot-load 9 000000FF
+>   Robot cell[9] <- 0x000000FF
+
+>>> robot-load 15 00000304
+robot-load 15 00000304
+>   Robot cell[15] <- 0x00000304
+
+>>> robot-load 18 000000FF
+robot-load 18 000000FF
+>   Robot cell[18] <- 0x000000FF
+
+>>> robot-load 22 00000005
+robot-load 22 00000005
+>   Robot cell[22] <- 0x00000005
+
+>>> robot-load 27 000000FF
+robot-load 27 000000FF
+>   Robot cell[27] <- 0x000000FF
+
+>>> robot-load 31 00000106
+robot-load 31 00000106
+>   Robot cell[31] <- 0x00000106
+
+>>> robot-load 33 000000FF
+robot-load 33 000000FF
+>   Robot cell[33] <- 0x000000FF
+
+>>> robot-load 42 000000FF
+robot-load 42 000000FF
+>   Robot cell[42] <- 0x000000FF
+
+>>> robot-load 44 00000207
+robot-load 44 00000207
+>   Robot cell[44] <- 0x00000207
+
+>>> robot-load 53 00000308
+robot-load 53 00000308
+>   Robot cell[53] <- 0x00000308
+
+>>> robot-start
+robot-start
+>   Robot grid accelerator started.
+
+>>> robot-status
+robot-status
+>   Robot status=0x00008000 caps=0x524F0400 active=64 grid=8x8 steps=32 flags=0x00000000
+        hash=0x9E3779B9 cycles=12290 moved=20 blocked=180 collisions=56
+
+>>> robot-hash-state
+robot-hash-state
+>   Robot grid hash started.
+  Robot status=0x00008000 caps=0x524F0400 active=64 grid=8x8 steps=32 flags=0x00000000
+        hash=0x71B7D968 cycles=12482 moved=20 blocked=180 collisions=56
+
+>>> robot-status
+robot-status
+>   Robot status=0x00008000 caps=0x524F0400 active=64 grid=8x8 steps=32 flags=0x00000000
+        hash=0x71B7D968 cycles=12482 moved=20 blocked=180 collisions=56

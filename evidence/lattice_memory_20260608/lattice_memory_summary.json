@@ -1,0 +1,3497 @@
+{
+  "final_pass": true,
+  "host_case_count": 48,
+  "host_case_pass_count": 48,
+  "host_cases": [
+    {
+      "layout": "morton",
+      "dim": 1,
+      "shape": [
+        1,
+        1,
+        1
+      ],
+      "active_points": 1,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 2,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "morton",
+      "dim": 1,
+      "shape": [
+        7,
+        1,
+        1
+      ],
+      "active_points": 7,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 14,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            3,
+            0,
+            0
+          ],
+          "local_idx": 3
+        },
+        {
+          "coord": [
+            6,
+            0,
+            0
+          ],
+          "local_idx": 6
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "morton",
+      "dim": 1,
+      "shape": [
+        64,
+        1,
+        1
+      ],
+      "active_points": 64,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 128,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            32,
+            0,
+            0
+          ],
+          "local_idx": 32
+        },
+        {
+          "coord": [
+            63,
+            0,
+            0
+          ],
+          "local_idx": 63
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "morton",
+      "dim": 1,
+      "shape": [
+        100,
+        1,
+        1
+      ],
+      "active_points": 100,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 200,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            50,
+            0,
+            0
+          ],
+          "local_idx": 50
+        },
+        {
+          "coord": [
+            99,
+            0,
+            0
+          ],
+          "local_idx": 99
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "morton",
+      "dim": 1,
+      "shape": [
+        256,
+        1,
+        1
+      ],
+      "active_points": 256,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 512,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            128,
+            0,
+            0
+          ],
+          "local_idx": 128
+        },
+        {
+          "coord": [
+            255,
+            0,
+            0
+          ],
+          "local_idx": 255
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "morton",
+      "dim": 1,
+      "shape": [
+        512,
+        1,
+        1
+      ],
+      "active_points": 512,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 1024,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            256,
+            0,
+            0
+          ],
+          "local_idx": 256
+        },
+        {
+          "coord": [
+            511,
+            0,
+            0
+          ],
+          "local_idx": 511
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "morton",
+      "dim": 1,
+      "shape": [
+        1024,
+        1,
+        1
+      ],
+      "active_points": 1024,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 2048,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            512,
+            0,
+            0
+          ],
+          "local_idx": 512
+        },
+        {
+          "coord": [
+            1023,
+            0,
+            0
+          ],
+          "local_idx": 1023
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "morton",
+      "dim": 2,
+      "shape": [
+        1,
+        1,
+        1
+      ],
+      "active_points": 1,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 4,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "morton",
+      "dim": 2,
+      "shape": [
+        4,
+        4,
+        1
+      ],
+      "active_points": 16,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 64,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            0,
+            3,
+            0
+          ],
+          "local_idx": 10
+        },
+        {
+          "coord": [
+            2,
+            2,
+            0
+          ],
+          "local_idx": 12
+        },
+        {
+          "coord": [
+            3,
+            0,
+            0
+          ],
+          "local_idx": 5
+        },
+        {
+          "coord": [
+            3,
+            3,
+            0
+          ],
+          "local_idx": 15
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "morton",
+      "dim": 2,
+      "shape": [
+        8,
+        16,
+        1
+      ],
+      "active_points": 128,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 512,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            0,
+            15,
+            0
+          ],
+          "local_idx": 106
+        },
+        {
+          "coord": [
+            4,
+            8,
+            0
+          ],
+          "local_idx": 80
+        },
+        {
+          "coord": [
+            7,
+            0,
+            0
+          ],
+          "local_idx": 21
+        },
+        {
+          "coord": [
+            7,
+            15,
+            0
+          ],
+          "local_idx": 127
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "morton",
+      "dim": 2,
+      "shape": [
+        16,
+        16,
+        1
+      ],
+      "active_points": 256,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 1024,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            0,
+            15,
+            0
+          ],
+          "local_idx": 170
+        },
+        {
+          "coord": [
+            8,
+            8,
+            0
+          ],
+          "local_idx": 192
+        },
+        {
+          "coord": [
+            15,
+            0,
+            0
+          ],
+          "local_idx": 85
+        },
+        {
+          "coord": [
+            15,
+            15,
+            0
+          ],
+          "local_idx": 255
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "morton",
+      "dim": 2,
+      "shape": [
+        32,
+        32,
+        1
+      ],
+      "active_points": 1024,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 4096,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            0,
+            31,
+            0
+          ],
+          "local_idx": 682
+        },
+        {
+          "coord": [
+            16,
+            16,
+            0
+          ],
+          "local_idx": 768
+        },
+        {
+          "coord": [
+            31,
+            0,
+            0
+          ],
+          "local_idx": 341
+        },
+        {
+          "coord": [
+            31,
+            31,
+            0
+          ],
+          "local_idx": 1023
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "morton",
+      "dim": 3,
+      "shape": [
+        1,
+        1,
+        1
+      ],
+      "active_points": 1,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 6,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "morton",
+      "dim": 3,
+      "shape": [
+        4,
+        4,
+        4
+      ],
+      "active_points": 64,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 384,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            0,
+            0,
+            3
+          ],
+          "local_idx": 36
+        },
+        {
+          "coord": [
+            0,
+            3,
+            0
+          ],
+          "local_idx": 18
+        },
+        {
+          "coord": [
+            0,
+            3,
+            3
+          ],
+          "local_idx": 54
+        },
+        {
+          "coord": [
+            2,
+            2,
+            2
+          ],
+          "local_idx": 56
+        },
+        {
+          "coord": [
+            3,
+            0,
+            0
+          ],
+          "local_idx": 9
+        },
+        {
+          "coord": [
+            3,
+            0,
+            3
+          ],
+          "local_idx": 45
+        },
+        {
+          "coord": [
+            3,
+            3,
+            0
+          ],
+          "local_idx": 27
+        },
+        {
+          "coord": [
+            3,
+            3,
+            3
+          ],
+          "local_idx": 63
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "morton",
+      "dim": 3,
+      "shape": [
+        8,
+        8,
+        8
+      ],
+      "active_points": 512,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 3072,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            0,
+            0,
+            7
+          ],
+          "local_idx": 292
+        },
+        {
+          "coord": [
+            0,
+            7,
+            0
+          ],
+          "local_idx": 146
+        },
+        {
+          "coord": [
+            0,
+            7,
+            7
+          ],
+          "local_idx": 438
+        },
+        {
+          "coord": [
+            4,
+            4,
+            4
+          ],
+          "local_idx": 448
+        },
+        {
+          "coord": [
+            7,
+            0,
+            0
+          ],
+          "local_idx": 73
+        },
+        {
+          "coord": [
+            7,
+            0,
+            7
+          ],
+          "local_idx": 365
+        },
+        {
+          "coord": [
+            7,
+            7,
+            0
+          ],
+          "local_idx": 219
+        },
+        {
+          "coord": [
+            7,
+            7,
+            7
+          ],
+          "local_idx": 511
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "morton",
+      "dim": 3,
+      "shape": [
+        10,
+        10,
+        10
+      ],
+      "active_points": 1000,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 6000,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            0,
+            0,
+            9
+          ],
+          "local_idx": 804
+        },
+        {
+          "coord": [
+            0,
+            9,
+            0
+          ],
+          "local_idx": 642
+        },
+        {
+          "coord": [
+            0,
+            9,
+            9
+          ],
+          "local_idx": 966
+        },
+        {
+          "coord": [
+            5,
+            5,
+            5
+          ],
+          "local_idx": 455
+        },
+        {
+          "coord": [
+            9,
+            0,
+            0
+          ],
+          "local_idx": 513
+        },
+        {
+          "coord": [
+            9,
+            0,
+            9
+          ],
+          "local_idx": 933
+        },
+        {
+          "coord": [
+            9,
+            9,
+            0
+          ],
+          "local_idx": 771
+        },
+        {
+          "coord": [
+            9,
+            9,
+            9
+          ],
+          "local_idx": 999
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "row",
+      "dim": 1,
+      "shape": [
+        1,
+        1,
+        1
+      ],
+      "active_points": 1,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 2,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "row",
+      "dim": 1,
+      "shape": [
+        7,
+        1,
+        1
+      ],
+      "active_points": 7,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 14,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            3,
+            0,
+            0
+          ],
+          "local_idx": 3
+        },
+        {
+          "coord": [
+            6,
+            0,
+            0
+          ],
+          "local_idx": 6
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "row",
+      "dim": 1,
+      "shape": [
+        64,
+        1,
+        1
+      ],
+      "active_points": 64,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 128,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            32,
+            0,
+            0
+          ],
+          "local_idx": 32
+        },
+        {
+          "coord": [
+            63,
+            0,
+            0
+          ],
+          "local_idx": 63
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "row",
+      "dim": 1,
+      "shape": [
+        100,
+        1,
+        1
+      ],
+      "active_points": 100,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 200,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            50,
+            0,
+            0
+          ],
+          "local_idx": 50
+        },
+        {
+          "coord": [
+            99,
+            0,
+            0
+          ],
+          "local_idx": 99
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "row",
+      "dim": 1,
+      "shape": [
+        256,
+        1,
+        1
+      ],
+      "active_points": 256,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 512,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            128,
+            0,
+            0
+          ],
+          "local_idx": 128
+        },
+        {
+          "coord": [
+            255,
+            0,
+            0
+          ],
+          "local_idx": 255
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "row",
+      "dim": 1,
+      "shape": [
+        512,
+        1,
+        1
+      ],
+      "active_points": 512,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 1024,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            256,
+            0,
+            0
+          ],
+          "local_idx": 256
+        },
+        {
+          "coord": [
+            511,
+            0,
+            0
+          ],
+          "local_idx": 511
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "row",
+      "dim": 1,
+      "shape": [
+        1024,
+        1,
+        1
+      ],
+      "active_points": 1024,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 2048,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            512,
+            0,
+            0
+          ],
+          "local_idx": 512
+        },
+        {
+          "coord": [
+            1023,
+            0,
+            0
+          ],
+          "local_idx": 1023
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "row",
+      "dim": 2,
+      "shape": [
+        1,
+        1,
+        1
+      ],
+      "active_points": 1,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 4,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "row",
+      "dim": 2,
+      "shape": [
+        4,
+        4,
+        1
+      ],
+      "active_points": 16,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 64,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            0,
+            3,
+            0
+          ],
+          "local_idx": 12
+        },
+        {
+          "coord": [
+            2,
+            2,
+            0
+          ],
+          "local_idx": 10
+        },
+        {
+          "coord": [
+            3,
+            0,
+            0
+          ],
+          "local_idx": 3
+        },
+        {
+          "coord": [
+            3,
+            3,
+            0
+          ],
+          "local_idx": 15
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "row",
+      "dim": 2,
+      "shape": [
+        8,
+        16,
+        1
+      ],
+      "active_points": 128,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 512,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            0,
+            15,
+            0
+          ],
+          "local_idx": 120
+        },
+        {
+          "coord": [
+            4,
+            8,
+            0
+          ],
+          "local_idx": 68
+        },
+        {
+          "coord": [
+            7,
+            0,
+            0
+          ],
+          "local_idx": 7
+        },
+        {
+          "coord": [
+            7,
+            15,
+            0
+          ],
+          "local_idx": 127
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "row",
+      "dim": 2,
+      "shape": [
+        16,
+        16,
+        1
+      ],
+      "active_points": 256,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 1024,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            0,
+            15,
+            0
+          ],
+          "local_idx": 240
+        },
+        {
+          "coord": [
+            8,
+            8,
+            0
+          ],
+          "local_idx": 136
+        },
+        {
+          "coord": [
+            15,
+            0,
+            0
+          ],
+          "local_idx": 15
+        },
+        {
+          "coord": [
+            15,
+            15,
+            0
+          ],
+          "local_idx": 255
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "row",
+      "dim": 2,
+      "shape": [
+        32,
+        32,
+        1
+      ],
+      "active_points": 1024,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 4096,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            0,
+            31,
+            0
+          ],
+          "local_idx": 992
+        },
+        {
+          "coord": [
+            16,
+            16,
+            0
+          ],
+          "local_idx": 528
+        },
+        {
+          "coord": [
+            31,
+            0,
+            0
+          ],
+          "local_idx": 31
+        },
+        {
+          "coord": [
+            31,
+            31,
+            0
+          ],
+          "local_idx": 1023
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "row",
+      "dim": 3,
+      "shape": [
+        1,
+        1,
+        1
+      ],
+      "active_points": 1,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 6,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "row",
+      "dim": 3,
+      "shape": [
+        4,
+        4,
+        4
+      ],
+      "active_points": 64,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 384,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            0,
+            0,
+            3
+          ],
+          "local_idx": 48
+        },
+        {
+          "coord": [
+            0,
+            3,
+            0
+          ],
+          "local_idx": 12
+        },
+        {
+          "coord": [
+            0,
+            3,
+            3
+          ],
+          "local_idx": 60
+        },
+        {
+          "coord": [
+            2,
+            2,
+            2
+          ],
+          "local_idx": 42
+        },
+        {
+          "coord": [
+            3,
+            0,
+            0
+          ],
+          "local_idx": 3
+        },
+        {
+          "coord": [
+            3,
+            0,
+            3
+          ],
+          "local_idx": 51
+        },
+        {
+          "coord": [
+            3,
+            3,
+            0
+          ],
+          "local_idx": 15
+        },
+        {
+          "coord": [
+            3,
+            3,
+            3
+          ],
+          "local_idx": 63
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "row",
+      "dim": 3,
+      "shape": [
+        8,
+        8,
+        8
+      ],
+      "active_points": 512,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 3072,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            0,
+            0,
+            7
+          ],
+          "local_idx": 448
+        },
+        {
+          "coord": [
+            0,
+            7,
+            0
+          ],
+          "local_idx": 56
+        },
+        {
+          "coord": [
+            0,
+            7,
+            7
+          ],
+          "local_idx": 504
+        },
+        {
+          "coord": [
+            4,
+            4,
+            4
+          ],
+          "local_idx": 292
+        },
+        {
+          "coord": [
+            7,
+            0,
+            0
+          ],
+          "local_idx": 7
+        },
+        {
+          "coord": [
+            7,
+            0,
+            7
+          ],
+          "local_idx": 455
+        },
+        {
+          "coord": [
+            7,
+            7,
+            0
+          ],
+          "local_idx": 63
+        },
+        {
+          "coord": [
+            7,
+            7,
+            7
+          ],
+          "local_idx": 511
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "row",
+      "dim": 3,
+      "shape": [
+        10,
+        10,
+        10
+      ],
+      "active_points": 1000,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 6000,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            0,
+            0,
+            9
+          ],
+          "local_idx": 900
+        },
+        {
+          "coord": [
+            0,
+            9,
+            0
+          ],
+          "local_idx": 90
+        },
+        {
+          "coord": [
+            0,
+            9,
+            9
+          ],
+          "local_idx": 990
+        },
+        {
+          "coord": [
+            5,
+            5,
+            5
+          ],
+          "local_idx": 555
+        },
+        {
+          "coord": [
+            9,
+            0,
+            0
+          ],
+          "local_idx": 9
+        },
+        {
+          "coord": [
+            9,
+            0,
+            9
+          ],
+          "local_idx": 909
+        },
+        {
+          "coord": [
+            9,
+            9,
+            0
+          ],
+          "local_idx": 99
+        },
+        {
+          "coord": [
+            9,
+            9,
+            9
+          ],
+          "local_idx": 999
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "snake",
+      "dim": 1,
+      "shape": [
+        1,
+        1,
+        1
+      ],
+      "active_points": 1,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 2,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "snake",
+      "dim": 1,
+      "shape": [
+        7,
+        1,
+        1
+      ],
+      "active_points": 7,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 14,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            3,
+            0,
+            0
+          ],
+          "local_idx": 3
+        },
+        {
+          "coord": [
+            6,
+            0,
+            0
+          ],
+          "local_idx": 6
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "snake",
+      "dim": 1,
+      "shape": [
+        64,
+        1,
+        1
+      ],
+      "active_points": 64,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 128,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            32,
+            0,
+            0
+          ],
+          "local_idx": 32
+        },
+        {
+          "coord": [
+            63,
+            0,
+            0
+          ],
+          "local_idx": 63
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "snake",
+      "dim": 1,
+      "shape": [
+        100,
+        1,
+        1
+      ],
+      "active_points": 100,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 200,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            50,
+            0,
+            0
+          ],
+          "local_idx": 50
+        },
+        {
+          "coord": [
+            99,
+            0,
+            0
+          ],
+          "local_idx": 99
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "snake",
+      "dim": 1,
+      "shape": [
+        256,
+        1,
+        1
+      ],
+      "active_points": 256,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 512,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            128,
+            0,
+            0
+          ],
+          "local_idx": 128
+        },
+        {
+          "coord": [
+            255,
+            0,
+            0
+          ],
+          "local_idx": 255
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "snake",
+      "dim": 1,
+      "shape": [
+        512,
+        1,
+        1
+      ],
+      "active_points": 512,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 1024,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            256,
+            0,
+            0
+          ],
+          "local_idx": 256
+        },
+        {
+          "coord": [
+            511,
+            0,
+            0
+          ],
+          "local_idx": 511
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "snake",
+      "dim": 1,
+      "shape": [
+        1024,
+        1,
+        1
+      ],
+      "active_points": 1024,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 2048,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            512,
+            0,
+            0
+          ],
+          "local_idx": 512
+        },
+        {
+          "coord": [
+            1023,
+            0,
+            0
+          ],
+          "local_idx": 1023
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "snake",
+      "dim": 2,
+      "shape": [
+        1,
+        1,
+        1
+      ],
+      "active_points": 1,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 4,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "snake",
+      "dim": 2,
+      "shape": [
+        4,
+        4,
+        1
+      ],
+      "active_points": 16,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 64,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            0,
+            3,
+            0
+          ],
+          "local_idx": 15
+        },
+        {
+          "coord": [
+            2,
+            2,
+            0
+          ],
+          "local_idx": 10
+        },
+        {
+          "coord": [
+            3,
+            0,
+            0
+          ],
+          "local_idx": 3
+        },
+        {
+          "coord": [
+            3,
+            3,
+            0
+          ],
+          "local_idx": 12
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "snake",
+      "dim": 2,
+      "shape": [
+        8,
+        16,
+        1
+      ],
+      "active_points": 128,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 512,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            0,
+            15,
+            0
+          ],
+          "local_idx": 127
+        },
+        {
+          "coord": [
+            4,
+            8,
+            0
+          ],
+          "local_idx": 68
+        },
+        {
+          "coord": [
+            7,
+            0,
+            0
+          ],
+          "local_idx": 7
+        },
+        {
+          "coord": [
+            7,
+            15,
+            0
+          ],
+          "local_idx": 120
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "snake",
+      "dim": 2,
+      "shape": [
+        16,
+        16,
+        1
+      ],
+      "active_points": 256,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 1024,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            0,
+            15,
+            0
+          ],
+          "local_idx": 255
+        },
+        {
+          "coord": [
+            8,
+            8,
+            0
+          ],
+          "local_idx": 136
+        },
+        {
+          "coord": [
+            15,
+            0,
+            0
+          ],
+          "local_idx": 15
+        },
+        {
+          "coord": [
+            15,
+            15,
+            0
+          ],
+          "local_idx": 240
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "snake",
+      "dim": 2,
+      "shape": [
+        32,
+        32,
+        1
+      ],
+      "active_points": 1024,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 4096,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            0,
+            31,
+            0
+          ],
+          "local_idx": 1023
+        },
+        {
+          "coord": [
+            16,
+            16,
+            0
+          ],
+          "local_idx": 528
+        },
+        {
+          "coord": [
+            31,
+            0,
+            0
+          ],
+          "local_idx": 31
+        },
+        {
+          "coord": [
+            31,
+            31,
+            0
+          ],
+          "local_idx": 992
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "snake",
+      "dim": 3,
+      "shape": [
+        1,
+        1,
+        1
+      ],
+      "active_points": 1,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 6,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "snake",
+      "dim": 3,
+      "shape": [
+        4,
+        4,
+        4
+      ],
+      "active_points": 64,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 384,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            0,
+            0,
+            3
+          ],
+          "local_idx": 48
+        },
+        {
+          "coord": [
+            0,
+            3,
+            0
+          ],
+          "local_idx": 15
+        },
+        {
+          "coord": [
+            0,
+            3,
+            3
+          ],
+          "local_idx": 63
+        },
+        {
+          "coord": [
+            2,
+            2,
+            2
+          ],
+          "local_idx": 42
+        },
+        {
+          "coord": [
+            3,
+            0,
+            0
+          ],
+          "local_idx": 3
+        },
+        {
+          "coord": [
+            3,
+            0,
+            3
+          ],
+          "local_idx": 51
+        },
+        {
+          "coord": [
+            3,
+            3,
+            0
+          ],
+          "local_idx": 12
+        },
+        {
+          "coord": [
+            3,
+            3,
+            3
+          ],
+          "local_idx": 60
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "snake",
+      "dim": 3,
+      "shape": [
+        8,
+        8,
+        8
+      ],
+      "active_points": 512,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 3072,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            0,
+            0,
+            7
+          ],
+          "local_idx": 448
+        },
+        {
+          "coord": [
+            0,
+            7,
+            0
+          ],
+          "local_idx": 63
+        },
+        {
+          "coord": [
+            0,
+            7,
+            7
+          ],
+          "local_idx": 511
+        },
+        {
+          "coord": [
+            4,
+            4,
+            4
+          ],
+          "local_idx": 292
+        },
+        {
+          "coord": [
+            7,
+            0,
+            0
+          ],
+          "local_idx": 7
+        },
+        {
+          "coord": [
+            7,
+            0,
+            7
+          ],
+          "local_idx": 455
+        },
+        {
+          "coord": [
+            7,
+            7,
+            0
+          ],
+          "local_idx": 56
+        },
+        {
+          "coord": [
+            7,
+            7,
+            7
+          ],
+          "local_idx": 504
+        }
+      ],
+      "pass": true
+    },
+    {
+      "layout": "snake",
+      "dim": 3,
+      "shape": [
+        10,
+        10,
+        10
+      ],
+      "active_points": 1000,
+      "local_dense": true,
+      "logical_dense": true,
+      "unique_coords": true,
+      "roundtrip_ok": true,
+      "neighbour_ok": true,
+      "neighbour_checks": 6000,
+      "boundary_details": [
+        {
+          "coord": [
+            0,
+            0,
+            0
+          ],
+          "local_idx": 0
+        },
+        {
+          "coord": [
+            0,
+            0,
+            9
+          ],
+          "local_idx": 900
+        },
+        {
+          "coord": [
+            0,
+            9,
+            0
+          ],
+          "local_idx": 99
+        },
+        {
+          "coord": [
+            0,
+            9,
+            9
+          ],
+          "local_idx": 999
+        },
+        {
+          "coord": [
+            5,
+            5,
+            5
+          ],
+          "local_idx": 554
+        },
+        {
+          "coord": [
+            9,
+            0,
+            0
+          ],
+          "local_idx": 9
+        },
+        {
+          "coord": [
+            9,
+            0,
+            9
+          ],
+          "local_idx": 909
+        },
+        {
+          "coord": [
+            9,
+            9,
+            0
+          ],
+          "local_idx": 90
+        },
+        {
+          "coord": [
+            9,
+            9,
+            9
+          ],
+          "local_idx": 990
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "board_cross_check": {
+    "port": "COM5",
+    "baud": 115200,
+    "cases": [
+      {
+        "pass": true,
+        "layout": "morton",
+        "dim": 1,
+        "shape": [
+          1024,
+          1,
+          1
+        ],
+        "coord": [
+          0,
+          0,
+          0
+        ],
+        "expected_local_idx": 0,
+        "reported_local_idx": 0,
+        "reported_a7_raw_idx": 0
+      },
+      {
+        "pass": true,
+        "layout": "morton",
+        "dim": 1,
+        "shape": [
+          1024,
+          1,
+          1
+        ],
+        "coord": [
+          512,
+          0,
+          0
+        ],
+        "expected_local_idx": 512,
+        "reported_local_idx": 512,
+        "reported_a7_raw_idx": 512
+      },
+      {
+        "pass": true,
+        "layout": "morton",
+        "dim": 1,
+        "shape": [
+          1024,
+          1,
+          1
+        ],
+        "coord": [
+          1023,
+          0,
+          0
+        ],
+        "expected_local_idx": 1023,
+        "reported_local_idx": 1023,
+        "reported_a7_raw_idx": 1023
+      },
+      {
+        "pass": true,
+        "layout": "morton",
+        "dim": 2,
+        "shape": [
+          32,
+          32,
+          1
+        ],
+        "coord": [
+          0,
+          0,
+          0
+        ],
+        "expected_local_idx": 0,
+        "reported_local_idx": 0,
+        "reported_a7_raw_idx": 0
+      },
+      {
+        "pass": true,
+        "layout": "morton",
+        "dim": 2,
+        "shape": [
+          32,
+          32,
+          1
+        ],
+        "coord": [
+          0,
+          31,
+          0
+        ],
+        "expected_local_idx": 682,
+        "reported_local_idx": 682,
+        "reported_a7_raw_idx": 682
+      },
+      {
+        "pass": true,
+        "layout": "morton",
+        "dim": 2,
+        "shape": [
+          32,
+          32,
+          1
+        ],
+        "coord": [
+          16,
+          16,
+          0
+        ],
+        "expected_local_idx": 768,
+        "reported_local_idx": 768,
+        "reported_a7_raw_idx": 768
+      },
+      {
+        "pass": true,
+        "layout": "morton",
+        "dim": 2,
+        "shape": [
+          32,
+          32,
+          1
+        ],
+        "coord": [
+          31,
+          0,
+          0
+        ],
+        "expected_local_idx": 341,
+        "reported_local_idx": 341,
+        "reported_a7_raw_idx": 341
+      },
+      {
+        "pass": true,
+        "layout": "morton",
+        "dim": 2,
+        "shape": [
+          32,
+          32,
+          1
+        ],
+        "coord": [
+          31,
+          31,
+          0
+        ],
+        "expected_local_idx": 1023,
+        "reported_local_idx": 1023,
+        "reported_a7_raw_idx": 1023
+      },
+      {
+        "pass": true,
+        "layout": "morton",
+        "dim": 3,
+        "shape": [
+          8,
+          8,
+          8
+        ],
+        "coord": [
+          0,
+          0,
+          0
+        ],
+        "expected_local_idx": 0,
+        "reported_local_idx": 0,
+        "reported_a7_raw_idx": 0
+      },
+      {
+        "pass": true,
+        "layout": "morton",
+        "dim": 3,
+        "shape": [
+          8,
+          8,
+          8
+        ],
+        "coord": [
+          0,
+          0,
+          7
+        ],
+        "expected_local_idx": 292,
+        "reported_local_idx": 292,
+        "reported_a7_raw_idx": 292
+      },
+      {
+        "pass": true,
+        "layout": "morton",
+        "dim": 3,
+        "shape": [
+          8,
+          8,
+          8
+        ],
+        "coord": [
+          0,
+          7,
+          0
+        ],
+        "expected_local_idx": 146,
+        "reported_local_idx": 146,
+        "reported_a7_raw_idx": 146
+      },
+      {
+        "pass": true,
+        "layout": "morton",
+        "dim": 3,
+        "shape": [
+          8,
+          8,
+          8
+        ],
+        "coord": [
+          0,
+          7,
+          7
+        ],
+        "expected_local_idx": 438,
+        "reported_local_idx": 438,
+        "reported_a7_raw_idx": 438
+      },
+      {
+        "pass": true,
+        "layout": "morton",
+        "dim": 3,
+        "shape": [
+          8,
+          8,
+          8
+        ],
+        "coord": [
+          4,
+          4,
+          4
+        ],
+        "expected_local_idx": 448,
+        "reported_local_idx": 448,
+        "reported_a7_raw_idx": 448
+      },
+      {
+        "pass": true,
+        "layout": "morton",
+        "dim": 3,
+        "shape": [
+          8,
+          8,
+          8
+        ],
+        "coord": [
+          7,
+          0,
+          0
+        ],
+        "expected_local_idx": 73,
+        "reported_local_idx": 73,
+        "reported_a7_raw_idx": 73
+      },
+      {
+        "pass": true,
+        "layout": "morton",
+        "dim": 3,
+        "shape": [
+          8,
+          8,
+          8
+        ],
+        "coord": [
+          7,
+          0,
+          7
+        ],
+        "expected_local_idx": 365,
+        "reported_local_idx": 365,
+        "reported_a7_raw_idx": 365
+      },
+      {
+        "pass": true,
+        "layout": "morton",
+        "dim": 3,
+        "shape": [
+          8,
+          8,
+          8
+        ],
+        "coord": [
+          7,
+          7,
+          0
+        ],
+        "expected_local_idx": 219,
+        "reported_local_idx": 219,
+        "reported_a7_raw_idx": 219
+      },
+      {
+        "pass": true,
+        "layout": "morton",
+        "dim": 3,
+        "shape": [
+          8,
+          8,
+          8
+        ],
+        "coord": [
+          7,
+          7,
+          7
+        ],
+        "expected_local_idx": 511,
+        "reported_local_idx": 511,
+        "reported_a7_raw_idx": 511
+      },
+      {
+        "pass": true,
+        "layout": "row",
+        "dim": 1,
+        "shape": [
+          1024,
+          1,
+          1
+        ],
+        "coord": [
+          0,
+          0,
+          0
+        ],
+        "expected_local_idx": 0,
+        "reported_local_idx": 0,
+        "reported_a7_raw_idx": 0
+      },
+      {
+        "pass": true,
+        "layout": "row",
+        "dim": 1,
+        "shape": [
+          1024,
+          1,
+          1
+        ],
+        "coord": [
+          512,
+          0,
+          0
+        ],
+        "expected_local_idx": 512,
+        "reported_local_idx": 512,
+        "reported_a7_raw_idx": 512
+      },
+      {
+        "pass": true,
+        "layout": "row",
+        "dim": 1,
+        "shape": [
+          1024,
+          1,
+          1
+        ],
+        "coord": [
+          1023,
+          0,
+          0
+        ],
+        "expected_local_idx": 1023,
+        "reported_local_idx": 1023,
+        "reported_a7_raw_idx": 1023
+      },
+      {
+        "pass": true,
+        "layout": "row",
+        "dim": 2,
+        "shape": [
+          32,
+          32,
+          1
+        ],
+        "coord": [
+          0,
+          0,
+          0
+        ],
+        "expected_local_idx": 0,
+        "reported_local_idx": 0,
+        "reported_a7_raw_idx": 0
+      },
+      {
+        "pass": true,
+        "layout": "row",
+        "dim": 2,
+        "shape": [
+          32,
+          32,
+          1
+        ],
+        "coord": [
+          0,
+          31,
+          0
+        ],
+        "expected_local_idx": 992,
+        "reported_local_idx": 992,
+        "reported_a7_raw_idx": 992
+      },
+      {
+        "pass": true,
+        "layout": "row",
+        "dim": 2,
+        "shape": [
+          32,
+          32,
+          1
+        ],
+        "coord": [
+          16,
+          16,
+          0
+        ],
+        "expected_local_idx": 528,
+        "reported_local_idx": 528,
+        "reported_a7_raw_idx": 528
+      },
+      {
+        "pass": true,
+        "layout": "row",
+        "dim": 2,
+        "shape": [
+          32,
+          32,
+          1
+        ],
+        "coord": [
+          31,
+          0,
+          0
+        ],
+        "expected_local_idx": 31,
+        "reported_local_idx": 31,
+        "reported_a7_raw_idx": 31
+      },
+      {
+        "pass": true,
+        "layout": "row",
+        "dim": 2,
+        "shape": [
+          32,
+          32,
+          1
+        ],
+        "coord": [
+          31,
+          31,
+          0
+        ],
+        "expected_local_idx": 1023,
+        "reported_local_idx": 1023,
+        "reported_a7_raw_idx": 1023
+      },
+      {
+        "pass": true,
+        "layout": "row",
+        "dim": 3,
+        "shape": [
+          8,
+          8,
+          8
+        ],
+        "coord": [
+          0,
+          0,
+          0
+        ],
+        "expected_local_idx": 0,
+        "reported_local_idx": 0,
+        "reported_a7_raw_idx": 0
+      },
+      {
+        "pass": true,
+        "layout": "row",
+        "dim": 3,
+        "shape": [
+          8,
+          8,
+          8
+        ],
+        "coord": [
+          0,
+          0,
+          7
+        ],
+        "expected_local_idx": 448,
+        "reported_local_idx": 448,
+        "reported_a7_raw_idx": 448
+      },
+      {
+        "pass": true,
+        "layout": "row",
+        "dim": 3,
+        "shape": [
+          8,
+          8,
+          8
+        ],
+        "coord": [
+          0,
+          7,
+          0
+        ],
+        "expected_local_idx": 56,
+        "reported_local_idx": 56,
+        "reported_a7_raw_idx": 56
+      },
+      {
+        "pass": true,
+        "layout": "row",
+        "dim": 3,
+        "shape": [
+          8,
+          8,
+          8
+        ],
+        "coord": [
+          0,
+          7,
+          7
+        ],
+        "expected_local_idx": 504,
+        "reported_local_idx": 504,
+        "reported_a7_raw_idx": 504
+      },
+      {
+        "pass": true,
+        "layout": "row",
+        "dim": 3,
+        "shape": [
+          8,
+          8,
+          8
+        ],
+        "coord": [
+          4,
+          4,
+          4
+        ],
+        "expected_local_idx": 292,
+        "reported_local_idx": 292,
+        "reported_a7_raw_idx": 292
+      },
+      {
+        "pass": true,
+        "layout": "row",
+        "dim": 3,
+        "shape": [
+          8,
+          8,
+          8
+        ],
+        "coord": [
+          7,
+          0,
+          0
+        ],
+        "expected_local_idx": 7,
+        "reported_local_idx": 7,
+        "reported_a7_raw_idx": 7
+      },
+      {
+        "pass": true,
+        "layout": "row",
+        "dim": 3,
+        "shape": [
+          8,
+          8,
+          8
+        ],
+        "coord": [
+          7,
+          0,
+          7
+        ],
+        "expected_local_idx": 455,
+        "reported_local_idx": 455,
+        "reported_a7_raw_idx": 455
+      },
+      {
+        "pass": true,
+        "layout": "row",
+        "dim": 3,
+        "shape": [
+          8,
+          8,
+          8
+        ],
+        "coord": [
+          7,
+          7,
+          0
+        ],
+        "expected_local_idx": 63,
+        "reported_local_idx": 63,
+        "reported_a7_raw_idx": 63
+      },
+      {
+        "pass": true,
+        "layout": "row",
+        "dim": 3,
+        "shape": [
+          8,
+          8,
+          8
+        ],
+        "coord": [
+          7,
+          7,
+          7
+        ],
+        "expected_local_idx": 511,
+        "reported_local_idx": 511,
+        "reported_a7_raw_idx": 511
+      },
+      {
+        "pass": true,
+        "layout": "snake",
+        "dim": 1,
+        "shape": [
+          1024,
+          1,
+          1
+        ],
+        "coord": [
+          0,
+          0,
+          0
+        ],
+        "expected_local_idx": 0,
+        "reported_local_idx": 0,
+        "reported_a7_raw_idx": 0
+      },
+      {
+        "pass": true,
+        "layout": "snake",
+        "dim": 1,
+        "shape": [
+          1024,
+          1,
+          1
+        ],
+        "coord": [
+          512,
+          0,
+          0
+        ],
+        "expected_local_idx": 512,
+        "reported_local_idx": 512,
+        "reported_a7_raw_idx": 512
+      },
+      {
+        "pass": true,
+        "layout": "snake",
+        "dim": 1,
+        "shape": [
+          1024,
+          1,
+          1
+        ],
+        "coord": [
+          1023,
+          0,
+          0
+        ],
+        "expected_local_idx": 1023,
+        "reported_local_idx": 1023,
+        "reported_a7_raw_idx": 1023
+      },
+      {
+        "pass": true,
+        "layout": "snake",
+        "dim": 2,
+        "shape": [
+          32,
+          32,
+          1
+        ],
+        "coord": [
+          0,
+          0,
+          0
+        ],
+        "expected_local_idx": 0,
+        "reported_local_idx": 0,
+        "reported_a7_raw_idx": 0
+      },
+      {
+        "pass": true,
+        "layout": "snake",
+        "dim": 2,
+        "shape": [
+          32,
+          32,
+          1
+        ],
+        "coord": [
+          0,
+          31,
+          0
+        ],
+        "expected_local_idx": 1023,
+        "reported_local_idx": 1023,
+        "reported_a7_raw_idx": 1023
+      },
+      {
+        "pass": true,
+        "layout": "snake",
+        "dim": 2,
+        "shape": [
+          32,
+          32,
+          1
+        ],
+        "coord": [
+          16,
+          16,
+          0
+        ],
+        "expected_local_idx": 528,
+        "reported_local_idx": 528,
+        "reported_a7_raw_idx": 528
+      },
+      {
+        "pass": true,
+        "layout": "snake",
+        "dim": 2,
+        "shape": [
+          32,
+          32,
+          1
+        ],
+        "coord": [
+          31,
+          0,
+          0
+        ],
+        "expected_local_idx": 31,
+        "reported_local_idx": 31,
+        "reported_a7_raw_idx": 31
+      },
+      {
+        "pass": true,
+        "layout": "snake",
+        "dim": 2,
+        "shape": [
+          32,
+          32,
+          1
+        ],
+        "coord": [
+          31,
+          31,
+          0
+        ],
+        "expected_local_idx": 992,
+        "reported_local_idx": 992,
+        "reported_a7_raw_idx": 992
+      },
+      {
+        "pass": true,
+        "layout": "snake",
+        "dim": 3,
+        "shape": [
+          8,
+          8,
+          8
+        ],
+        "coord": [
+          0,
+          0,
+          0
+        ],
+        "expected_local_idx": 0,
+        "reported_local_idx": 0,
+        "reported_a7_raw_idx": 0
+      },
+      {
+        "pass": true,
+        "layout": "snake",
+        "dim": 3,
+        "shape": [
+          8,
+          8,
+          8
+        ],
+        "coord": [
+          0,
+          0,
+          7
+        ],
+        "expected_local_idx": 448,
+        "reported_local_idx": 448,
+        "reported_a7_raw_idx": 448
+      },
+      {
+        "pass": true,
+        "layout": "snake",
+        "dim": 3,
+        "shape": [
+          8,
+          8,
+          8
+        ],
+        "coord": [
+          0,
+          7,
+          0
+        ],
+        "expected_local_idx": 63,
+        "reported_local_idx": 63,
+        "reported_a7_raw_idx": 63
+      },
+      {
+        "pass": true,
+        "layout": "snake",
+        "dim": 3,
+        "shape": [
+          8,
+          8,
+          8
+        ],
+        "coord": [
+          0,
+          7,
+          7
+        ],
+        "expected_local_idx": 511,
+        "reported_local_idx": 511,
+        "reported_a7_raw_idx": 511
+      },
+      {
+        "pass": true,
+        "layout": "snake",
+        "dim": 3,
+        "shape": [
+          8,
+          8,
+          8
+        ],
+        "coord": [
+          4,
+          4,
+          4
+        ],
+        "expected_local_idx": 292,
+        "reported_local_idx": 292,
+        "reported_a7_raw_idx": 292
+      },
+      {
+        "pass": true,
+        "layout": "snake",
+        "dim": 3,
+        "shape": [
+          8,
+          8,
+          8
+        ],
+        "coord": [
+          7,
+          0,
+          0
+        ],
+        "expected_local_idx": 7,
+        "reported_local_idx": 7,
+        "reported_a7_raw_idx": 7
+      },
+      {
+        "pass": true,
+        "layout": "snake",
+        "dim": 3,
+        "shape": [
+          8,
+          8,
+          8
+        ],
+        "coord": [
+          7,
+          0,
+          7
+        ],
+        "expected_local_idx": 455,
+        "reported_local_idx": 455,
+        "reported_a7_raw_idx": 455
+      },
+      {
+        "pass": true,
+        "layout": "snake",
+        "dim": 3,
+        "shape": [
+          8,
+          8,
+          8
+        ],
+        "coord": [
+          7,
+          7,
+          0
+        ],
+        "expected_local_idx": 56,
+        "reported_local_idx": 56,
+        "reported_a7_raw_idx": 56
+      },
+      {
+        "pass": true,
+        "layout": "snake",
+        "dim": 3,
+        "shape": [
+          8,
+          8,
+          8
+        ],
+        "coord": [
+          7,
+          7,
+          7
+        ],
+        "expected_local_idx": 504,
+        "reported_local_idx": 504,
+        "reported_a7_raw_idx": 504
+      }
+    ],
+    "help_has_layout": true,
+    "layout_status_ok": true,
+    "route_status": "route-status\n  FLX route: caps=0x464C5852 self=0 target=0 global_idx=0 local_idx=0 data=0x00000000 status=0x00000051\n             status local=1 remote=0 requested=1 write=0 code=0x1\n",
+    "route_local_read": "route-read 0 0\n  route-read local board=0 idx=0 psi=0x00000000 prev=0x00000000 m=0x00000000\n",
+    "case_count": 51,
+    "case_pass_count": 51,
+    "pass": true
+  },
+  "order_csvs": [
+    "E:\\GMW_CPU\\results\\lattice_memory\\board_crosscheck_final_20260608\\morton_1d_1024x1x1_order.csv",
+    "E:\\GMW_CPU\\results\\lattice_memory\\board_crosscheck_final_20260608\\morton_2d_32x32x1_order.csv",
+    "E:\\GMW_CPU\\results\\lattice_memory\\board_crosscheck_final_20260608\\morton_3d_8x8x8_order.csv",
+    "E:\\GMW_CPU\\results\\lattice_memory\\board_crosscheck_final_20260608\\morton_3d_10x10x10_order.csv",
+    "E:\\GMW_CPU\\results\\lattice_memory\\board_crosscheck_final_20260608\\row_1d_1024x1x1_order.csv",
+    "E:\\GMW_CPU\\results\\lattice_memory\\board_crosscheck_final_20260608\\row_2d_32x32x1_order.csv",
+    "E:\\GMW_CPU\\results\\lattice_memory\\board_crosscheck_final_20260608\\row_3d_8x8x8_order.csv",
+    "E:\\GMW_CPU\\results\\lattice_memory\\board_crosscheck_final_20260608\\row_3d_10x10x10_order.csv",
+    "E:\\GMW_CPU\\results\\lattice_memory\\board_crosscheck_final_20260608\\snake_1d_1024x1x1_order.csv",
+    "E:\\GMW_CPU\\results\\lattice_memory\\board_crosscheck_final_20260608\\snake_2d_32x32x1_order.csv",
+    "E:\\GMW_CPU\\results\\lattice_memory\\board_crosscheck_final_20260608\\snake_3d_8x8x8_order.csv",
+    "E:\\GMW_CPU\\results\\lattice_memory\\board_crosscheck_final_20260608\\snake_3d_10x10x10_order.csv"
+  ],
+  "report": "E:\\GMW_CPU\\results\\lattice_memory\\board_crosscheck_final_20260608\\lattice_memory_report.md"
+}

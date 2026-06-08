@@ -1,0 +1,74 @@
+{
+  "workload": "gaussian_field",
+  "dimension": "3d",
+  "shape": [
+    8,
+    8,
+    8
+  ],
+  "active_points": 512,
+  "timesteps": null,
+  "hardware_field": "hardware_field.csv",
+  "reference_field": "reference_field.csv",
+  "density_error": "density_error.csv",
+  "hardware_metrics": {
+    "density_integral": 182884267549.38696,
+    "field_l2_norm": 427649.7019166352,
+    "field_sum": -6484.80378723226,
+    "peak_psi": -32755.9566040039,
+    "peak_psi_abs": 32755.9566040039,
+    "peak_density": 1072952693.0433867,
+    "peak_site": 0,
+    "peak_xyz": [
+      0,
+      0,
+      0
+    ],
+    "center_of_mass_xyz": [
+      3.557913078852536,
+      3.514013189570636,
+      3.3833410233728722
+    ],
+    "rms_radius": 3.9871020823488426,
+    "density_min": 0.111861750742473,
+    "density_max": 1072952693.0433867,
+    "psi_min": -32755.9566040039,
+    "psi_max": 32674.2743682861
+  },
+  "reference_metrics": {
+    "density_integral": 182884267549.38696,
+    "field_l2_norm": 427649.7019166352,
+    "field_sum": -6484.803787231445,
+    "peak_psi": -32755.956604003906,
+    "peak_psi_abs": 32755.956604003906,
+    "peak_density": 1072952693.0433872,
+    "peak_site": 0,
+    "peak_xyz": [
+      0,
+      0,
+      0
+    ],
+    "center_of_mass_xyz": [
+      3.557913078852536,
+      3.514013189570636,
+      3.383341023372872
+    ],
+    "rms_radius": 3.987102082348842,
+    "density_min": 0.11186175071634352,
+    "density_max": 1072952693.0433872,
+    "psi_min": -32755.956604003906,
+    "psi_max": 32674.274368286133
+  },
+  "comparison": {
+    "mismatches": 0,
+    "max_abs_delta_q16": 0,
+    "density_integral_delta": null,
+    "normalized_overlap": 1.0,
+    "peak_location_delta": 0.0,
+    "center_of_mass_delta": 4.440892098500626e-16
+  },
+  "pass_fail": {
+    "passed": true,
+    "reasons": []
+  }
+}

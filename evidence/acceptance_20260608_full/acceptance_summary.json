@@ -1,0 +1,2029 @@
+{
+  "final_pass": true,
+  "port": "COM5",
+  "baud": 115200,
+  "out": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance",
+  "kernel_contract_words": [
+    "0x4D545332"
+  ],
+  "results": {
+    "prelaunch": {
+      "pass": true,
+      "mode": "manual_no_autorun_one_particle_cold_start",
+      "experiment": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\prelaunch\\manual_prelaunch.toml",
+      "cold_start_log": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\prelaunch\\uart_prelaunch_cold_start.log",
+      "log": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\acceptance_runner.log"
+    },
+    "health": {
+      "pass": true,
+      "uart_log": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\health\\uart_health.log",
+      "help_docs_audit": {
+        "help_log": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\health\\uart_health.log",
+        "docs": "E:\\GMW_CPU\\docs\\z7_help_commands.md",
+        "live_command_lines": 132,
+        "checked": [
+          {
+            "live": "help",
+            "keys": [
+              "help"
+            ],
+            "covered": true
+          },
+          {
+            "live": "status | s",
+            "keys": [
+              "status"
+            ],
+            "covered": true
+          },
+          {
+            "live": "stop | q | exit",
+            "keys": [
+              "stop"
+            ],
+            "covered": true
+          },
+          {
+            "live": "step <N>",
+            "keys": [
+              "step"
+            ],
+            "covered": true
+          },
+          {
+            "live": "checkpoint | cp",
+            "keys": [
+              "checkpoint"
+            ],
+            "covered": true
+          },
+          {
+            "live": "read-site <idx>",
+            "keys": [
+              "read-site"
+            ],
+            "covered": true
+          },
+          {
+            "live": "cmod-site <idx>",
+            "keys": [
+              "cmod-site"
+            ],
+            "covered": true
+          },
+          {
+            "live": "dump-wal",
+            "keys": [
+              "dump-wal"
+            ],
+            "covered": true
+          },
+          {
+            "live": "dump-cmod [n]",
+            "keys": [
+              "dump-cmod"
+            ],
+            "covered": true
+          },
+          {
+            "live": "dump-all",
+            "keys": [
+              "dump-all"
+            ],
+            "covered": true
+          },
+          {
+            "live": "wal-var-status",
+            "keys": [
+              "wal-var-status"
+            ],
+            "covered": true
+          },
+          {
+            "live": "wal-active",
+            "keys": [
+              "wal-active"
+            ],
+            "covered": true
+          },
+          {
+            "live": "wal-var-config <words> <mask_hex> [checksum_hex]",
+            "keys": [
+              "wal-var-config"
+            ],
+            "covered": true
+          },
+          {
+            "live": "wal-var-write <idx> <word_hex> | wal-var-read <idx> [count]",
+            "keys": [
+              "wal-var-write"
+            ],
+            "covered": true
+          },
+          {
+            "live": "wal-var-dump [count] | wal-var-selftest",
+            "keys": [
+              "wal-var-dump"
+            ],
+            "covered": true
+          },
+          {
+            "live": "wal-save-mts | wal-save-mts-checkpoint | wal-restore-mts",
+            "keys": [
+              "wal-save-mts"
+            ],
+            "covered": true
+          },
+          {
+            "live": "Save/restore MTS field+potential through WAL_VAR/flash",
+            "keys": [
+              "Save/restore"
+            ],
+            "covered": true
+          },
+          {
+            "live": "wal-save-sha|robot|ukernel and wal-restore-sha|robot|ukernel",
+            "keys": [
+              "wal-save-sha",
+              "robot",
+              "ukernel"
+            ],
+            "covered": true
+          },
+          {
+            "live": "Save/restore accelerator/VM state through WAL_VAR/flash",
+            "keys": [
+              "Save/restore"
+            ],
+            "covered": true
+          },
+          {
+            "live": "Default checkpoint stages active MTS/SHA/robot/ukernel unless wal-bypass is ON",
+            "keys": [
+              "Default"
+            ],
+            "covered": true
+          },
+          {
+            "live": "restore",
+            "keys": [
+              "restore"
+            ],
+            "covered": true
+          },
+          {
+            "live": "cold-start",
+            "keys": [
+              "cold-start"
+            ],
+            "covered": true
+          },
+          {
+            "live": "set tau-rate <hz>",
+            "keys": [
+              "set tau-rate"
+            ],
+            "covered": true
+          },
+          {
+            "live": "set spi1-div <n>",
+            "keys": [
+              "set spi1-div"
+            ],
+            "covered": true
+          },
+          {
+            "live": "set spi0-div <n>",
+            "keys": [
+              "set spi0-div"
+            ],
+            "covered": true
+          },
+          {
+            "live": "set v2|eta|zeta|lambdaR|gamma|cg2|epsilon <hex>",
+            "keys": [
+              "set v2",
+              "set eta",
+              "set zeta",
+              "set lambdaR",
+              "set gamma",
+              "set cg2",
+              "set epsilon"
+            ],
+            "covered": true
+          },
+          {
+            "live": "set tau-low|tau-high|tau-block <hex>",
+            "keys": [
+              "set tau-low",
+              "set tau-high",
+              "set tau-block"
+            ],
+            "covered": true
+          },
+          {
+            "live": "set w-energy|w-curvature|step-size <hex>",
+            "keys": [
+              "set w-energy",
+              "set w-curvature",
+              "set step-size"
+            ],
+            "covered": true
+          },
+          {
+            "live": "set push-period <n>",
+            "keys": [
+              "set push-period"
+            ],
+            "covered": true
+          },
+          {
+            "live": "set repair on|off",
+            "keys": [
+              "set repair"
+            ],
+            "covered": true
+          },
+          {
+            "live": "set logging on|off",
+            "keys": [
+              "set logging"
+            ],
+            "covered": true
+          },
+          {
+            "live": "set recovery-fields 3|6",
+            "keys": [
+              "set recovery-fields"
+            ],
+            "covered": true
+          },
+          {
+            "live": "set recovery-depth <n>",
+            "keys": [
+              "set recovery-depth"
+            ],
+            "covered": true
+          },
+          {
+            "live": "set wal-bypass on|off",
+            "keys": [
+              "set wal-bypass"
+            ],
+            "covered": true
+          },
+          {
+            "live": "set particle-count <n>",
+            "keys": [
+              "set particle-count"
+            ],
+            "covered": true
+          },
+          {
+            "live": "set particle-batch <n>",
+            "keys": [
+              "set particle-batch"
+            ],
+            "covered": true
+          },
+          {
+            "live": "set particle-seed <n>",
+            "keys": [
+              "set particle-seed"
+            ],
+            "covered": true
+          },
+          {
+            "live": "set particle-scale <hex> Override accelerator normalization scale",
+            "keys": [
+              "set particle-scale"
+            ],
+            "covered": true
+          },
+          {
+            "live": "set accum-mode full512|local27|local125|hist",
+            "keys": [
+              "set accum-mode"
+            ],
+            "covered": true
+          },
+          {
+            "live": "set accum-lanes <n>",
+            "keys": [
+              "set accum-lanes"
+            ],
+            "covered": true
+          },
+          {
+            "live": "set site-lanes <n>",
+            "keys": [
+              "set site-lanes"
+            ],
+            "covered": true
+          },
+          {
+            "live": "set wal-policy full|checkpoint|final|off-debug",
+            "keys": [
+              "set wal-policy"
+            ],
+            "covered": true
+          },
+          {
+            "live": "set binary-output-first on|off",
+            "keys": [
+              "set binary-output-first"
+            ],
+            "covered": true
+          },
+          {
+            "live": "write-site <i> <psi> <prev> <m>",
+            "keys": [
+              "write-site"
+            ],
+            "covered": true
+          },
+          {
+            "live": "write-lambda <site> <val>",
+            "keys": [
+              "write-lambda"
+            ],
+            "covered": true
+          },
+          {
+            "live": "write-block <addr> <val>",
+            "keys": [
+              "write-block"
+            ],
+            "covered": true
+          },
+          {
+            "live": "pause",
+            "keys": [
+              "pause"
+            ],
+            "covered": true
+          },
+          {
+            "live": "resume",
+            "keys": [
+              "resume"
+            ],
+            "covered": true
+          },
+          {
+            "live": "tau-reset",
+            "keys": [
+              "tau-reset"
+            ],
+            "covered": true
+          },
+          {
+            "live": "layer-status | ls",
+            "keys": [
+              "layer-status"
+            ],
+            "covered": true
+          },
+          {
+            "live": "layer-push [idx]",
+            "keys": [
+              "layer-push"
+            ],
+            "covered": true
+          },
+          {
+            "live": "particle-load [idx]",
+            "keys": [
+              "particle-load"
+            ],
+            "covered": true
+          },
+          {
+            "live": "particle-start",
+            "keys": [
+              "particle-start"
+            ],
+            "covered": true
+          },
+          {
+            "live": "particle-status",
+            "keys": [
+              "particle-status"
+            ],
+            "covered": true
+          },
+          {
+            "live": "particle-clear",
+            "keys": [
+              "particle-clear"
+            ],
+            "covered": true
+          },
+          {
+            "live": "mts-config 1d <particles> <gx> [timesteps]",
+            "keys": [
+              "mts-config"
+            ],
+            "covered": true
+          },
+          {
+            "live": "mts-config 2d <particles> <gx> <gy> [timesteps]",
+            "keys": [
+              "mts-config"
+            ],
+            "covered": true
+          },
+          {
+            "live": "mts-config 3d <particles> <gx> <gy> <gz> [timesteps]",
+            "keys": [
+              "mts-config"
+            ],
+            "covered": true
+          },
+          {
+            "live": "mts-coeff <dt_q16> <diffusion_q16> <v_coeff_q16>",
+            "keys": [
+              "mts-coeff"
+            ],
+            "covered": true
+          },
+          {
+            "live": "mts-normalize on|off",
+            "keys": [
+              "mts-normalize"
+            ],
+            "covered": true
+          },
+          {
+            "live": "mts-init [grid_size [width]]",
+            "keys": [
+              "mts-init"
+            ],
+            "covered": true
+          },
+          {
+            "live": "mts-load-field <idx> <real_q16> <imag_q16>",
+            "keys": [
+              "mts-load-field"
+            ],
+            "covered": true
+          },
+          {
+            "live": "mts-load-potential <idx> <q16>",
+            "keys": [
+              "mts-load-potential"
+            ],
+            "covered": true
+          },
+          {
+            "live": "mts-load-potential-all <q16>",
+            "keys": [
+              "mts-load-potential-all"
+            ],
+            "covered": true
+          },
+          {
+            "live": "mts-load-layer <particle_base> <count>",
+            "keys": [
+              "mts-load-layer"
+            ],
+            "covered": true
+          },
+          {
+            "live": "mts-start",
+            "keys": [
+              "mts-start"
+            ],
+            "covered": true
+          },
+          {
+            "live": "mts-start-field-dump [n]",
+            "keys": [
+              "mts-start-field-dump"
+            ],
+            "covered": true
+          },
+          {
+            "live": "wal-var-mts-restore-start-field-dump <words> <checksum_hex> [n]",
+            "keys": [
+              "wal-var-mts-restore-start-field-dump"
+            ],
+            "covered": true
+          },
+          {
+            "live": "mts-status",
+            "keys": [
+              "mts-status"
+            ],
+            "covered": true
+          },
+          {
+            "live": "mts-read <idx>",
+            "keys": [
+              "mts-read"
+            ],
+            "covered": true
+          },
+          {
+            "live": "mts-dump [count]",
+            "keys": [
+              "mts-dump"
+            ],
+            "covered": true
+          },
+          {
+            "live": "mts-field-read <idx>",
+            "keys": [
+              "mts-field-read"
+            ],
+            "covered": true
+          },
+          {
+            "live": "mts-field-dump [count]",
+            "keys": [
+              "mts-field-dump"
+            ],
+            "covered": true
+          },
+          {
+            "live": "mts-clear",
+            "keys": [
+              "mts-clear"
+            ],
+            "covered": true
+          },
+          {
+            "live": "mts-reset",
+            "keys": [
+              "mts-reset"
+            ],
+            "covered": true
+          },
+          {
+            "live": "mts-bench",
+            "keys": [
+              "mts-bench"
+            ],
+            "covered": true
+          },
+          {
+            "live": "FLX lattice layout / expansion routing:",
+            "keys": [
+              "FLX"
+            ],
+            "covered": true
+          },
+          {
+            "live": "layout-status",
+            "keys": [
+              "layout-status"
+            ],
+            "covered": true
+          },
+          {
+            "live": "layout-set row|snake|morton",
+            "keys": [
+              "layout-set"
+            ],
+            "covered": true
+          },
+          {
+            "live": "layout-map <dim> <gx> [gy] [gz] <x> [y] [z]",
+            "keys": [
+              "layout-map"
+            ],
+            "covered": true
+          },
+          {
+            "live": "layout-dump [count]",
+            "keys": [
+              "layout-dump"
+            ],
+            "covered": true
+          },
+          {
+            "live": "route-status | route-map",
+            "keys": [
+              "route-status"
+            ],
+            "covered": true
+          },
+          {
+            "live": "route-read <board> <idx> | route-write <board> <idx> <word_hex>",
+            "keys": [
+              "route-read"
+            ],
+            "covered": true
+          },
+          {
+            "live": "GMW Universal Kernel v1:",
+            "keys": [
+              "GMW"
+            ],
+            "covered": true
+          },
+          {
+            "live": "ukernel-caps | ukernel-status",
+            "keys": [
+              "ukernel-caps"
+            ],
+            "covered": true
+          },
+          {
+            "live": "ukernel-config <active> [sx] [sy] [sz] [flags_hex]",
+            "keys": [
+              "ukernel-config"
+            ],
+            "covered": true
+          },
+          {
+            "live": "ukernel-load-prog halt|sum4",
+            "keys": [
+              "ukernel-load-prog"
+            ],
+            "covered": true
+          },
+          {
+            "live": "ukernel-load-prog <idx> <word_hex>",
+            "keys": [
+              "ukernel-load-prog"
+            ],
+            "covered": true
+          },
+          {
+            "live": "ukernel-load-data <idx> <word_hex>",
+            "keys": [
+              "ukernel-load-data"
+            ],
+            "covered": true
+          },
+          {
+            "live": "ukernel-load-const <idx> <word_hex> Load VM constant RAM",
+            "keys": [
+              "ukernel-load-const"
+            ],
+            "covered": true
+          },
+          {
+            "live": "ukernel-start | ukernel-step [n]",
+            "keys": [
+              "ukernel-start"
+            ],
+            "covered": true
+          },
+          {
+            "live": "ukernel-read <idx> [count] | ukernel-dump [count]",
+            "keys": [
+              "ukernel-read"
+            ],
+            "covered": true
+          },
+          {
+            "live": "ukernel-hash-state | ukernel-bench",
+            "keys": [
+              "ukernel-hash-state"
+            ],
+            "covered": true
+          },
+          {
+            "live": "ukernel-clear | ukernel-reset | ukernel-restore-test",
+            "keys": [
+              "ukernel-clear"
+            ],
+            "covered": true
+          },
+          {
+            "live": "SHA / robotics accelerator slots:",
+            "keys": [
+              "SHA"
+            ],
+            "covered": true
+          },
+          {
+            "live": "sha-config <nonce_start> <nonce_count>",
+            "keys": [
+              "sha-config"
+            ],
+            "covered": true
+          },
+          {
+            "live": "sha-load-header <idx0-19> <word_hex>",
+            "keys": [
+              "sha-load-header"
+            ],
+            "covered": true
+          },
+          {
+            "live": "sha-start | sha-status | sha-clear | sha-reset",
+            "keys": [
+              "sha-start"
+            ],
+            "covered": true
+          },
+          {
+            "live": "robot-config <active> <gx> <gy> <steps> [flags_hex]",
+            "keys": [
+              "robot-config"
+            ],
+            "covered": true
+          },
+          {
+            "live": "robot-load <idx> <cell_word_hex> | robot-read <idx> [count]",
+            "keys": [
+              "robot-load"
+            ],
+            "covered": true
+          },
+          {
+            "live": "robot-start | robot-status | robot-hash-state | robot-clear | robot-reset",
+            "keys": [
+              "robot-start"
+            ],
+            "covered": true
+          },
+          {
+            "live": "accel-status",
+            "keys": [
+              "accel-status"
+            ],
+            "covered": true
+          },
+          {
+            "live": "accel-caps",
+            "keys": [
+              "accel-caps"
+            ],
+            "covered": true
+          },
+          {
+            "live": "benchmark-status",
+            "keys": [
+              "benchmark-status"
+            ],
+            "covered": true
+          },
+          {
+            "live": "reset-stats",
+            "keys": [
+              "reset-stats"
+            ],
+            "covered": true
+          },
+          {
+            "live": "clear-errors",
+            "keys": [
+              "clear-errors"
+            ],
+            "covered": true
+          },
+          {
+            "live": "drain-ack",
+            "keys": [
+              "drain-ack"
+            ],
+            "covered": true
+          },
+          {
+            "live": "clear-backpressure",
+            "keys": [
+              "clear-backpressure"
+            ],
+            "covered": true
+          },
+          {
+            "live": "bp-recover",
+            "keys": [
+              "bp-recover"
+            ],
+            "covered": true
+          },
+          {
+            "live": "BTN2/L20",
+            "keys": [
+              "BTN2/L20"
+            ],
+            "covered": true
+          },
+          {
+            "live": "snapshot <file>",
+            "keys": [
+              "snapshot"
+            ],
+            "covered": true
+          },
+          {
+            "live": "load <file>",
+            "keys": [
+              "load"
+            ],
+            "covered": true
+          },
+          {
+            "live": "sd-ls [path]",
+            "keys": [
+              "sd-ls"
+            ],
+            "covered": true
+          },
+          {
+            "live": "sd-cat <file>",
+            "keys": [
+              "sd-cat"
+            ],
+            "covered": true
+          },
+          {
+            "live": "sd-get <file>",
+            "keys": [
+              "sd-get"
+            ],
+            "covered": true
+          },
+          {
+            "live": "sd-get-dir <path>",
+            "keys": [
+              "sd-get-dir"
+            ],
+            "covered": true
+          },
+          {
+            "live": "particle-superpose [n]",
+            "keys": [
+              "particle-superpose"
+            ],
+            "covered": true
+          },
+          {
+            "live": "monitor on|off",
+            "keys": [
+              "monitor"
+            ],
+            "covered": true
+          },
+          {
+            "live": "monitor rate <ms>",
+            "keys": [
+              "monitor"
+            ],
+            "covered": true
+          },
+          {
+            "live": "log-energy on|off",
+            "keys": [
+              "log-energy"
+            ],
+            "covered": true
+          },
+          {
+            "live": "energy-check | ec",
+            "keys": [
+              "energy-check"
+            ],
+            "covered": true
+          },
+          {
+            "live": "wal-bypass on|off",
+            "keys": [
+              "wal-bypass"
+            ],
+            "covered": true
+          },
+          {
+            "live": "regs",
+            "keys": [
+              "regs"
+            ],
+            "covered": true
+          },
+          {
+            "live": "spi-health",
+            "keys": [
+              "spi-health"
+            ],
+            "covered": true
+          },
+          {
+            "live": "force-spi3",
+            "keys": [
+              "force-spi3"
+            ],
+            "covered": true
+          },
+          {
+            "live": "a7-debug",
+            "keys": [
+              "a7-debug"
+            ],
+            "covered": true
+          },
+          {
+            "live": "read-reg",
+            "keys": [
+              "read-reg"
+            ],
+            "covered": true
+          },
+          {
+            "live": "write-reg <hex> <hex>",
+            "keys": [
+              "write-reg"
+            ],
+            "covered": true
+          },
+          {
+            "live": "a7-reg",
+            "keys": [
+              "a7-reg"
+            ],
+            "covered": true
+          },
+          {
+            "live": "cmod-reg <hex>",
+            "keys": [
+              "cmod-reg"
+            ],
+            "covered": true
+          },
+          {
+            "live": "status|s",
+            "keys": [
+              "status",
+              "s"
+            ],
+            "covered": true
+          },
+          {
+            "live": "restore",
+            "keys": [
+              "restore"
+            ],
+            "covered": true
+          }
+        ],
+        "missing": [],
+        "passed": true
+      }
+    },
+    "invalid_config": {
+      "pass": true,
+      "checks": {
+        "1d_oversize": true,
+        "2d_oversize": true,
+        "3d_oversize": true,
+        "zero_particles": true,
+        "zero_timesteps": true
+      },
+      "uart_logs": {
+        "1d_oversize": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\invalid_config\\1d_oversize\\uart_invalid_config.log",
+        "2d_oversize": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\invalid_config\\2d_oversize\\uart_invalid_config.log",
+        "3d_oversize": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\invalid_config\\3d_oversize\\uart_invalid_config.log",
+        "zero_particles": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\invalid_config\\zero_particles\\uart_invalid_config.log",
+        "zero_timesteps": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\invalid_config\\zero_timesteps\\uart_invalid_config.log"
+      }
+    },
+    "mts": {
+      "pass": true,
+      "cases": [
+        {
+          "name": "mts_1d_100_t140",
+          "dimension": "1d",
+          "gx": 100,
+          "gy": 1,
+          "gz": 1,
+          "timesteps": 140,
+          "core": true,
+          "path": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\mts\\mts_1d_100_t140",
+          "pass": true,
+          "returncode": 0,
+          "compare": {
+            "cpu_field": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\mts\\mts_1d_100_t140\\cpu_kernel_model\\field.csv",
+            "fpga_field": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\mts\\mts_1d_100_t140\\field.csv",
+            "dimension": "1d",
+            "shape": [
+              100
+            ],
+            "mismatches": 0,
+            "max_abs_delta_q16": 0,
+            "normalized_overlap": 1.0000000000000002,
+            "density_integral_cpu": 1.0077336262158973,
+            "density_integral_fpga": 1.0077336262158973,
+            "density_integral_relative_error": 0.0,
+            "density_l1_error": 0.0,
+            "density_l2_error": 0.0,
+            "density_max_abs_error": 0.0,
+            "peak_location_cpu": [
+              0
+            ],
+            "peak_location_fpga": [
+              0
+            ],
+            "peak_location_delta": 0.0,
+            "center_of_mass_cpu": [
+              2.8866173949533165
+            ],
+            "center_of_mass_fpga": [
+              2.8866173949533165
+            ],
+            "center_of_mass_delta": 0.0,
+            "first_mismatches": [],
+            "pass": true
+          },
+          "metrics": {
+            "source_dir": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\mts\\mts_1d_100_t140",
+            "metric_name": "field_norm_energy_q16",
+            "dimension": "mts_1d",
+            "logical_shape": [
+              100,
+              1,
+              1
+            ],
+            "active_points": 100,
+            "particles": 1,
+            "timesteps": 140,
+            "cycles": 355006,
+            "wall_elapsed_s": 0.20729509999910078,
+            "cycles_per_point": 3550.06,
+            "cycles_per_point_step": 25.35757142857143,
+            "density_energy_q16": 1.1399881253018975,
+            "density_l2": 0.4493667821013189,
+            "density_max": 0.28466367069631815,
+            "density_min": 0.0,
+            "peak_index": 0,
+            "peak_density": 0.28466367069631815,
+            "real_min": 0.0,
+            "real_max": 0.533538818359375,
+            "imag_min": 0.0,
+            "imag_max": 0.0,
+            "kernel_contract": "a7_mts_full_physics_kernel_v2_q16",
+            "kernel_contract_word": 1297371954,
+            "kernel_contract_word_hex": "0x4D545332",
+            "compare": {
+              "pass": true,
+              "mismatches": 0,
+              "max_abs_delta_q16": 0,
+              "normalized_overlap": 1.0000000000000002,
+              "density_integral_relative_error": 0.0
+            }
+          }
+        },
+        {
+          "name": "mts_2d_16x16_t140",
+          "dimension": "2d",
+          "gx": 16,
+          "gy": 16,
+          "gz": 1,
+          "timesteps": 140,
+          "core": true,
+          "path": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\mts\\mts_2d_16x16_t140",
+          "pass": true,
+          "returncode": 0,
+          "compare": {
+            "cpu_field": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\mts\\mts_2d_16x16_t140\\cpu_kernel_model\\field.csv",
+            "fpga_field": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\mts\\mts_2d_16x16_t140\\field.csv",
+            "dimension": "2d",
+            "shape": [
+              16,
+              16
+            ],
+            "mismatches": 0,
+            "max_abs_delta_q16": 0,
+            "normalized_overlap": 0.9999999999999999,
+            "density_integral_cpu": 1.0070493341320093,
+            "density_integral_fpga": 1.0070493341320093,
+            "density_integral_relative_error": 0.0,
+            "density_l1_error": 0.0,
+            "density_l2_error": 0.0,
+            "density_max_abs_error": 0.0,
+            "peak_location_cpu": [
+              0,
+              0
+            ],
+            "peak_location_fpga": [
+              0,
+              0
+            ],
+            "peak_location_delta": 0.0,
+            "center_of_mass_cpu": [
+              0.87575943093796,
+              0.8757594309379603
+            ],
+            "center_of_mass_fpga": [
+              0.87575943093796,
+              0.8757594309379603
+            ],
+            "center_of_mass_delta": 0.0,
+            "first_mismatches": [],
+            "pass": true
+          },
+          "metrics": {
+            "source_dir": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\mts\\mts_2d_16x16_t140",
+            "metric_name": "field_norm_energy_q16",
+            "dimension": "mts_2d",
+            "logical_shape": [
+              16,
+              16,
+              1
+            ],
+            "active_points": 256,
+            "particles": 1,
+            "timesteps": 140,
+            "cycles": 1094658,
+            "wall_elapsed_s": 0.21114289999968605,
+            "cycles_per_point": 4276.0078125,
+            "cycles_per_point_step": 30.542912946428572,
+            "density_energy_q16": 0.022658610017970204,
+            "density_l2": 0.017640766632223352,
+            "density_max": 0.01731238537468016,
+            "density_min": 0.0,
+            "peak_index": 0,
+            "peak_density": 0.01731238537468016,
+            "real_min": 0.0,
+            "real_max": 0.1315765380859375,
+            "imag_min": 0.0,
+            "imag_max": 0.0,
+            "kernel_contract": "a7_mts_full_physics_kernel_v2_q16",
+            "kernel_contract_word": 1297371954,
+            "kernel_contract_word_hex": "0x4D545332",
+            "compare": {
+              "pass": true,
+              "mismatches": 0,
+              "max_abs_delta_q16": 0,
+              "normalized_overlap": 0.9999999999999999,
+              "density_integral_relative_error": 0.0
+            }
+          }
+        },
+        {
+          "name": "mts_3d_8x8x8_t140",
+          "dimension": "3d",
+          "gx": 8,
+          "gy": 8,
+          "gz": 8,
+          "timesteps": 140,
+          "core": true,
+          "path": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\mts\\mts_3d_8x8x8_t140",
+          "pass": true,
+          "returncode": 0,
+          "compare": {
+            "cpu_field": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\mts\\mts_3d_8x8x8_t140\\cpu_kernel_model\\field.csv",
+            "fpga_field": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\mts\\mts_3d_8x8x8_t140\\field.csv",
+            "dimension": "3d",
+            "shape": [
+              8,
+              8,
+              8
+            ],
+            "mismatches": 0,
+            "max_abs_delta_q16": 0,
+            "normalized_overlap": 0.9999999999999999,
+            "density_integral_cpu": 1.0024703246250792,
+            "density_integral_fpga": 1.0024703246250792,
+            "density_integral_relative_error": 0.0,
+            "density_l1_error": 0.0,
+            "density_l2_error": 0.0,
+            "density_max_abs_error": 0.0,
+            "peak_location_cpu": [
+              0,
+              0,
+              0
+            ],
+            "peak_location_fpga": [
+              0,
+              0,
+              0
+            ],
+            "peak_location_delta": 0.0,
+            "center_of_mass_cpu": [
+              0.0018959746426934218,
+              0.0018959746426934218,
+              0.0018959746426934218
+            ],
+            "center_of_mass_fpga": [
+              0.0018959746426934218,
+              0.0018959746426934218,
+              0.0018959746426934218
+            ],
+            "center_of_mass_delta": 0.0,
+            "first_mismatches": [],
+            "pass": true
+          },
+          "metrics": {
+            "source_dir": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\mts\\mts_3d_8x8x8_t140",
+            "metric_name": "field_norm_energy_q16",
+            "dimension": "mts_3d",
+            "logical_shape": [
+              8,
+              8,
+              8
+            ],
+            "active_points": 512,
+            "particles": 1,
+            "timesteps": 140,
+            "cycles": 2600730,
+            "wall_elapsed_s": 0.20649589999993623,
+            "cycles_per_point": 5079.55078125,
+            "cycles_per_point_step": 36.282505580357146,
+            "density_energy_q16": 0.00034384732134640217,
+            "density_l2": 0.0003437104260164079,
+            "density_max": 0.0003437104169279337,
+            "density_min": 0.0,
+            "peak_index": 0,
+            "peak_density": 0.0003437104169279337,
+            "real_min": 0.0,
+            "real_max": 0.0185394287109375,
+            "imag_min": 0.0,
+            "imag_max": 0.0,
+            "kernel_contract": "a7_mts_full_physics_kernel_v2_q16",
+            "kernel_contract_word": 1297371954,
+            "kernel_contract_word_hex": "0x4D545332",
+            "compare": {
+              "pass": true,
+              "mismatches": 0,
+              "max_abs_delta_q16": 0,
+              "normalized_overlap": 0.9999999999999999,
+              "density_integral_relative_error": 0.0
+            }
+          }
+        },
+        {
+          "name": "mts_1d_1024_t2",
+          "dimension": "1d",
+          "gx": 1024,
+          "gy": 1,
+          "gz": 1,
+          "timesteps": 2,
+          "cap": true,
+          "path": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\mts\\mts_1d_1024_t2",
+          "pass": true,
+          "returncode": 0,
+          "compare": {
+            "cpu_field": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\mts\\mts_1d_1024_t2\\cpu_kernel_model\\field.csv",
+            "fpga_field": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\mts\\mts_1d_1024_t2\\field.csv",
+            "dimension": "1d",
+            "shape": [
+              1024
+            ],
+            "mismatches": 0,
+            "max_abs_delta_q16": 0,
+            "normalized_overlap": 0.9999999999999998,
+            "density_integral_cpu": 0.9996783457271289,
+            "density_integral_fpga": 0.9996783457271289,
+            "density_integral_relative_error": 0.0,
+            "density_l1_error": 0.0,
+            "density_l2_error": 0.0,
+            "density_max_abs_error": 0.0,
+            "peak_location_cpu": [
+              1
+            ],
+            "peak_location_fpga": [
+              1
+            ],
+            "peak_location_delta": 0.0,
+            "center_of_mass_cpu": [
+              0.11884715499953447
+            ],
+            "center_of_mass_fpga": [
+              0.11884715499953447
+            ],
+            "center_of_mass_delta": 0.0,
+            "first_mismatches": [],
+            "pass": true
+          },
+          "metrics": {
+            "source_dir": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\mts\\mts_1d_1024_t2",
+            "metric_name": "field_norm_energy_q16",
+            "dimension": "mts_1d",
+            "logical_shape": [
+              1024,
+              1,
+              1
+            ],
+            "active_points": 1024,
+            "particles": 1,
+            "timesteps": 2,
+            "cycles": 52480,
+            "wall_elapsed_s": 0.2065734000007069,
+            "cycles_per_point": 51.25,
+            "cycles_per_point_step": 25.625,
+            "density_energy_q16": 10.226714758435264,
+            "density_l2": 8.317846309872541,
+            "density_max": 8.01970960199833,
+            "density_min": 0.0,
+            "peak_index": 1,
+            "peak_density": 8.01970960199833,
+            "real_min": -2.8319091796875,
+            "real_max": 1.485595703125,
+            "imag_min": 0.0,
+            "imag_max": 0.0,
+            "kernel_contract": "a7_mts_full_physics_kernel_v2_q16",
+            "kernel_contract_word": 1297371954,
+            "kernel_contract_word_hex": "0x4D545332",
+            "compare": {
+              "pass": true,
+              "mismatches": 0,
+              "max_abs_delta_q16": 0,
+              "normalized_overlap": 0.9999999999999998,
+              "density_integral_relative_error": 0.0
+            }
+          }
+        },
+        {
+          "name": "mts_2d_32x32_t2",
+          "dimension": "2d",
+          "gx": 32,
+          "gy": 32,
+          "gz": 1,
+          "timesteps": 2,
+          "cap": true,
+          "path": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\mts\\mts_2d_32x32_t2",
+          "pass": true,
+          "returncode": 0,
+          "compare": {
+            "cpu_field": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\mts\\mts_2d_32x32_t2\\cpu_kernel_model\\field.csv",
+            "fpga_field": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\mts\\mts_2d_32x32_t2\\field.csv",
+            "dimension": "2d",
+            "shape": [
+              32,
+              32
+            ],
+            "mismatches": 0,
+            "max_abs_delta_q16": 0,
+            "normalized_overlap": 1.0000000000000002,
+            "density_integral_cpu": 1.0051910060920153,
+            "density_integral_fpga": 1.0051910060920153,
+            "density_integral_relative_error": 0.0,
+            "density_l1_error": 0.0,
+            "density_l2_error": 0.0,
+            "density_max_abs_error": 0.0,
+            "peak_location_cpu": [
+              0,
+              0
+            ],
+            "peak_location_fpga": [
+              0,
+              0
+            ],
+            "peak_location_delta": 0.0,
+            "center_of_mass_cpu": [
+              0.004720766030730589,
+              0.004720766030730589
+            ],
+            "center_of_mass_fpga": [
+              0.004720766030730589,
+              0.004720766030730589
+            ],
+            "center_of_mass_delta": 0.0,
+            "first_mismatches": [],
+            "pass": true
+          },
+          "metrics": {
+            "source_dir": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\mts\\mts_2d_32x32_t2",
+            "metric_name": "field_norm_energy_q16",
+            "dimension": "mts_2d",
+            "logical_shape": [
+              32,
+              32,
+              1
+            ],
+            "active_points": 1024,
+            "particles": 1,
+            "timesteps": 2,
+            "cycles": 64770,
+            "wall_elapsed_s": 0.207304399998975,
+            "cycles_per_point": 63.251953125,
+            "cycles_per_point_step": 31.6259765625,
+            "density_energy_q16": 0.09659885568544269,
+            "density_l2": 0.09631640538697994,
+            "density_max": 0.09631619811989367,
+            "density_min": 0.0,
+            "peak_index": 0,
+            "peak_density": 0.09631619811989367,
+            "real_min": 0.0,
+            "real_max": 0.3103485107421875,
+            "imag_min": 0.0,
+            "imag_max": 0.0,
+            "kernel_contract": "a7_mts_full_physics_kernel_v2_q16",
+            "kernel_contract_word": 1297371954,
+            "kernel_contract_word_hex": "0x4D545332",
+            "compare": {
+              "pass": true,
+              "mismatches": 0,
+              "max_abs_delta_q16": 0,
+              "normalized_overlap": 1.0000000000000002,
+              "density_integral_relative_error": 0.0
+            }
+          }
+        },
+        {
+          "name": "mts_3d_10x10x10_t2",
+          "dimension": "3d",
+          "gx": 10,
+          "gy": 10,
+          "gz": 10,
+          "timesteps": 2,
+          "cap": true,
+          "path": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\mts\\mts_3d_10x10x10_t2",
+          "pass": true,
+          "returncode": 0,
+          "compare": {
+            "cpu_field": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\mts\\mts_3d_10x10x10_t2\\cpu_kernel_model\\field.csv",
+            "fpga_field": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\mts\\mts_3d_10x10x10_t2\\field.csv",
+            "dimension": "3d",
+            "shape": [
+              10,
+              10,
+              10
+            ],
+            "mismatches": 0,
+            "max_abs_delta_q16": 0,
+            "normalized_overlap": 0.9999999999999999,
+            "density_integral_cpu": 1.0244960325612942,
+            "density_integral_fpga": 1.0244960325612942,
+            "density_integral_relative_error": 0.0,
+            "density_l1_error": 0.0,
+            "density_l2_error": 0.0,
+            "density_max_abs_error": 0.0,
+            "peak_location_cpu": [
+              0,
+              0,
+              0
+            ],
+            "peak_location_fpga": [
+              0,
+              0,
+              0
+            ],
+            "peak_location_delta": 0.0,
+            "center_of_mass_cpu": [
+              5.542169484322952e-05,
+              5.542169484322952e-05,
+              5.542169484322952e-05
+            ],
+            "center_of_mass_fpga": [
+              5.542169484322952e-05,
+              5.542169484322952e-05,
+              5.542169484322952e-05
+            ],
+            "center_of_mass_delta": 0.0,
+            "first_mismatches": [],
+            "pass": true
+          },
+          "metrics": {
+            "source_dir": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\mts\\mts_3d_10x10x10_t2",
+            "metric_name": "field_norm_energy_q16",
+            "dimension": "mts_3d",
+            "logical_shape": [
+              10,
+              10,
+              10
+            ],
+            "active_points": 1000,
+            "particles": 1,
+            "timesteps": 2,
+            "cycles": 75286,
+            "wall_elapsed_s": 0.20667369999864604,
+            "cycles_per_point": 75.286,
+            "cycles_per_point_step": 37.643,
+            "density_energy_q16": 0.0007468576077371836,
+            "density_l2": 0.000746846431894161,
+            "density_max": 0.0007468464318662882,
+            "density_min": 0.0,
+            "peak_index": 0,
+            "peak_density": 0.0007468464318662882,
+            "real_min": 0.0,
+            "real_max": 0.0273284912109375,
+            "imag_min": 0.0,
+            "imag_max": 0.0,
+            "kernel_contract": "a7_mts_full_physics_kernel_v2_q16",
+            "kernel_contract_word": 1297371954,
+            "kernel_contract_word_hex": "0x4D545332",
+            "compare": {
+              "pass": true,
+              "mismatches": 0,
+              "max_abs_delta_q16": 0,
+              "normalized_overlap": 0.9999999999999999,
+              "density_integral_relative_error": 0.0
+            }
+          }
+        }
+      ]
+    },
+    "rtl": {
+      "pass": true,
+      "returncodes": {
+        "xvlog": 0,
+        "xelab": 0,
+        "xsim": 0
+      },
+      "path": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\rtl",
+      "pass_line_seen": true
+    },
+    "adaptive_dispatcher": {
+      "pass": true,
+      "self_test_returncode": 0,
+      "cases": [
+        {
+          "name": "sha256_nonce_scan",
+          "workload": "E:\\GMW_CPU\\programs\\gmwprog\\sha256_nonce_scan.gmwprog",
+          "returncode": 0,
+          "pass": true,
+          "selected_engine": "sha_accel",
+          "fallback_engine": "ukernel_vm",
+          "warnings": [],
+          "plan": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\adaptive_dispatcher\\sha256_nonce_scan_dispatch_plan.json"
+        },
+        {
+          "name": "robot_swarm_grid",
+          "workload": "E:\\GMW_CPU\\programs\\gmwprog\\robot_swarm_grid.gmwprog",
+          "returncode": 0,
+          "pass": true,
+          "selected_engine": "robotics_accel",
+          "fallback_engine": "ukernel_vm",
+          "warnings": [],
+          "plan": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\adaptive_dispatcher\\robot_swarm_grid_dispatch_plan.json"
+        },
+        {
+          "name": "wave2d_restore",
+          "workload": "E:\\GMW_CPU\\programs\\gmwprog\\wave2d_restore.gmwprog",
+          "returncode": 0,
+          "pass": true,
+          "selected_engine": "mts_full_physics",
+          "fallback_engine": "ukernel_vm",
+          "warnings": [],
+          "plan": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\adaptive_dispatcher\\wave2d_restore_dispatch_plan.json"
+        },
+        {
+          "name": "generic_program",
+          "workload": "unknown_control_program",
+          "returncode": 0,
+          "pass": true,
+          "selected_engine": "ukernel_vm",
+          "fallback_engine": null,
+          "warnings": [],
+          "plan": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\adaptive_dispatcher\\generic_program_dispatch_plan.json"
+        }
+      ]
+    },
+    "wave_restore_demo": {
+      "pass": true,
+      "prelaunch_returncode": 0,
+      "returncode": 0,
+      "path": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\wave_restore_demo",
+      "summary": {
+        "final_pass": true,
+        "dry_run": false,
+        "shape": [
+          4,
+          4,
+          1
+        ],
+        "timesteps": 32,
+        "center_index": 10,
+        "hardware": {
+          "baseline": {
+            "status": {
+              "mode": 2,
+              "busy": 0,
+              "done": 1,
+              "error": 0,
+              "overflow": 0,
+              "grid_x": 4,
+              "grid_y": 4,
+              "grid_z": 1,
+              "lanes": 4,
+              "timesteps_low": 32,
+              "cycles": 20514,
+              "active_points": 16
+            },
+            "elapsed_s": 1.1172293999989051,
+            "path": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\wave_restore_demo\\fpga_baseline"
+          },
+          "restored": {
+            "status": {
+              "mode": 2,
+              "busy": 0,
+              "done": 1,
+              "error": 0,
+              "overflow": 0,
+              "grid_x": 4,
+              "grid_y": 4,
+              "grid_z": 1,
+              "lanes": 4,
+              "timesteps_low": 32,
+              "cycles": 20514,
+              "active_points": 16
+            },
+            "elapsed_s": 1.2232624999996915,
+            "path": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\wave_restore_demo\\fpga_restored"
+          }
+        },
+        "cpu_vs_baseline": {
+          "cpu_field": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\wave_restore_demo\\cpu_reference\\field.csv",
+          "fpga_field": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\wave_restore_demo\\fpga_baseline\\field.csv",
+          "dimension": "2d",
+          "shape": [
+            4,
+            4
+          ],
+          "mismatches": 0,
+          "max_abs_delta_q16": 0,
+          "normalized_overlap": 1.0,
+          "density_integral_cpu": 1.0234513320028784,
+          "density_integral_fpga": 1.0234513320028784,
+          "density_integral_relative_error": 0.0,
+          "density_l1_error": 0.0,
+          "density_l2_error": 0.0,
+          "density_max_abs_error": 0.0,
+          "peak_location_cpu": [
+            2,
+            2
+          ],
+          "peak_location_fpga": [
+            2,
+            2
+          ],
+          "peak_location_delta": 0.0,
+          "center_of_mass_cpu": [
+            66.66666666666667,
+            66.66666666666667
+          ],
+          "center_of_mass_fpga": [
+            66.66666666666667,
+            66.66666666666667
+          ],
+          "center_of_mass_delta": 0.0,
+          "first_mismatches": [],
+          "pass": true
+        },
+        "cpu_vs_restored": {
+          "cpu_field": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\wave_restore_demo\\cpu_reference\\field.csv",
+          "fpga_field": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\wave_restore_demo\\fpga_restored\\field.csv",
+          "dimension": "2d",
+          "shape": [
+            4,
+            4
+          ],
+          "mismatches": 0,
+          "max_abs_delta_q16": 0,
+          "normalized_overlap": 1.0,
+          "density_integral_cpu": 1.0234513320028784,
+          "density_integral_fpga": 1.0234513320028784,
+          "density_integral_relative_error": 0.0,
+          "density_l1_error": 0.0,
+          "density_l2_error": 0.0,
+          "density_max_abs_error": 0.0,
+          "peak_location_cpu": [
+            2,
+            2
+          ],
+          "peak_location_fpga": [
+            2,
+            2
+          ],
+          "peak_location_delta": 0.0,
+          "center_of_mass_cpu": [
+            66.66666666666667,
+            66.66666666666667
+          ],
+          "center_of_mass_fpga": [
+            66.66666666666667,
+            66.66666666666667
+          ],
+          "center_of_mass_delta": 0.0,
+          "first_mismatches": [],
+          "pass": true
+        },
+        "baseline_vs_restored": {
+          "cpu_field": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\wave_restore_demo\\fpga_baseline\\field.csv",
+          "fpga_field": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\wave_restore_demo\\fpga_restored\\field.csv",
+          "dimension": "2d",
+          "shape": [
+            4,
+            4
+          ],
+          "mismatches": 0,
+          "max_abs_delta_q16": 0,
+          "normalized_overlap": 1.0,
+          "density_integral_cpu": 1.0234513320028784,
+          "density_integral_fpga": 1.0234513320028784,
+          "density_integral_relative_error": 0.0,
+          "density_l1_error": 0.0,
+          "density_l2_error": 0.0,
+          "density_max_abs_error": 0.0,
+          "peak_location_cpu": [
+            2,
+            2
+          ],
+          "peak_location_fpga": [
+            2,
+            2
+          ],
+          "peak_location_delta": 0.0,
+          "center_of_mass_cpu": [
+            66.66666666666667,
+            66.66666666666667
+          ],
+          "center_of_mass_fpga": [
+            66.66666666666667,
+            66.66666666666667
+          ],
+          "center_of_mass_delta": 0.0,
+          "first_mismatches": [],
+          "pass": true
+        }
+      }
+    },
+    "fault_recovery": {
+      "pass": true,
+      "prelaunch_returncode": 0,
+      "returncode": 0,
+      "path": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\fault_recovery",
+      "summary": {
+        "final_pass": true,
+        "stage": "complete",
+        "mode": "mts_wal_var",
+        "port": "COM5",
+        "baud": 115200,
+        "checkpoint_restore": {
+          "pass": true,
+          "mismatches": 0,
+          "max_abs_delta_q16": 0,
+          "normalized_overlap": 1.0
+        },
+        "final_baseline": {
+          "pass": true,
+          "mismatches": 0,
+          "max_abs_delta_q16": 0,
+          "normalized_overlap": 1.0
+        },
+        "wave_summary": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\fault_recovery\\mts_wal_var_recovery\\wave_restore_summary.json",
+        "returncode": 0
+      }
+    },
+    "particle3d_438": {
+      "pass": true,
+      "program_a7_cmod_pass": true,
+      "returncode": 0,
+      "path": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438",
+      "compare": {
+        "label": "final",
+        "cpu_source": "architecture_cpu",
+        "fpga_source": "fpga",
+        "cpu_field": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438\\architecture_cpu\\field_cpu.csv",
+        "fpga_field": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438\\field.csv",
+        "cpu_metrics": {
+          "metadata": {
+            "source": "architecture_cpu",
+            "experiment_name": null,
+            "input_field": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438\\architecture_cpu\\field_cpu.csv",
+            "grid_shape": [
+              8,
+              8,
+              8
+            ],
+            "spacing": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "d_volume": 1.0,
+            "steps": null,
+            "dt": null,
+            "q_format": "q16.16"
+          },
+          "density_integral": 169720133096.95367,
+          "field_l2_norm": 411971.03429361834,
+          "field_sum": 1972118.288925171,
+          "peak_psi": -32336.57354736328,
+          "peak_psi_abs": 32336.57354736328,
+          "peak_density": 1045653988.7840347,
+          "peak_site": 471,
+          "peak_xyz": [
+            7,
+            2,
+            7
+          ],
+          "center_of_mass_xyz": [
+            3.500000000477068,
+            3.500000001993767,
+            3.5000000006001324
+          ],
+          "rms_radius": 3.9577521997002214,
+          "density_min": 2267902.765445525,
+          "density_max": 1045653988.7840347,
+          "psi_min": -32336.57354736328,
+          "psi_max": 24282.918533325195
+        },
+        "fpga_metrics": {
+          "metadata": {
+            "source": "fpga",
+            "experiment_name": null,
+            "input_field": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438\\field.csv",
+            "grid_shape": [
+              8,
+              8,
+              8
+            ],
+            "spacing": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "d_volume": 1.0,
+            "steps": null,
+            "dt": null,
+            "q_format": "q16.16"
+          },
+          "density_integral": 169720133096.95367,
+          "field_l2_norm": 411971.03429361834,
+          "field_sum": 1972118.288925171,
+          "peak_psi": -32336.5735473633,
+          "peak_psi_abs": 32336.5735473633,
+          "peak_density": 1045653988.7840359,
+          "peak_site": 471,
+          "peak_xyz": [
+            7,
+            2,
+            7
+          ],
+          "center_of_mass_xyz": [
+            3.500000000477068,
+            3.500000001993767,
+            3.500000000600133
+          ],
+          "rms_radius": 3.957752199700222,
+          "density_min": 2267902.7654455015,
+          "density_max": 1045653988.7840359,
+          "psi_min": -32336.5735473633,
+          "psi_max": 24282.9185333252
+        },
+        "comparison": {
+          "mismatches": 0,
+          "max_abs_delta_q16": 0,
+          "max_abs_delta_float": 0.0,
+          "first_mismatching_sites": [],
+          "field_overlap_integral": 169720133096.95367,
+          "normalized_overlap": 1.0,
+          "density_l1_error": 0.0003998344764113426,
+          "density_l2_error": 2.2714530228725143e-05,
+          "density_max_abs_error": 3.0994415283203125e-06,
+          "density_integral_relative_error": 0.0,
+          "center_of_mass_delta": 4.440892098500626e-16,
+          "peak_location_delta": 0.0
+        },
+        "outputs": {
+          "compare_report_json": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438\\compare_final_cpu_vs_fpga\\compare_report.json",
+          "compare_summary_txt": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438\\compare_final_cpu_vs_fpga\\compare_summary.txt",
+          "density_error_csv": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438\\compare_final_cpu_vs_fpga\\density_error.csv"
+        },
+        "pass_fail": {
+          "passed": true,
+          "checks": {
+            "normalized_overlap": true,
+            "density_integral_relative_error": true,
+            "center_of_mass_delta": true,
+            "peak_location_delta": true
+          },
+          "thresholds": {
+            "normalized_overlap_min": 0.99,
+            "density_integral_relative_error_max": 0.02,
+            "center_of_mass_delta_max": 0.25,
+            "peak_location_delta_max": 1.0
+          }
+        }
+      },
+      "cmod_mirror_verified": true
+    }
+  },
+  "benchmark_table": [
+    {
+      "case": "mts_1d_100_t140",
+      "dimension": "1d",
+      "shape": "100x1x1",
+      "active_points": 100,
+      "particles": 1,
+      "timesteps": 140,
+      "a7_cycles": 355006,
+      "wall_elapsed_s": 0.20729509999910078,
+      "cycles_per_point": 3550.06,
+      "cycles_per_point_step": 25.35757142857143,
+      "mismatches": 0,
+      "max_abs_delta_q16": 0,
+      "normalized_overlap": 1.0000000000000002,
+      "pass": true
+    },
+    {
+      "case": "mts_2d_16x16_t140",
+      "dimension": "2d",
+      "shape": "16x16x1",
+      "active_points": 256,
+      "particles": 1,
+      "timesteps": 140,
+      "a7_cycles": 1094658,
+      "wall_elapsed_s": 0.21114289999968605,
+      "cycles_per_point": 4276.0078125,
+      "cycles_per_point_step": 30.542912946428572,
+      "mismatches": 0,
+      "max_abs_delta_q16": 0,
+      "normalized_overlap": 0.9999999999999999,
+      "pass": true
+    },
+    {
+      "case": "mts_3d_8x8x8_t140",
+      "dimension": "3d",
+      "shape": "8x8x8",
+      "active_points": 512,
+      "particles": 1,
+      "timesteps": 140,
+      "a7_cycles": 2600730,
+      "wall_elapsed_s": 0.20649589999993623,
+      "cycles_per_point": 5079.55078125,
+      "cycles_per_point_step": 36.282505580357146,
+      "mismatches": 0,
+      "max_abs_delta_q16": 0,
+      "normalized_overlap": 0.9999999999999999,
+      "pass": true
+    },
+    {
+      "case": "mts_1d_1024_t2",
+      "dimension": "1d",
+      "shape": "1024x1x1",
+      "active_points": 1024,
+      "particles": 1,
+      "timesteps": 2,
+      "a7_cycles": 52480,
+      "wall_elapsed_s": 0.2065734000007069,
+      "cycles_per_point": 51.25,
+      "cycles_per_point_step": 25.625,
+      "mismatches": 0,
+      "max_abs_delta_q16": 0,
+      "normalized_overlap": 0.9999999999999998,
+      "pass": true
+    },
+    {
+      "case": "mts_2d_32x32_t2",
+      "dimension": "2d",
+      "shape": "32x32x1",
+      "active_points": 1024,
+      "particles": 1,
+      "timesteps": 2,
+      "a7_cycles": 64770,
+      "wall_elapsed_s": 0.207304399998975,
+      "cycles_per_point": 63.251953125,
+      "cycles_per_point_step": 31.6259765625,
+      "mismatches": 0,
+      "max_abs_delta_q16": 0,
+      "normalized_overlap": 1.0000000000000002,
+      "pass": true
+    },
+    {
+      "case": "mts_3d_10x10x10_t2",
+      "dimension": "3d",
+      "shape": "10x10x10",
+      "active_points": 1000,
+      "particles": 1,
+      "timesteps": 2,
+      "a7_cycles": 75286,
+      "wall_elapsed_s": 0.20667369999864604,
+      "cycles_per_point": 75.286,
+      "cycles_per_point_step": 37.643,
+      "mismatches": 0,
+      "max_abs_delta_q16": 0,
+      "normalized_overlap": 0.9999999999999999,
+      "pass": true
+    },
+    {
+      "case": "particle3d_438_10m",
+      "dimension": "3d_particle",
+      "shape": "8x8x8",
+      "active_points": 512,
+      "particles": 10000000,
+      "timesteps": 438,
+      "a7_cycles": null,
+      "wall_elapsed_s": null,
+      "cycles_per_point": null,
+      "cycles_per_point_step": null,
+      "mismatches": null,
+      "max_abs_delta_q16": null,
+      "normalized_overlap": null,
+      "pass": true
+    },
+    {
+      "case": "wave_restore_2d",
+      "dimension": "2d_wave_restore",
+      "shape": "4x4x1",
+      "active_points": 256,
+      "particles": 1,
+      "timesteps": 32,
+      "a7_cycles": 20514,
+      "wall_elapsed_s": 1.2232624999996915,
+      "cycles_per_point": null,
+      "cycles_per_point_step": null,
+      "mismatches": 0,
+      "max_abs_delta_q16": 0,
+      "normalized_overlap": 1.0,
+      "pass": true
+    }
+  ],
+  "evidence_bundle": "E:\\GMW_CPU\\evidence_bundles\\flx_core_acceptance_20260608_141658"
+}

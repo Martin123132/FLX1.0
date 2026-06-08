@@ -1,0 +1,41 @@
+{
+  "workload": {
+    "name": "wave2d_restore",
+    "kind": "mts_wave",
+    "active_points": 1024,
+    "dimension": "2d",
+    "shape": [
+      32,
+      32,
+      1
+    ],
+    "particles": 1,
+    "timesteps": 1,
+    "requires_restore": true,
+    "prefer_accelerator": true,
+    "source": "E:\\GMW_CPU\\programs\\gmwprog\\wave2d_restore.gmwprog",
+    "metadata": {
+      "program_format": "gmwprog",
+      "instruction_count": 4
+    }
+  },
+  "selected_engine": "mts_full_physics",
+  "fallback_engine": "ukernel_vm",
+  "reason": "field propagation maps to the full MTS physics kernel with Q16 CPU comparison",
+  "commands": [
+    "mts-reset",
+    "mts-clear",
+    "mts-config 2d 1 32 32 1",
+    "mts-coeff <dt> <diffusion> <vcoeff>",
+    "mts-start",
+    "mts-status",
+    "mts-dump 1024"
+  ],
+  "evidence_tags": [
+    "adaptive_dispatch",
+    "mts_full_physics",
+    "wave_restore"
+  ],
+  "warnings": [],
+  "contract": "gmw_adaptive_dispatcher_v1"
+}

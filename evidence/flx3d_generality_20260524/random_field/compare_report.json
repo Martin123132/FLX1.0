@@ -1,0 +1,74 @@
+{
+  "workload": "random_field",
+  "dimension": "3d",
+  "shape": [
+    8,
+    8,
+    8
+  ],
+  "active_points": 512,
+  "timesteps": null,
+  "hardware_field": "hardware_field.csv",
+  "reference_field": "reference_field.csv",
+  "density_error": "density_error.csv",
+  "hardware_metrics": {
+    "density_integral": 184690238294.83923,
+    "field_l2_norm": 429756.0218249876,
+    "field_sum": -266386.060974121,
+    "peak_psi": 32749.061340332,
+    "peak_psi_abs": 32749.061340332,
+    "peak_density": 1072501018.6728278,
+    "peak_site": 296,
+    "peak_xyz": [
+      0,
+      5,
+      4
+    ],
+    "center_of_mass_xyz": [
+      3.3327674867740256,
+      3.4415536692726567,
+      3.6025998113563156
+    ],
+    "rms_radius": 3.9292915584039196,
+    "density_min": 4600.236420593815,
+    "density_max": 1072501018.6728278,
+    "psi_min": -32670.5933532715,
+    "psi_max": 32749.061340332
+  },
+  "reference_metrics": {
+    "density_integral": 184690238294.8393,
+    "field_l2_norm": 429756.02182498766,
+    "field_sum": -266386.0609741211,
+    "peak_psi": 32749.06134033203,
+    "peak_psi_abs": 32749.06134033203,
+    "peak_density": 1072501018.67283,
+    "peak_site": 296,
+    "peak_xyz": [
+      0,
+      5,
+      4
+    ],
+    "center_of_mass_xyz": [
+      3.332767486774025,
+      3.4415536692726563,
+      3.6025998113563147
+    ],
+    "rms_radius": 3.9292915584039196,
+    "density_min": 4600.236420595087,
+    "density_max": 1072501018.67283,
+    "psi_min": -32670.593353271484,
+    "psi_max": 32749.06134033203
+  },
+  "comparison": {
+    "mismatches": 0,
+    "max_abs_delta_q16": 0,
+    "density_integral_delta": null,
+    "normalized_overlap": 1.0000000000000002,
+    "peak_location_delta": 0.0,
+    "center_of_mass_delta": 1.0877919644084146e-15
+  },
+  "pass_fail": {
+    "passed": true,
+    "reasons": []
+  }
+}

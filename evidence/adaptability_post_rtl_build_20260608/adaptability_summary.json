@@ -1,0 +1,431 @@
+{
+  "final_pass": true,
+  "port": "COM5",
+  "baud": 115200,
+  "cases": {
+    "vm_load_xor_bitwork": {
+      "class": "normal_cpu_integer_bitwork",
+      "description": "LOAD two VM RAM words, XOR them, STORE the result",
+      "cpu": {
+        "engine": "python_cpu_reference",
+        "expected_result0": 3079795677,
+        "expected_result0_hex": "0xB791F3DD",
+        "elapsed_s": 1.1999982234556228e-06,
+        "reference_rate": 1666669.1340930657
+      },
+      "flx": {
+        "engine": "flx_universal_kernel_vm",
+        "name": "vm_load_xor_bitwork",
+        "result0": 3079795677,
+        "cycles": 34,
+        "retires": 6,
+        "state_hash": 0,
+        "wall_elapsed_s": 1.3121074000009685,
+        "kernel_elapsed_s": 3.4e-07
+      },
+      "compare_pass": true
+    },
+    "vm_q16_multiply_load": {
+      "class": "fixed_point_q16_arithmetic",
+      "description": "LOAD two Q16.16 values, multiply in VM, STORE the Q16 result",
+      "cpu": {
+        "engine": "python_cpu_reference",
+        "expected_result0": 4294942720,
+        "expected_result0_hex": "0xFFFFA000",
+        "elapsed_s": 7.00001692166552e-07,
+        "reference_rate": 2857135.9503573007
+      },
+      "flx": {
+        "engine": "flx_universal_kernel_vm",
+        "name": "vm_q16_multiply_load",
+        "result0": 4294942720,
+        "cycles": 37,
+        "retires": 6,
+        "state_hash": 0,
+        "wall_elapsed_s": 1.1893272999986948,
+        "kernel_elapsed_s": 3.7e-07
+      },
+      "compare_pass": true
+    },
+    "vm_rotr_bit_permutation": {
+      "class": "normal_cpu_integer_bitwork",
+      "description": "LOAD one VM RAM word, rotate right by an immediate-loaded shift",
+      "cpu": {
+        "engine": "python_cpu_reference",
+        "expected_result0": 2014458966,
+        "expected_result0_hex": "0x78123456",
+        "elapsed_s": 5.000001692678779e-07,
+        "reference_rate": 1999999.3229287174
+      },
+      "flx": {
+        "engine": "flx_universal_kernel_vm",
+        "name": "vm_rotr_bit_permutation",
+        "result0": 2014458966,
+        "cycles": 33,
+        "retires": 6,
+        "state_hash": 0,
+        "wall_elapsed_s": 1.3044856000014988,
+        "kernel_elapsed_s": 3.3e-07
+      },
+      "compare_pass": true
+    },
+    "vm_filter_count_reduce": {
+      "class": "database_filter_count",
+      "description": "Database/filter-style count over predicate flags using VM reduction",
+      "cpu": {
+        "engine": "python_cpu_reference",
+        "expected_result0": 4,
+        "expected_result0_hex": "0x00000004",
+        "elapsed_s": 8.999995770864189e-07,
+        "reference_rate": 8888893.06581511
+      },
+      "flx": {
+        "engine": "flx_universal_kernel_vm",
+        "name": "vm_filter_count_reduce",
+        "result0": 4,
+        "cycles": 34,
+        "retires": 5,
+        "state_hash": 0,
+        "wall_elapsed_s": 1.2217874000016309,
+        "kernel_elapsed_s": 3.4e-07
+      },
+      "compare_pass": true
+    },
+    "vm_checksum_xor_reduce": {
+      "class": "normal_cpu_integer_bitwork",
+      "description": "XOR checksum reduction over VM data RAM",
+      "cpu": {
+        "engine": "python_cpu_reference",
+        "expected_result0": 1714635325,
+        "expected_result0_hex": "0x6633423D",
+        "elapsed_s": 3.9999940781854093e-07,
+        "reference_rate": 10000014.804558394
+      },
+      "flx": {
+        "engine": "flx_universal_kernel_vm",
+        "name": "vm_checksum_xor_reduce",
+        "result0": 1714635325,
+        "cycles": 26,
+        "retires": 5,
+        "state_hash": 0,
+        "wall_elapsed_s": 1.2769262000001618,
+        "kernel_elapsed_s": 2.6e-07
+      },
+      "compare_pass": true
+    },
+    "vm_signed_min_reduce": {
+      "class": "normal_cpu_scan_reduction",
+      "description": "Signed minimum reduction over VM data RAM",
+      "cpu": {
+        "engine": "python_cpu_reference",
+        "expected_result0": 4294967276,
+        "expected_result0_hex": "0xFFFFFFEC",
+        "elapsed_s": 3.00002284348011e-07,
+        "reference_rate": 13333231.807528133
+      },
+      "flx": {
+        "engine": "flx_universal_kernel_vm",
+        "name": "vm_signed_min_reduce",
+        "result0": 4294967276,
+        "cycles": 26,
+        "retires": 5,
+        "state_hash": 0,
+        "wall_elapsed_s": 1.2931147999988752,
+        "kernel_elapsed_s": 2.6e-07
+      },
+      "compare_pass": true
+    },
+    "vm_signed_max_reduce": {
+      "class": "normal_cpu_scan_reduction",
+      "description": "Signed maximum reduction over VM data RAM",
+      "cpu": {
+        "engine": "python_cpu_reference",
+        "expected_result0": 5,
+        "expected_result0_hex": "0x00000005",
+        "elapsed_s": 3.9999940781854093e-07,
+        "reference_rate": 10000014.804558394
+      },
+      "flx": {
+        "engine": "flx_universal_kernel_vm",
+        "name": "vm_signed_max_reduce",
+        "result0": 5,
+        "cycles": 26,
+        "retires": 5,
+        "state_hash": 0,
+        "wall_elapsed_s": 1.3072494999978517,
+        "kernel_elapsed_s": 2.6e-07
+      },
+      "compare_pass": true
+    },
+    "vm_lattice_neighbor_index": {
+      "class": "lattice_addressing_helper",
+      "description": "Neighbour-index calculation in a 2D lattice shape",
+      "cpu": {
+        "engine": "python_cpu_reference",
+        "expected_result0": 11,
+        "expected_result0_hex": "0x0000000B",
+        "elapsed_s": 6.000009307172149e-07,
+        "reference_rate": 106666501.20608512
+      },
+      "flx": {
+        "engine": "flx_universal_kernel_vm",
+        "name": "vm_lattice_neighbor_index",
+        "result0": 11,
+        "cycles": 28,
+        "retires": 5,
+        "state_hash": 0,
+        "wall_elapsed_s": 1.249103100002685,
+        "kernel_elapsed_s": 2.8e-07
+      },
+      "compare_pass": true
+    },
+    "sand_fall_local_rules": {
+      "case": "sand_fall_local_rules",
+      "class": "world_state_local_rules",
+      "cpu": {
+        "engine": "python_cpu_world_grid_reference",
+        "active": 64,
+        "grid_x": 8,
+        "grid_y": 8,
+        "steps": 12,
+        "flags": 0,
+        "elapsed_s": 0.0003617999973357655,
+        "cell_steps_per_second": 2122719.750291385,
+        "moved": 47,
+        "blocked": 0,
+        "collisions": 0,
+        "hash": 87345658
+      },
+      "flx": {
+        "status": 32768,
+        "caps": 1380910080,
+        "active": 64,
+        "grid_x": 8,
+        "grid_y": 8,
+        "steps": 12,
+        "flags": 0,
+        "hash": 87345658,
+        "cycles": 4802,
+        "moved": 47,
+        "blocked": 0,
+        "collisions": 0,
+        "engine": "flx_robot_grid_accelerator",
+        "elapsed_s": 1.5026624999991327,
+        "kernel_elapsed_s": 4.802e-05,
+        "kernel_cell_steps_per_second": 15993336.109954186,
+        "wall_cell_steps_per_second": 511.0928102620803
+      },
+      "compare_pass": true
+    },
+    "factory_conveyor_jam": {
+      "case": "factory_conveyor_jam",
+      "class": "world_state_local_rules",
+      "cpu": {
+        "engine": "python_cpu_world_grid_reference",
+        "active": 64,
+        "grid_x": 8,
+        "grid_y": 8,
+        "steps": 20,
+        "flags": 0,
+        "elapsed_s": 0.00037340000199037604,
+        "cell_steps_per_second": 3427959.274710959,
+        "moved": 49,
+        "blocked": 26,
+        "collisions": 0,
+        "hash": 1548723877
+      },
+      "flx": {
+        "status": 32768,
+        "caps": 1380910080,
+        "active": 64,
+        "grid_x": 8,
+        "grid_y": 8,
+        "steps": 20,
+        "flags": 0,
+        "hash": 1548723877,
+        "cycles": 7874,
+        "moved": 49,
+        "blocked": 26,
+        "collisions": 0,
+        "engine": "flx_robot_grid_accelerator",
+        "elapsed_s": 1.4748648999993748,
+        "kernel_elapsed_s": 7.874e-05,
+        "kernel_cell_steps_per_second": 16256032.512065025,
+        "wall_cell_steps_per_second": 867.8761017368728
+      },
+      "compare_pass": true
+    },
+    "swarm_wrap_edges": {
+      "case": "swarm_wrap_edges",
+      "class": "world_state_local_rules",
+      "cpu": {
+        "engine": "python_cpu_world_grid_reference",
+        "active": 64,
+        "grid_x": 8,
+        "grid_y": 8,
+        "steps": 18,
+        "flags": 1,
+        "elapsed_s": 0.0003006000006280374,
+        "cell_steps_per_second": 3832335.3213344985,
+        "moved": 93,
+        "blocked": 2,
+        "collisions": 2,
+        "hash": 2303498694
+      },
+      "flx": {
+        "status": 32768,
+        "caps": 1380910080,
+        "active": 64,
+        "grid_x": 8,
+        "grid_y": 8,
+        "steps": 18,
+        "flags": 1,
+        "hash": 2303498694,
+        "cycles": 7106,
+        "moved": 93,
+        "blocked": 2,
+        "collisions": 2,
+        "engine": "flx_robot_grid_accelerator",
+        "elapsed_s": 1.4880868999971426,
+        "kernel_elapsed_s": 7.106e-05,
+        "kernel_cell_steps_per_second": 16211652.124964818,
+        "wall_cell_steps_per_second": 774.1483377094523
+      },
+      "compare_pass": true
+    }
+  },
+  "benchmark_rows": [
+    {
+      "case": "vm_load_xor_bitwork",
+      "class": "normal_cpu_integer_bitwork",
+      "metric": "ops/s",
+      "cpu_rate": 1666669.1340930657,
+      "flx_kernel_rate": 5882352.941176471,
+      "flx_wall_rate": 1.5242654679018834,
+      "flx_vs_cpu_kernel_ratio": 3.5294065395753615,
+      "expected_hex": "0xB791F3DD",
+      "flx_hex": "0xB791F3DD",
+      "compare_pass": true
+    },
+    {
+      "case": "vm_q16_multiply_load",
+      "class": "fixed_point_q16_arithmetic",
+      "metric": "ops/s",
+      "cpu_rate": 2857135.9503573007,
+      "flx_kernel_rate": 5405405.405405405,
+      "flx_wall_rate": 1.6816228804318163,
+      "flx_vs_cpu_kernel_ratio": 1.891896465315005,
+      "expected_hex": "0xFFFFA000",
+      "flx_hex": "0xFFFFA000",
+      "compare_pass": true
+    },
+    {
+      "case": "vm_rotr_bit_permutation",
+      "class": "normal_cpu_integer_bitwork",
+      "metric": "ops/s",
+      "cpu_rate": 1999999.3229287174,
+      "flx_kernel_rate": 3030303.0303030303,
+      "flx_wall_rate": 0.7665856947741324,
+      "flx_vs_cpu_kernel_ratio": 1.5151520280844786,
+      "expected_hex": "0x78123456",
+      "flx_hex": "0x78123456",
+      "compare_pass": true
+    },
+    {
+      "case": "vm_filter_count_reduce",
+      "class": "database_filter_count",
+      "metric": "words/s",
+      "cpu_rate": 8888893.06581511,
+      "flx_kernel_rate": 23529411.764705885,
+      "flx_wall_rate": 6.547784008894936,
+      "flx_vs_cpu_kernel_ratio": 2.647057579665938,
+      "expected_hex": "0x00000004",
+      "flx_hex": "0x00000004",
+      "compare_pass": true
+    },
+    {
+      "case": "vm_checksum_xor_reduce",
+      "class": "normal_cpu_integer_bitwork",
+      "metric": "words/s",
+      "cpu_rate": 10000014.804558394,
+      "flx_kernel_rate": 15384615.384615384,
+      "flx_wall_rate": 3.1325224590109384,
+      "flx_vs_cpu_kernel_ratio": 1.5384592608405419,
+      "expected_hex": "0x6633423D",
+      "flx_hex": "0x6633423D",
+      "compare_pass": true
+    },
+    {
+      "case": "vm_signed_min_reduce",
+      "class": "normal_cpu_scan_reduction",
+      "metric": "words/s",
+      "cpu_rate": 13333231.807528133,
+      "flx_kernel_rate": 15384615.384615384,
+      "flx_wall_rate": 3.0933061782321873,
+      "flx_vs_cpu_kernel_ratio": 1.1538549398000424,
+      "expected_hex": "0xFFFFFFEC",
+      "flx_hex": "0xFFFFFFEC",
+      "compare_pass": true
+    },
+    {
+      "case": "vm_signed_max_reduce",
+      "class": "normal_cpu_scan_reduction",
+      "metric": "words/s",
+      "cpu_rate": 10000014.804558394,
+      "flx_kernel_rate": 15384615.384615384,
+      "flx_wall_rate": 3.0598596518924457,
+      "flx_vs_cpu_kernel_ratio": 1.5384592608405419,
+      "expected_hex": "0x00000005",
+      "flx_hex": "0x00000005",
+      "compare_pass": true
+    },
+    {
+      "case": "vm_lattice_neighbor_index",
+      "class": "lattice_addressing_helper",
+      "metric": "ops/s",
+      "cpu_rate": 106666501.20608512,
+      "flx_kernel_rate": 228571428.57142857,
+      "flx_wall_rate": 51.23676340236641,
+      "flx_vs_cpu_kernel_ratio": 2.142860466847196,
+      "expected_hex": "0x0000000B",
+      "flx_hex": "0x0000000B",
+      "compare_pass": true
+    },
+    {
+      "case": "sand_fall_local_rules",
+      "class": "world_state_local_rules",
+      "metric": "cell_steps_per_second",
+      "cpu_rate": 2122719.750291385,
+      "flx_kernel_rate": 15993336.109954186,
+      "flx_wall_rate": 511.0928102620803,
+      "flx_vs_cpu_kernel_ratio": 7.5343606275669615,
+      "expected_hex": "0x0534C9FA",
+      "flx_hex": "0x0534C9FA",
+      "compare_pass": true
+    },
+    {
+      "case": "factory_conveyor_jam",
+      "class": "world_state_local_rules",
+      "metric": "cell_steps_per_second",
+      "cpu_rate": 3427959.274710959,
+      "flx_kernel_rate": 16256032.512065025,
+      "flx_wall_rate": 867.8761017368728,
+      "flx_vs_cpu_kernel_ratio": 4.742189509656795,
+      "expected_hex": "0x5C4FA6A5",
+      "flx_hex": "0x5C4FA6A5",
+      "compare_pass": true
+    },
+    {
+      "case": "swarm_wrap_edges",
+      "class": "world_state_local_rules",
+      "metric": "cell_steps_per_second",
+      "cpu_rate": 3832335.3213344985,
+      "flx_kernel_rate": 16211652.124964818,
+      "flx_wall_rate": 774.1483377094523,
+      "flx_vs_cpu_kernel_ratio": 4.2302279851961355,
+      "expected_hex": "0x894C99C6",
+      "flx_hex": "0x894C99C6",
+      "compare_pass": true
+    }
+  ]
+}

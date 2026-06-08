@@ -1,0 +1,37 @@
+{
+  "source_dir": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\mts\\mts_3d_10x10x10_t2",
+  "metric_name": "field_norm_energy_q16",
+  "dimension": "mts_3d",
+  "logical_shape": [
+    10,
+    10,
+    10
+  ],
+  "active_points": 1000,
+  "particles": 1,
+  "timesteps": 2,
+  "cycles": 75286,
+  "wall_elapsed_s": 0.20667369999864604,
+  "cycles_per_point": 75.286,
+  "cycles_per_point_step": 37.643,
+  "density_energy_q16": 0.0007468576077371836,
+  "density_l2": 0.000746846431894161,
+  "density_max": 0.0007468464318662882,
+  "density_min": 0.0,
+  "peak_index": 0,
+  "peak_density": 0.0007468464318662882,
+  "real_min": 0.0,
+  "real_max": 0.0273284912109375,
+  "imag_min": 0.0,
+  "imag_max": 0.0,
+  "kernel_contract": "a7_mts_full_physics_kernel_v2_q16",
+  "kernel_contract_word": 1297371954,
+  "kernel_contract_word_hex": "0x4D545332",
+  "compare": {
+    "pass": true,
+    "mismatches": 0,
+    "max_abs_delta_q16": 0,
+    "normalized_overlap": 0.9999999999999999,
+    "density_integral_relative_error": 0.0
+  }
+}

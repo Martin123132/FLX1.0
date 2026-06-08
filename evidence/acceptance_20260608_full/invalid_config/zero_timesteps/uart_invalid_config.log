@@ -1,0 +1,6 @@
+[host] opening COM5 @ 115200
+[host] draining for 1.0s
+[cmd] mts-config 1d 1 100 0
+[uart] mts-config 1d 1 100 0
+[uart]   ERROR configuring MTS: timesteps must be > 0.
+[host] final drain 1.0s

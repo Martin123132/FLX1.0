@@ -1,0 +1,18 @@
+{
+  "video": "MEDIA/videos/flx1_evidence_demo.mp4",
+  "frames": [
+    "MEDIA/videos/frames/frame_01.png",
+    "MEDIA/videos/frames/frame_02.png",
+    "MEDIA/videos/frames/frame_03.png",
+    "MEDIA/videos/frames/frame_04.png",
+    "MEDIA/videos/frames/frame_05.png",
+    "MEDIA/videos/frames/frame_06.png",
+    "MEDIA/videos/frames/frame_07.png",
+    "MEDIA/videos/frames/frame_08.png",
+    "MEDIA/videos/frames/frame_09.png",
+    "MEDIA/videos/frames/frame_10.png",
+    "MEDIA/videos/frames/frame_11.png"
+  ],
+  "fps": 12,
+  "seconds_per_frame": 3.5
+}

@@ -1,0 +1,46 @@
+{
+  "pass": true,
+  "self_test_returncode": 0,
+  "cases": [
+    {
+      "name": "sha256_nonce_scan",
+      "workload": "E:\\GMW_CPU\\programs\\gmwprog\\sha256_nonce_scan.gmwprog",
+      "returncode": 0,
+      "pass": true,
+      "selected_engine": "sha_accel",
+      "fallback_engine": "ukernel_vm",
+      "warnings": [],
+      "plan": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\adaptive_dispatcher\\sha256_nonce_scan_dispatch_plan.json"
+    },
+    {
+      "name": "robot_swarm_grid",
+      "workload": "E:\\GMW_CPU\\programs\\gmwprog\\robot_swarm_grid.gmwprog",
+      "returncode": 0,
+      "pass": true,
+      "selected_engine": "robotics_accel",
+      "fallback_engine": "ukernel_vm",
+      "warnings": [],
+      "plan": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\adaptive_dispatcher\\robot_swarm_grid_dispatch_plan.json"
+    },
+    {
+      "name": "wave2d_restore",
+      "workload": "E:\\GMW_CPU\\programs\\gmwprog\\wave2d_restore.gmwprog",
+      "returncode": 0,
+      "pass": true,
+      "selected_engine": "mts_full_physics",
+      "fallback_engine": "ukernel_vm",
+      "warnings": [],
+      "plan": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\adaptive_dispatcher\\wave2d_restore_dispatch_plan.json"
+    },
+    {
+      "name": "generic_program",
+      "workload": "unknown_control_program",
+      "returncode": 0,
+      "pass": true,
+      "selected_engine": "ukernel_vm",
+      "fallback_engine": null,
+      "warnings": [],
+      "plan": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\adaptive_dispatcher\\generic_program_dispatch_plan.json"
+    }
+  ]
+}

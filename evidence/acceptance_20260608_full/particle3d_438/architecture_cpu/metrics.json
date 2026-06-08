@@ -1,0 +1,50 @@
+{
+  "config": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438\\lane4_autorun_experiment.toml",
+  "output_dir": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438\\architecture_cpu",
+  "architecture_equivalent": true,
+  "particles": 10000000,
+  "steps": 438,
+  "accum_lanes": 4,
+  "v2_q16_hex": "0x00001062",
+  "lambda_min_hex": "0xFFFFF5DA",
+  "lambda_max_hex": "0x00000000",
+  "initial_peak_q16": 8,
+  "final_peak_q16": 2119209684,
+  "final_peak_hex": "0x7E5092D4",
+  "total_seconds": 244.97887980000087,
+  "accumulator": {
+    "particles": 10000000,
+    "seed": 42,
+    "batch_particles": 10000,
+    "accum_lanes": 4,
+    "scale_q32": 429,
+    "accum_seconds": 243.9879879
+  },
+  "lane4_verification": null,
+  "outputs": {
+    "initial_field_csv": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438\\architecture_cpu\\initial_field_cpu.csv",
+    "initial_field_bin": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438\\architecture_cpu\\initial_field_cpu.bin",
+    "initial_field_npy": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438\\architecture_cpu\\initial_field_cpu.npy",
+    "field_csv": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438\\architecture_cpu\\field_cpu.csv",
+    "field_bin": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438\\architecture_cpu\\field_cpu.bin",
+    "energy_csv": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438\\architecture_cpu\\energy_cpu.csv",
+    "result_metrics_json": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438\\architecture_cpu\\result_metrics.json",
+    "density_csv": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438\\architecture_cpu\\density.csv",
+    "canonical_field_csv": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438\\architecture_cpu\\field.csv",
+    "slice_xy_png": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438\\architecture_cpu\\slice_xy.png"
+  },
+  "initial_hardware_comparison": {
+    "hardware_csv": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438\\initial_field_a7.csv",
+    "mismatches": 0,
+    "max_abs_delta_q16": 0,
+    "max_abs_delta_float": 0.0,
+    "first_mismatches": []
+  },
+  "hardware_comparison": {
+    "hardware_csv": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438\\field.csv",
+    "mismatches": 0,
+    "max_abs_delta_q16": 0,
+    "max_abs_delta_float": 0.0,
+    "first_mismatches": []
+  }
+}

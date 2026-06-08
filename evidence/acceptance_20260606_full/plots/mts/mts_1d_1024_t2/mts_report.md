@@ -6,12 +6,12 @@
 - Timesteps: `2`
 - Particles: `1`
 - A7 cycles: `unknown`
-- Kernel contract: `1297371954`
+- Kernel contract: `0x4D545332`
 - Metric name: `field_norm_energy_q16`
 - Density energy Q16: `10.226714758435264`
 - Density L2: `8.317846309872541`
-- Cycles/point: `0.0`
-- Cycles/point/step: `None`
+- Cycles/point: `not recorded`
+- Cycles/point/step: `not recorded`
 - Peak density: `8.01970960199833` at index `1`
 - Real range: `-2.8319091796875` .. `1.485595703125`
 - Imag range: `0.0` .. `0.0`

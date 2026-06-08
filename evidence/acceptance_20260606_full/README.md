@@ -7,7 +7,7 @@ This folder contains the generated artefacts from the passing FLX hardware accep
 - [acceptance_report.md](acceptance_report.md) - human-readable acceptance report
 - [acceptance_summary.json](acceptance_summary.json) - machine-readable acceptance summary
 - [manifest.json](manifest.json) - evidence bundle manifest
-- [file_hashes_sha256.txt](file_hashes_sha256.txt) - file-integrity hashes
+- [flx_evidence_file_hashes_sha256.txt](flx_evidence_file_hashes_sha256.txt) - file-integrity hashes
 - [acceptance_runner.log](acceptance_runner.log) - full runner log
 
 ## Result

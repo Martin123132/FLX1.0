@@ -1,0 +1,6 @@
+[host] opening COM5 @ 115200
+[host] draining for 1.0s
+[cmd] mts-config 3d 1 11 10 10 1
+[uart] mts-config 3d 1 11 10 10 1
+[uart]   ERROR configuring MTS: active points must be 1..1024.
+[host] final drain 1.0s

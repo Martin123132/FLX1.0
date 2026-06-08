@@ -1,0 +1,74 @@
+{
+  "workload": "plane_wave_field",
+  "dimension": "3d",
+  "shape": [
+    8,
+    8,
+    8
+  ],
+  "active_points": 512,
+  "timesteps": null,
+  "hardware_field": "hardware_field.csv",
+  "reference_field": "reference_field.csv",
+  "density_error": "density_error.csv",
+  "hardware_metrics": {
+    "density_integral": 129029294845.46716,
+    "field_l2_norm": 359206.47940351407,
+    "field_sum": -2444144.137695309,
+    "peak_psi": -31200.5349731445,
+    "peak_psi_abs": 31200.5349731445,
+    "peak_density": 973473382.610413,
+    "peak_site": 1,
+    "peak_xyz": [
+      1,
+      0,
+      0
+    ],
+    "center_of_mass_xyz": [
+      3.751321355089527,
+      3.500774514224895,
+      3.3024937935159557
+    ],
+    "rms_radius": 3.955733595049591,
+    "density_min": 2140638.6776833776,
+    "density_max": 973473382.610413,
+    "psi_min": -31200.5349731445,
+    "psi_max": 18682.7991027832
+  },
+  "reference_metrics": {
+    "density_integral": 129029294845.46722,
+    "field_l2_norm": 359206.4794035141,
+    "field_sum": -2444144.1376953125,
+    "peak_psi": -31200.53497314453,
+    "peak_psi_abs": 31200.53497314453,
+    "peak_density": 973473382.610415,
+    "peak_site": 1,
+    "peak_xyz": [
+      1,
+      0,
+      0
+    ],
+    "center_of_mass_xyz": [
+      3.7513213550895275,
+      3.500774514224894,
+      3.3024937935159553
+    ],
+    "rms_radius": 3.955733595049591,
+    "density_min": 2140638.6776834875,
+    "density_max": 973473382.610415,
+    "psi_min": -31200.53497314453,
+    "psi_max": 18682.799102783203
+  },
+  "comparison": {
+    "mismatches": 0,
+    "max_abs_delta_q16": 0,
+    "density_integral_delta": null,
+    "normalized_overlap": 0.9999999999999999,
+    "peak_location_delta": 0.0,
+    "center_of_mass_delta": 1.0877919644084146e-15
+  },
+  "pass_fail": {
+    "passed": true,
+    "reasons": []
+  }
+}

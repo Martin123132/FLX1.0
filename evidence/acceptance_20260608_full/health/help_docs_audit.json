@@ -1,0 +1,946 @@
+{
+  "help_log": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\health\\uart_health.log",
+  "docs": "E:\\GMW_CPU\\docs\\z7_help_commands.md",
+  "live_command_lines": 132,
+  "checked": [
+    {
+      "live": "help",
+      "keys": [
+        "help"
+      ],
+      "covered": true
+    },
+    {
+      "live": "status | s",
+      "keys": [
+        "status"
+      ],
+      "covered": true
+    },
+    {
+      "live": "stop | q | exit",
+      "keys": [
+        "stop"
+      ],
+      "covered": true
+    },
+    {
+      "live": "step <N>",
+      "keys": [
+        "step"
+      ],
+      "covered": true
+    },
+    {
+      "live": "checkpoint | cp",
+      "keys": [
+        "checkpoint"
+      ],
+      "covered": true
+    },
+    {
+      "live": "read-site <idx>",
+      "keys": [
+        "read-site"
+      ],
+      "covered": true
+    },
+    {
+      "live": "cmod-site <idx>",
+      "keys": [
+        "cmod-site"
+      ],
+      "covered": true
+    },
+    {
+      "live": "dump-wal",
+      "keys": [
+        "dump-wal"
+      ],
+      "covered": true
+    },
+    {
+      "live": "dump-cmod [n]",
+      "keys": [
+        "dump-cmod"
+      ],
+      "covered": true
+    },
+    {
+      "live": "dump-all",
+      "keys": [
+        "dump-all"
+      ],
+      "covered": true
+    },
+    {
+      "live": "wal-var-status",
+      "keys": [
+        "wal-var-status"
+      ],
+      "covered": true
+    },
+    {
+      "live": "wal-active",
+      "keys": [
+        "wal-active"
+      ],
+      "covered": true
+    },
+    {
+      "live": "wal-var-config <words> <mask_hex> [checksum_hex]",
+      "keys": [
+        "wal-var-config"
+      ],
+      "covered": true
+    },
+    {
+      "live": "wal-var-write <idx> <word_hex> | wal-var-read <idx> [count]",
+      "keys": [
+        "wal-var-write"
+      ],
+      "covered": true
+    },
+    {
+      "live": "wal-var-dump [count] | wal-var-selftest",
+      "keys": [
+        "wal-var-dump"
+      ],
+      "covered": true
+    },
+    {
+      "live": "wal-save-mts | wal-save-mts-checkpoint | wal-restore-mts",
+      "keys": [
+        "wal-save-mts"
+      ],
+      "covered": true
+    },
+    {
+      "live": "Save/restore MTS field+potential through WAL_VAR/flash",
+      "keys": [
+        "Save/restore"
+      ],
+      "covered": true
+    },
+    {
+      "live": "wal-save-sha|robot|ukernel and wal-restore-sha|robot|ukernel",
+      "keys": [
+        "wal-save-sha",
+        "robot",
+        "ukernel"
+      ],
+      "covered": true
+    },
+    {
+      "live": "Save/restore accelerator/VM state through WAL_VAR/flash",
+      "keys": [
+        "Save/restore"
+      ],
+      "covered": true
+    },
+    {
+      "live": "Default checkpoint stages active MTS/SHA/robot/ukernel unless wal-bypass is ON",
+      "keys": [
+        "Default"
+      ],
+      "covered": true
+    },
+    {
+      "live": "restore",
+      "keys": [
+        "restore"
+      ],
+      "covered": true
+    },
+    {
+      "live": "cold-start",
+      "keys": [
+        "cold-start"
+      ],
+      "covered": true
+    },
+    {
+      "live": "set tau-rate <hz>",
+      "keys": [
+        "set tau-rate"
+      ],
+      "covered": true
+    },
+    {
+      "live": "set spi1-div <n>",
+      "keys": [
+        "set spi1-div"
+      ],
+      "covered": true
+    },
+    {
+      "live": "set spi0-div <n>",
+      "keys": [
+        "set spi0-div"
+      ],
+      "covered": true
+    },
+    {
+      "live": "set v2|eta|zeta|lambdaR|gamma|cg2|epsilon <hex>",
+      "keys": [
+        "set v2",
+        "set eta",
+        "set zeta",
+        "set lambdaR",
+        "set gamma",
+        "set cg2",
+        "set epsilon"
+      ],
+      "covered": true
+    },
+    {
+      "live": "set tau-low|tau-high|tau-block <hex>",
+      "keys": [
+        "set tau-low",
+        "set tau-high",
+        "set tau-block"
+      ],
+      "covered": true
+    },
+    {
+      "live": "set w-energy|w-curvature|step-size <hex>",
+      "keys": [
+        "set w-energy",
+        "set w-curvature",
+        "set step-size"
+      ],
+      "covered": true
+    },
+    {
+      "live": "set push-period <n>",
+      "keys": [
+        "set push-period"
+      ],
+      "covered": true
+    },
+    {
+      "live": "set repair on|off",
+      "keys": [
+        "set repair"
+      ],
+      "covered": true
+    },
+    {
+      "live": "set logging on|off",
+      "keys": [
+        "set logging"
+      ],
+      "covered": true
+    },
+    {
+      "live": "set recovery-fields 3|6",
+      "keys": [
+        "set recovery-fields"
+      ],
+      "covered": true
+    },
+    {
+      "live": "set recovery-depth <n>",
+      "keys": [
+        "set recovery-depth"
+      ],
+      "covered": true
+    },
+    {
+      "live": "set wal-bypass on|off",
+      "keys": [
+        "set wal-bypass"
+      ],
+      "covered": true
+    },
+    {
+      "live": "set particle-count <n>",
+      "keys": [
+        "set particle-count"
+      ],
+      "covered": true
+    },
+    {
+      "live": "set particle-batch <n>",
+      "keys": [
+        "set particle-batch"
+      ],
+      "covered": true
+    },
+    {
+      "live": "set particle-seed <n>",
+      "keys": [
+        "set particle-seed"
+      ],
+      "covered": true
+    },
+    {
+      "live": "set particle-scale <hex> Override accelerator normalization scale",
+      "keys": [
+        "set particle-scale"
+      ],
+      "covered": true
+    },
+    {
+      "live": "set accum-mode full512|local27|local125|hist",
+      "keys": [
+        "set accum-mode"
+      ],
+      "covered": true
+    },
+    {
+      "live": "set accum-lanes <n>",
+      "keys": [
+        "set accum-lanes"
+      ],
+      "covered": true
+    },
+    {
+      "live": "set site-lanes <n>",
+      "keys": [
+        "set site-lanes"
+      ],
+      "covered": true
+    },
+    {
+      "live": "set wal-policy full|checkpoint|final|off-debug",
+      "keys": [
+        "set wal-policy"
+      ],
+      "covered": true
+    },
+    {
+      "live": "set binary-output-first on|off",
+      "keys": [
+        "set binary-output-first"
+      ],
+      "covered": true
+    },
+    {
+      "live": "write-site <i> <psi> <prev> <m>",
+      "keys": [
+        "write-site"
+      ],
+      "covered": true
+    },
+    {
+      "live": "write-lambda <site> <val>",
+      "keys": [
+        "write-lambda"
+      ],
+      "covered": true
+    },
+    {
+      "live": "write-block <addr> <val>",
+      "keys": [
+        "write-block"
+      ],
+      "covered": true
+    },
+    {
+      "live": "pause",
+      "keys": [
+        "pause"
+      ],
+      "covered": true
+    },
+    {
+      "live": "resume",
+      "keys": [
+        "resume"
+      ],
+      "covered": true
+    },
+    {
+      "live": "tau-reset",
+      "keys": [
+        "tau-reset"
+      ],
+      "covered": true
+    },
+    {
+      "live": "layer-status | ls",
+      "keys": [
+        "layer-status"
+      ],
+      "covered": true
+    },
+    {
+      "live": "layer-push [idx]",
+      "keys": [
+        "layer-push"
+      ],
+      "covered": true
+    },
+    {
+      "live": "particle-load [idx]",
+      "keys": [
+        "particle-load"
+      ],
+      "covered": true
+    },
+    {
+      "live": "particle-start",
+      "keys": [
+        "particle-start"
+      ],
+      "covered": true
+    },
+    {
+      "live": "particle-status",
+      "keys": [
+        "particle-status"
+      ],
+      "covered": true
+    },
+    {
+      "live": "particle-clear",
+      "keys": [
+        "particle-clear"
+      ],
+      "covered": true
+    },
+    {
+      "live": "mts-config 1d <particles> <gx> [timesteps]",
+      "keys": [
+        "mts-config"
+      ],
+      "covered": true
+    },
+    {
+      "live": "mts-config 2d <particles> <gx> <gy> [timesteps]",
+      "keys": [
+        "mts-config"
+      ],
+      "covered": true
+    },
+    {
+      "live": "mts-config 3d <particles> <gx> <gy> <gz> [timesteps]",
+      "keys": [
+        "mts-config"
+      ],
+      "covered": true
+    },
+    {
+      "live": "mts-coeff <dt_q16> <diffusion_q16> <v_coeff_q16>",
+      "keys": [
+        "mts-coeff"
+      ],
+      "covered": true
+    },
+    {
+      "live": "mts-normalize on|off",
+      "keys": [
+        "mts-normalize"
+      ],
+      "covered": true
+    },
+    {
+      "live": "mts-init [grid_size [width]]",
+      "keys": [
+        "mts-init"
+      ],
+      "covered": true
+    },
+    {
+      "live": "mts-load-field <idx> <real_q16> <imag_q16>",
+      "keys": [
+        "mts-load-field"
+      ],
+      "covered": true
+    },
+    {
+      "live": "mts-load-potential <idx> <q16>",
+      "keys": [
+        "mts-load-potential"
+      ],
+      "covered": true
+    },
+    {
+      "live": "mts-load-potential-all <q16>",
+      "keys": [
+        "mts-load-potential-all"
+      ],
+      "covered": true
+    },
+    {
+      "live": "mts-load-layer <particle_base> <count>",
+      "keys": [
+        "mts-load-layer"
+      ],
+      "covered": true
+    },
+    {
+      "live": "mts-start",
+      "keys": [
+        "mts-start"
+      ],
+      "covered": true
+    },
+    {
+      "live": "mts-start-field-dump [n]",
+      "keys": [
+        "mts-start-field-dump"
+      ],
+      "covered": true
+    },
+    {
+      "live": "wal-var-mts-restore-start-field-dump <words> <checksum_hex> [n]",
+      "keys": [
+        "wal-var-mts-restore-start-field-dump"
+      ],
+      "covered": true
+    },
+    {
+      "live": "mts-status",
+      "keys": [
+        "mts-status"
+      ],
+      "covered": true
+    },
+    {
+      "live": "mts-read <idx>",
+      "keys": [
+        "mts-read"
+      ],
+      "covered": true
+    },
+    {
+      "live": "mts-dump [count]",
+      "keys": [
+        "mts-dump"
+      ],
+      "covered": true
+    },
+    {
+      "live": "mts-field-read <idx>",
+      "keys": [
+        "mts-field-read"
+      ],
+      "covered": true
+    },
+    {
+      "live": "mts-field-dump [count]",
+      "keys": [
+        "mts-field-dump"
+      ],
+      "covered": true
+    },
+    {
+      "live": "mts-clear",
+      "keys": [
+        "mts-clear"
+      ],
+      "covered": true
+    },
+    {
+      "live": "mts-reset",
+      "keys": [
+        "mts-reset"
+      ],
+      "covered": true
+    },
+    {
+      "live": "mts-bench",
+      "keys": [
+        "mts-bench"
+      ],
+      "covered": true
+    },
+    {
+      "live": "FLX lattice layout / expansion routing:",
+      "keys": [
+        "FLX"
+      ],
+      "covered": true
+    },
+    {
+      "live": "layout-status",
+      "keys": [
+        "layout-status"
+      ],
+      "covered": true
+    },
+    {
+      "live": "layout-set row|snake|morton",
+      "keys": [
+        "layout-set"
+      ],
+      "covered": true
+    },
+    {
+      "live": "layout-map <dim> <gx> [gy] [gz] <x> [y] [z]",
+      "keys": [
+        "layout-map"
+      ],
+      "covered": true
+    },
+    {
+      "live": "layout-dump [count]",
+      "keys": [
+        "layout-dump"
+      ],
+      "covered": true
+    },
+    {
+      "live": "route-status | route-map",
+      "keys": [
+        "route-status"
+      ],
+      "covered": true
+    },
+    {
+      "live": "route-read <board> <idx> | route-write <board> <idx> <word_hex>",
+      "keys": [
+        "route-read"
+      ],
+      "covered": true
+    },
+    {
+      "live": "GMW Universal Kernel v1:",
+      "keys": [
+        "GMW"
+      ],
+      "covered": true
+    },
+    {
+      "live": "ukernel-caps | ukernel-status",
+      "keys": [
+        "ukernel-caps"
+      ],
+      "covered": true
+    },
+    {
+      "live": "ukernel-config <active> [sx] [sy] [sz] [flags_hex]",
+      "keys": [
+        "ukernel-config"
+      ],
+      "covered": true
+    },
+    {
+      "live": "ukernel-load-prog halt|sum4",
+      "keys": [
+        "ukernel-load-prog"
+      ],
+      "covered": true
+    },
+    {
+      "live": "ukernel-load-prog <idx> <word_hex>",
+      "keys": [
+        "ukernel-load-prog"
+      ],
+      "covered": true
+    },
+    {
+      "live": "ukernel-load-data <idx> <word_hex>",
+      "keys": [
+        "ukernel-load-data"
+      ],
+      "covered": true
+    },
+    {
+      "live": "ukernel-load-const <idx> <word_hex> Load VM constant RAM",
+      "keys": [
+        "ukernel-load-const"
+      ],
+      "covered": true
+    },
+    {
+      "live": "ukernel-start | ukernel-step [n]",
+      "keys": [
+        "ukernel-start"
+      ],
+      "covered": true
+    },
+    {
+      "live": "ukernel-read <idx> [count] | ukernel-dump [count]",
+      "keys": [
+        "ukernel-read"
+      ],
+      "covered": true
+    },
+    {
+      "live": "ukernel-hash-state | ukernel-bench",
+      "keys": [
+        "ukernel-hash-state"
+      ],
+      "covered": true
+    },
+    {
+      "live": "ukernel-clear | ukernel-reset | ukernel-restore-test",
+      "keys": [
+        "ukernel-clear"
+      ],
+      "covered": true
+    },
+    {
+      "live": "SHA / robotics accelerator slots:",
+      "keys": [
+        "SHA"
+      ],
+      "covered": true
+    },
+    {
+      "live": "sha-config <nonce_start> <nonce_count>",
+      "keys": [
+        "sha-config"
+      ],
+      "covered": true
+    },
+    {
+      "live": "sha-load-header <idx0-19> <word_hex>",
+      "keys": [
+        "sha-load-header"
+      ],
+      "covered": true
+    },
+    {
+      "live": "sha-start | sha-status | sha-clear | sha-reset",
+      "keys": [
+        "sha-start"
+      ],
+      "covered": true
+    },
+    {
+      "live": "robot-config <active> <gx> <gy> <steps> [flags_hex]",
+      "keys": [
+        "robot-config"
+      ],
+      "covered": true
+    },
+    {
+      "live": "robot-load <idx> <cell_word_hex> | robot-read <idx> [count]",
+      "keys": [
+        "robot-load"
+      ],
+      "covered": true
+    },
+    {
+      "live": "robot-start | robot-status | robot-hash-state | robot-clear | robot-reset",
+      "keys": [
+        "robot-start"
+      ],
+      "covered": true
+    },
+    {
+      "live": "accel-status",
+      "keys": [
+        "accel-status"
+      ],
+      "covered": true
+    },
+    {
+      "live": "accel-caps",
+      "keys": [
+        "accel-caps"
+      ],
+      "covered": true
+    },
+    {
+      "live": "benchmark-status",
+      "keys": [
+        "benchmark-status"
+      ],
+      "covered": true
+    },
+    {
+      "live": "reset-stats",
+      "keys": [
+        "reset-stats"
+      ],
+      "covered": true
+    },
+    {
+      "live": "clear-errors",
+      "keys": [
+        "clear-errors"
+      ],
+      "covered": true
+    },
+    {
+      "live": "drain-ack",
+      "keys": [
+        "drain-ack"
+      ],
+      "covered": true
+    },
+    {
+      "live": "clear-backpressure",
+      "keys": [
+        "clear-backpressure"
+      ],
+      "covered": true
+    },
+    {
+      "live": "bp-recover",
+      "keys": [
+        "bp-recover"
+      ],
+      "covered": true
+    },
+    {
+      "live": "BTN2/L20",
+      "keys": [
+        "BTN2/L20"
+      ],
+      "covered": true
+    },
+    {
+      "live": "snapshot <file>",
+      "keys": [
+        "snapshot"
+      ],
+      "covered": true
+    },
+    {
+      "live": "load <file>",
+      "keys": [
+        "load"
+      ],
+      "covered": true
+    },
+    {
+      "live": "sd-ls [path]",
+      "keys": [
+        "sd-ls"
+      ],
+      "covered": true
+    },
+    {
+      "live": "sd-cat <file>",
+      "keys": [
+        "sd-cat"
+      ],
+      "covered": true
+    },
+    {
+      "live": "sd-get <file>",
+      "keys": [
+        "sd-get"
+      ],
+      "covered": true
+    },
+    {
+      "live": "sd-get-dir <path>",
+      "keys": [
+        "sd-get-dir"
+      ],
+      "covered": true
+    },
+    {
+      "live": "particle-superpose [n]",
+      "keys": [
+        "particle-superpose"
+      ],
+      "covered": true
+    },
+    {
+      "live": "monitor on|off",
+      "keys": [
+        "monitor"
+      ],
+      "covered": true
+    },
+    {
+      "live": "monitor rate <ms>",
+      "keys": [
+        "monitor"
+      ],
+      "covered": true
+    },
+    {
+      "live": "log-energy on|off",
+      "keys": [
+        "log-energy"
+      ],
+      "covered": true
+    },
+    {
+      "live": "energy-check | ec",
+      "keys": [
+        "energy-check"
+      ],
+      "covered": true
+    },
+    {
+      "live": "wal-bypass on|off",
+      "keys": [
+        "wal-bypass"
+      ],
+      "covered": true
+    },
+    {
+      "live": "regs",
+      "keys": [
+        "regs"
+      ],
+      "covered": true
+    },
+    {
+      "live": "spi-health",
+      "keys": [
+        "spi-health"
+      ],
+      "covered": true
+    },
+    {
+      "live": "force-spi3",
+      "keys": [
+        "force-spi3"
+      ],
+      "covered": true
+    },
+    {
+      "live": "a7-debug",
+      "keys": [
+        "a7-debug"
+      ],
+      "covered": true
+    },
+    {
+      "live": "read-reg",
+      "keys": [
+        "read-reg"
+      ],
+      "covered": true
+    },
+    {
+      "live": "write-reg <hex> <hex>",
+      "keys": [
+        "write-reg"
+      ],
+      "covered": true
+    },
+    {
+      "live": "a7-reg",
+      "keys": [
+        "a7-reg"
+      ],
+      "covered": true
+    },
+    {
+      "live": "cmod-reg <hex>",
+      "keys": [
+        "cmod-reg"
+      ],
+      "covered": true
+    },
+    {
+      "live": "status|s",
+      "keys": [
+        "status",
+        "s"
+      ],
+      "covered": true
+    },
+    {
+      "live": "restore",
+      "keys": [
+        "restore"
+      ],
+      "covered": true
+    }
+  ],
+  "missing": [],
+  "passed": true
+}

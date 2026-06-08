@@ -1,0 +1,38 @@
+{
+  "cpu_field": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\mts\\mts_2d_32x32_t2\\cpu_kernel_model\\field.csv",
+  "fpga_field": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\mts\\mts_2d_32x32_t2\\field.csv",
+  "dimension": "2d",
+  "shape": [
+    32,
+    32
+  ],
+  "mismatches": 0,
+  "max_abs_delta_q16": 0,
+  "normalized_overlap": 1.0000000000000002,
+  "density_integral_cpu": 1.0051910060920153,
+  "density_integral_fpga": 1.0051910060920153,
+  "density_integral_relative_error": 0.0,
+  "density_l1_error": 0.0,
+  "density_l2_error": 0.0,
+  "density_max_abs_error": 0.0,
+  "peak_location_cpu": [
+    0,
+    0
+  ],
+  "peak_location_fpga": [
+    0,
+    0
+  ],
+  "peak_location_delta": 0.0,
+  "center_of_mass_cpu": [
+    0.004720766030730589,
+    0.004720766030730589
+  ],
+  "center_of_mass_fpga": [
+    0.004720766030730589,
+    0.004720766030730589
+  ],
+  "center_of_mass_delta": 0.0,
+  "first_mismatches": [],
+  "pass": true
+}

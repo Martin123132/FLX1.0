@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "source": "architecture_cpu",
+    "experiment_name": "notebook_10M_particles",
+    "input_field": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438\\architecture_cpu\\field_cpu.csv",
+    "grid_shape": [
+      8,
+      8,
+      8
+    ],
+    "spacing": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "d_volume": 1.0,
+    "steps": 438,
+    "dt": 0.08,
+    "q_format": "q16.16",
+    "config": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438\\lane4_autorun_experiment.toml",
+    "particles": 10000000,
+    "batch_particles": 10000,
+    "seed": 42,
+    "architecture_equivalent": true
+  },
+  "density_integral": 169720133096.95367,
+  "field_l2_norm": 411971.03429361834,
+  "field_sum": 1972118.288925171,
+  "peak_psi": -32336.57354736328,
+  "peak_psi_abs": 32336.57354736328,
+  "peak_density": 1045653988.7840347,
+  "peak_site": 471,
+  "peak_xyz": [
+    7,
+    2,
+    7
+  ],
+  "center_of_mass_xyz": [
+    3.500000000477068,
+    3.500000001993767,
+    3.5000000006001324
+  ],
+  "rms_radius": 3.9577521997002214,
+  "density_min": 2267902.765445525,
+  "density_max": 1045653988.7840347,
+  "psi_min": -32336.57354736328,
+  "psi_max": 24282.918533325195,
+  "outputs": {
+    "result_metrics_json": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438\\architecture_cpu\\result_metrics.json",
+    "field_csv": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438\\architecture_cpu\\field.csv",
+    "density_csv": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438\\architecture_cpu\\density.csv",
+    "slice_xy_png": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438\\architecture_cpu\\slice_xy.png",
+    "source_field": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\particle3d_438\\architecture_cpu\\field_cpu.csv"
+  }
+}

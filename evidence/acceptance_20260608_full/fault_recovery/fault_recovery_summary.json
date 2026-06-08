@@ -1,0 +1,21 @@
+{
+  "final_pass": true,
+  "stage": "complete",
+  "mode": "mts_wal_var",
+  "port": "COM5",
+  "baud": 115200,
+  "checkpoint_restore": {
+    "pass": true,
+    "mismatches": 0,
+    "max_abs_delta_q16": 0,
+    "normalized_overlap": 1.0
+  },
+  "final_baseline": {
+    "pass": true,
+    "mismatches": 0,
+    "max_abs_delta_q16": 0,
+    "normalized_overlap": 1.0
+  },
+  "wave_summary": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\fault_recovery\\mts_wal_var_recovery\\wave_restore_summary.json",
+  "returncode": 0
+}

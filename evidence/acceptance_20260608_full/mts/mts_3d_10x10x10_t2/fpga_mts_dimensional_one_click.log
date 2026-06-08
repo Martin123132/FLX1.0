@@ -1,0 +1,1180 @@
+
+$ C:\Python313\python.exe -u E:\GMW_CPU\tools\z7_sd_manager.py push-experiment --experiment E:\GMW_CPU\results\board_acceptance\20260608_135515\acceptance\mts\mts_3d_10x10x10_t2\staged\mbt_mts_generated.toml --boot E:\GMW_CPU\experiments\sd_card\BOOT.bin --xsct E:\AMD\2025.2.1\Vitis\bin\xsct.bat --run
+[uart] [SD] SD card mounted OK.
+Staged config: E:\GMW_CPU\results\board_acceptance\20260608_135515\acceptance\mts\mts_3d_10x10x10_t2\staged\mbt_mts_generated.toml -> E:\GMW_CPU\experiments\sd_card_particle3d\mbt.cfg
+Staging BOOT.bin too: E:\GMW_CPU\experiments\sd_card\BOOT.bin
+
+Running JTAG SD staging:
+  C:\Python313\python.exe E:\GMW_CPU\tools\_z7_sd_backend\jtag_upload.py E:\GMW_CPU\experiments\sd_card_particle3d --xsct E:\AMD\2025.2.1\Vitis\bin\xsct.bat --boot E:\GMW_CPU\experiments\sd_card\BOOT.bin --run
+Using XSCT: E:\AMD\2025.2.1\Vitis\bin\xsct.bat
+
+Uploading to Z7 via JTAG (DDR to SD):
+  mbt.cfg (1072 bytes)
+  state.bin (6144 bytes)
+  lambda_r.bin (2048 bytes)
+  BOOT.bin (4,541,660 bytes) <- E:\GMW_CPU\experiments\sd_card\BOOT.bin
+  + Program existing bitstream + ELF + start
+
+Running: E:\AMD\2025.2.1\Vitis\bin\xsct.bat E:/GMW_CPU/tools/_z7_sd_backend/jtag_upload.tcl E:/GMW_CPU/experiments/sd_card_particle3d --run --boot E:/GMW_CPU/experiments/sd_card/BOOT.bin
+
+============================================================
+
+****** Software Commandline Tool (XSCT) v2025.2.1
+  **** SW Build 6403652 on Thu Mar 19 19:48:24 GMT 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+Warning: XSCT is deprecated and will be removed in future releases.
+We recommend using the new Python command-line tool for project management and debugging:
+- Run "vitis -i" for interactive mode.
+- Run "vitis -s <script>" for script mode.
+Reading experiment from: E:/GMW_CPU/experiments/sd_card_particle3d
+  config (mbt.cfg): 1012 bytes
+  state: 6144 bytes
+  initial_state.bin: 6144 bytes
+  lambda_r.bin: 2048 bytes
+  BOOT.bin: 4541660 bytes (E:/GMW_CPU/experiments/sd_card/BOOT.bin)
+
+Connecting to JTAG target...
+Programming FPGA...
+FPGA programmed.
+
+Writing to DDR staging area at 0x1F000000...
+  Writing config (1012 bytes)...
+  Writing state (6144 bytes)...
+  Writing lambda_r.bin (2048 bytes)...
+  Writing BOOT.bin (4541660 bytes) — this may take a moment...
+  BOOT.bin written.
+  Magic written — staging area committed.
+
+Loading ELF: E:/GMW_CPU/arty_a7_fabric/z7_new/platform_set/orch/build/orch.elf
+Starting execution...
+Z7 orchestrator running.  Open serial console at 115200 baud.
+
+Done.
+============================================================
+
+Upload complete. All files are staged in DDR.
+Z7 is running. Firmware will copy DDR to SD and follow the loaded experiment firmware flow.
+[uart] [DDR] Staged data found! toml=1012  state=6144  lambda=2048  boot=4541660
+[uart] [SD] Wrote '0:/BOOT.bin' (4541660 bytes)
+[uart] [SD] Wrote '0:/mbt.cfg' (1012 bytes)
+[uart] [SD] Wrote '0:/state.bin' (6144 bytes)
+[uart] [SD] Wrote '0:/lambda_r.bin' (2048 bytes)
+[uart] [DDR] Copied 4 file(s) to SD card.  Staging area cleared.
+[uart] [MAIN] 4 experiment file(s) copied from DDR to SD.
+[uart] [SD] Read '0:/mbt.cfg' (1012 bytes)
+[uart] [CONFIG] Parsing SD/JTAG config buffer directly...
+[uart] [CONFIG] Loaded experiment 'generated_mts_3d_1' from direct buffer parser
+[uart] [SD] Experiment config loaded from SD.
+[uart] [SD] MTS mode: ignoring optional state.bin/lambda_r.bin; command/config path loads field and potential.
+[uart] Z7 Orchestrator v2.0
+[uart] === Experiment Configuration ===
+[uart] Name:          generated_mts_3d_1
+[uart] Lattice:       512 sites (8x8x8)
+[uart] Mode:          mts_3d (0)
+[uart] Auto-run:      no
+[uart] Dimension:     kind=mts_1d packing=dense_compressed min_thickness=state_words
+[uart] logical=8x8x8 physical=8x8x8 channels/tile=1 layers=1
+[uart] Layering:      capacity=512 items/layer=512 total_layers=1
+[uart] grid/item=1 timesteps/layer=0 used/spare=512/0
+[uart] A7 coeffs:     v2=0x00010000 eta=0x00000666 zeta=0x00008000
+[uart] lambda=0x00004000 gamma=0x00002000 cg2=0x00010000
+[uart] epsilon=0x00000100 step_period=0
+[uart] spi3_push=7 spi3_sites=512
+[uart] Cmod coeffs:   tau_low=0x00100000 tau_high=0x00400000
+[uart] tau_block=0x01000000 w_e=0x00008000 w_g=0x00008000
+[uart] eta_psi=0x00000666
+[uart] Timing:        tau_div=49999999  steps=0  ckpt_every=100  poll=10000 µs
+[uart] Logging:       energy=no  snapshot_every=0  wal_stream=no
+[uart] Recovery:      snapshot_fields=6  depth=128  restore_audit=yes
+[uart] IC (cold):     sigma=32.0  amplitude=1.000
+[uart] Robustness:    max_consec_errors=5  wal_stream_floor=5000 µs
+[uart] ================================
+[uart] [SD] output dir ready: 0:/output
+[uart] === Z7 Orchestrator Early Startup ===
+[uart] [STARTUP] PL version: 0x00010001
+[uart] [STARTUP] SPI dividers: SPI1=9 (5 MHz), SPI0=31 (~1.56 MHz)
+[uart] [STARTUP] Cmod SHUTDOWN_FLAG = 0x00
+[uart] [STARTUP] Cle�C��>> EARLY PRESTART: adjust/debug before A7/Cmod config or restore
+[uart-raw]     Commands: status, regs, spi-health, set spi1-div <n>, set spi0-div <n>
+              a7-debug, layer-status, particle-load, mts-config/load/status, bp-recover, sd-ls, cold-start, restore, wal-bypass on/off, help
+    'go' continues only after cold-sta
+[uart-raw] rt or restore succeeds. 'stop' exits.
+
+
+>> cold-start
+[uart] cold-start
+[uart] === COLD START: Configuring A7 and Cmod from defaults/config ===
+[uart] [STARTUP] Resetting external fabric boards ...
+[uart] [STARTUP] Configuring A7 ...
+[uart] A7 layer descriptor <- mode=mbt_3d_lattice layer=0 item_start=0 items=512 grid=1 steps=0
+[uart] [STARTUP] Writing Î»R for 512 sites ...
+[uart] [STARTUP] Writing initial conditions (Gaussian: Ïƒ=32.0 A=1.000) ...
+[uart] [STARTUP] A7 configured OK.
+[uart] [STARTUP] Capturing initial A7 field RAM ...
+[uart] [A7] Dumping 512 sites 0 64 128 192 256 320 384 448 done
+[uart] [STARTUP] Initial A7 field captured in PS RAM.
+[uart] [STARTUP] Initial A7 field SD output deferred to final evidence bundle.
+[uart] [STARTUP] Configuring Cmod ...
+[uart] [STARTUP] Cmod recovery: fields=6 policy=0x0000000F depth=128
+[uart] [STARTUP] Cmod WAL control: logging=on repair=on
+[uart] [STARTUP] Cmod configured OK.
+[uart] === Cold Start Complete - Hardware Ready (tau NOT started) ===
+>> monitor off
+>> clear-errors
+>> mts-reset
+>> mts-clear
+>> mts-config 3d 1 10 10 10 2
+[uart] monitor off
+[uart]   Monitor OFF
+[uart] clear-errors
+[uart]   Z7 sticky flags cleared; Cmod clear-errors/drain-ack sent.
+[uart] mts-reset
+[uart]   MTS reset sent.
+[uart] mts-clear
+[uart]   MTS clear/done-clear sent.
+[uart] mts-config 3d 1 10 10 10 2
+[uart]   MTS configured: mode=mts_3d particles=1 gx=10 gy=10 gz=10 lanes=4 timesteps=2 contract=0x4D545332
+>> mts-coeff 0x00004000 0x0000CCCD 0x00009999
+[uart] mts-coeff 0x00004000 0x0000CCCD 0x00009999
+[uart]   MTS coeff staged: dt=0x00004000 diffusion=0x0000CCCD v_coeff=0x00009999
+>> mts-normalize on
+[uart] mts-normalize on
+[uart]   MTS normalize on staged.
+>> mts-load-layer 0 1
+[uart] mts-load-layer 0 1
+[uart]   MTS layer loaded: particle_base=0 count=1 active_points=1000 as Q16 occupancy field
+>> mts-load-potential-all 0x00002000
+[uart] mts-load-potential-all 0x00002000
+[uart]   MTS potential loaded: q16=0x00002000 active_points=1000
+>> mts-start
+>> mts-status
+[uart] mts-start
+[uart]   MTS configured: mode=mts_3d particles=1 gx=10 gy=10 gz=10 lanes=4 timesteps=2 contract=0x4D545332
+[uart] MTS started.
+[uart] MTS command run done: cycles=75286 active_points=1000 contract=0x4D545332
+[uart] mts-status
+[uart]   MTS mode=mts_3d(3) busy=0 done=1 error=0 overflow=0 gx=10 gy=10 gz=10 lanes=4 timesteps_low=2 cycles=75286 active_points=1000 contract=0x4D545332
+>> mts-field-dump 1000
+[uart] mts-field-dump 1000
+[uart]   field[0] real=1791 imag=0 real_hex=0x000006FF imag_hex=0x00000000
+[uart] field[1] real=4 imag=0 real_hex=0x00000004 imag_hex=0x00000000
+[uart] field[2] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[3] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[4] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[5] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[6] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[7] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[8] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[9] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[10] real=4 imag=0 real_hex=0x00000004 imag_hex=0x00000000
+[uart] field[11] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[12] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[13] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[14] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[15] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[16] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[17] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[18] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[19] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[20] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[21] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[22] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[23] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[24] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[25] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[26] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[27] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[28] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[29] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[30] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[31] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[32] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[33] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[34] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[35] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[36] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[37] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[38] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[39] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[40] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[41] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[42] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[43] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[44] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[45] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[46] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[47] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[48] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[49] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[50] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[51] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[52] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[53] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[54] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[55] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[56] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[57] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[58] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[59] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[60] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[61] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[62] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[63] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[64] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[65] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[66] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[67] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[68] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[69] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[70] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[71] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[72] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[73] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[74] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[75] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[76] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[77] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[78] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[79] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[80] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[81] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[82] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[83] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[84] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[85] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[86] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[87] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[88] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[89] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[90] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[91] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[92] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[93] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[94] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[95] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[96] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[97] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[98] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[99] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[100] real=4 imag=0 real_hex=0x00000004 imag_hex=0x00000000
+[uart] field[101] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[102] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[103] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[104] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[105] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[106] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[107] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[108] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[109] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[110] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[111] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[112] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[113] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[114] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[115] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[116] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[117] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[118] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[119] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[120] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[121] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[122] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[123] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[124] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[125] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[126] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[127] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[128] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[129] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[130] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[131] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[132] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[133] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[134] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[135] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[136] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[137] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[138] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[139] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[140] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[141] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[142] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[143] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[144] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[145] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[146] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[147] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[148] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[149] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[150] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[151] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[152] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[153] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[154] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[155] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[156] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[157] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[158] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[159] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[160] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[161] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[162] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[163] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[164] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[165] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[166] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[167] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[168] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[169] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[170] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[171] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[172] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[173] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[174] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[175] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[176] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[177] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[178] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[179] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[180] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[181] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[182] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[183] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[184] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[185] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[186] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[187] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[188] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[189] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[190] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[191] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[192] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[193] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[194] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[195] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[196] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[197] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[198] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[199] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[200] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[201] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[202] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[203] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[204] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[205] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[206] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[207] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[208] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[209] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[210] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[211] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[212] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[213] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[214] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[215] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[216] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[217] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[218] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[219] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[220] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[221] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[222] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[223] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[224] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[225] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[226] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[227] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[228] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[229] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[230] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[231] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[232] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[233] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[234] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[235] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[236] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[237] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[238] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[239] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[240] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[241] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[242] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[243] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[244] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[245] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[246] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[247] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[248] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[249] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[250] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[251] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[252] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[253] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[254] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[255] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[256] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[257] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[258] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[259] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[260] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[261] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[262] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[263] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[264] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[265] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[266] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[267] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[268] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[269] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[270] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[271] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[272] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[273] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[274] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[275] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[276] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[277] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[278] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[279] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[280] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[281] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[282] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[283] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[284] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[285] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[286] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[287] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[288] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[289] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[290] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[291] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[292] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[293] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[294] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[295] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[296] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[297] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[298] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[299] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[300] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[301] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[302] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[303] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[304] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[305] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[306] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[307] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[308] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[309] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[310] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[311] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[312] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[313] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[314] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[315] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[316] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[317] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[318] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[319] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[320] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[321] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[322] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[323] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[324] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[325] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[326] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[327] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[328] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[329] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[330] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[331] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[332] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[333] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[334] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[335] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[336] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[337] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[338] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[339] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[340] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[341] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[342] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[343] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[344] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[345] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[346] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[347] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[348] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[349] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[350] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[351] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[352] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[353] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[354] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[355] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[356] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[357] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[358] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[359] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[360] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[361] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[362] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[363] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[364] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[365] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[366] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[367] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[368] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[369] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[370] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[371] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[372] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[373] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[374] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[375] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[376] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[377] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[378] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[379] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[380] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[381] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[382] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[383] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[384] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[385] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[386] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[387] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[388] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[389] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[390] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[391] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[392] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[393] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[394] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[395] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[396] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[397] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[398] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[399] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[400] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[401] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[402] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[403] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[404] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[405] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[406] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[407] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[408] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[409] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[410] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[411] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[412] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[413] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[414] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[415] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[416] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[417] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[418] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[419] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[420] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[421] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[422] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[423] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[424] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[425] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[426] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[427] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[428] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[429] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[430] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[431] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[432] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[433] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[434] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[435] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[436] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[437] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[438] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[439] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[440] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[441] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[442] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[443] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[444] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[445] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[446] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[447] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[448] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[449] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[450] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[451] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[452] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[453] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[454] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[455] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[456] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[457] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[458] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[459] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[460] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[461] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[462] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[463] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[464] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[465] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[466] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[467] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[468] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[469] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[470] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[471] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[472] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[473] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[474] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[475] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[476] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[477] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[478] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[479] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[480] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[481] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[482] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[483] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[484] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[485] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[486] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[487] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[488] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[489] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[490] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[491] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[492] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[493] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[494] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[495] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[496] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[497] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[498] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[499] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[500] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[501] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[502] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[503] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[504] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[505] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[506] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[507] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[508] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[509] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[510] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[511] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[512] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[513] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[514] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[515] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[516] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[517] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[518] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[519] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[520] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[521] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[522] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[523] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[524] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[525] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[526] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[527] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[528] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[529] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[530] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[531] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[532] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[533] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[534] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[535] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[536] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[537] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[538] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[539] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[540] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[541] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[542] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[543] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[544] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[545] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[546] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[547] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[548] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[549] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[550] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[551] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[552] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[553] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[554] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[555] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[556] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[557] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[558] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[559] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[560] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[561] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[562] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[563] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[564] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[565] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[566] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[567] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[568] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[569] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[570] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[571] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[572] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[573] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[574] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[575] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[576] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[577] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[578] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[579] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[580] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[581] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[582] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[583] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[584] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[585] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[586] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[587] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[588] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[589] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[590] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[591] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[592] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[593] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[594] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[595] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[596] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[597] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[598] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[599] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[600] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[601] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[602] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[603] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[604] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[605] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[606] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[607] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[608] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[609] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[610] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[611] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[612] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[613] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[614] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[615] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[616] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[617] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[618] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[619] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[620] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[621] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[622] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[623] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[624] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[625] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[626] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[627] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[628] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[629] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[630] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[631] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[632] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[633] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[634] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[635] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[636] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[637] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[638] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[639] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[640] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[641] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[642] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[643] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[644] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[645] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[646] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[647] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[648] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[649] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[650] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[651] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[652] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[653] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[654] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[655] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[656] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[657] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[658] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[659] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[660] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[661] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[662] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[663] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[664] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[665] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[666] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[667] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[668] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[669] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[670] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[671] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[672] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[673] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[674] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[675] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[676] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[677] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[678] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[679] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[680] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[681] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[682] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[683] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[684] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[685] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[686] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[687] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[688] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[689] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[690] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[691] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[692] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[693] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[694] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[695] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[696] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[697] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[698] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[699] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[700] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[701] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[702] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[703] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[704] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[705] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[706] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[707] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[708] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[709] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[710] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[711] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[712] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[713] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[714] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[715] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[716] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[717] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[718] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[719] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[720] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[721] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[722] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[723] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[724] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[725] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[726] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[727] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[728] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[729] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[730] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[731] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[732] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[733] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[734] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[735] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[736] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[737] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[738] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[739] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[740] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[741] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[742] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[743] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[744] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[745] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[746] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[747] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[748] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[749] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[750] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[751] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[752] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[753] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[754] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[755] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[756] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[757] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[758] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[759] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[760] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[761] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[762] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[763] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[764] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[765] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[766] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[767] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[768] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[769] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[770] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[771] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[772] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[773] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[774] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[775] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[776] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[777] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[778] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[779] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[780] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[781] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[782] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[783] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[784] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[785] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[786] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[787] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[788] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[789] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[790] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[791] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[792] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[793] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[794] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[795] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[796] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[797] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[798] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[799] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[800] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[801] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[802] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[803] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[804] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[805] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[806] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[807] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[808] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[809] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[810] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[811] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[812] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[813] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[814] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[815] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[816] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[817] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[818] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[819] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[820] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[821] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[822] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[823] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[824] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[825] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[826] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[827] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[828] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[829] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[830] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[831] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[832] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[833] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[834] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[835] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[836] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[837] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[838] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[839] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[840] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[841] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[842] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[843] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[844] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[845] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[846] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[847] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[848] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[849] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[850] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[851] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[852] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[853] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[854] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[855] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[856] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[857] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[858] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[859] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[860] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[861] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[862] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[863] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[864] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[865] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[866] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[867] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[868] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[869] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[870] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[871] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[872] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[873] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[874] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[875] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[876] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[877] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[878] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[879] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[880] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[881] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[882] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[883] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[884] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[885] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[886] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[887] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[888] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[889] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[890] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[891] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[892] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[893] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[894] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[895] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[896] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[897] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[898] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[899] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[900] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[901] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[902] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[903] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[904] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[905] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[906] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[907] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[908] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[909] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[910] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[911] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[912] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[913] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[914] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[915] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[916] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[917] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[918] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[919] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[920] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[921] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[922] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[923] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[924] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[925] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[926] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[927] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[928] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[929] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[930] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[931] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[932] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[933] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[934] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[935] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[936] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[937] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[938] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[939] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[940] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[941] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[942] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[943] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[944] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[945] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[946] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[947] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[948] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[949] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[950] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[951] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[952] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[953] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[954] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[955] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[956] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[957] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[958] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[959] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[960] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[961] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[962] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[963] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[964] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[965] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[966] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[967] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[968] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[969] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[970] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[971] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[972] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[973] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[974] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[975] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[976] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[977] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[978] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[979] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[980] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[981] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[982] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[983] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[984] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[985] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[986] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[987] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[988] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[989] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[990] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[991] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[992] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[993] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[994] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[995] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[996] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[997] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[998] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+[uart] field[999] real=0 imag=0 real_hex=0x00000000 imag_hex=0x00000000
+
+$ C:\Python313\python.exe E:\GMW_CPU\tools\mts_full_physics_q16.py --dimension 3d --particles 1 --timesteps 2 --gx 10 --gy 10 --gz 10 --dt-q16 0x00004000 --diffusion-q16 0x0000CCCD --vcoeff-q16 0x00009999 --uniform-potential-q16 0x00002000 --dx-q16 0x000B1C72 --dy-q16 0x000B1C72 --dz-q16 0x000B1C72 --inv-dx2-q16 0x00000213 --inv-dy2-q16 0x00000213 --inv-dz2-q16 0x00000213 --normalize --out E:\GMW_CPU\results\board_acceptance\20260608_135515\acceptance\mts\mts_3d_10x10x10_t2\cpu_kernel_model
+[MTS-FULL-CPU] dimension=3d shape=10x10x10 points=1000 elapsed_s=0.056043
+[MTS-FULL-CPU] output=E:\GMW_CPU\results\board_acceptance\20260608_135515\acceptance\mts\mts_3d_10x10x10_t2\cpu_kernel_model
+
+$ C:\Python313\python.exe E:\GMW_CPU\tools\compare_mts_dimensional_results.py --cpu E:\GMW_CPU\results\board_acceptance\20260608_135515\acceptance\mts\mts_3d_10x10x10_t2\cpu_kernel_model --fpga E:\GMW_CPU\results\board_acceptance\20260608_135515\acceptance\mts\mts_3d_10x10x10_t2 --out E:\GMW_CPU\results\board_acceptance\20260608_135515\acceptance\mts\mts_3d_10x10x10_t2\compare_cpu_kernel_vs_fpga
+pass=True
+mismatches=0
+max_abs_delta_q16=0
+normalized_overlap=0.99999999999999989
+
+$ C:\Python313\python.exe E:\GMW_CPU\tools\plot_mts_results.py E:\GMW_CPU\results\board_acceptance\20260608_135515\acceptance\mts\mts_3d_10x10x10_t2
+[MTS-PLOT] source=E:\GMW_CPU\results\board_acceptance\20260608_135515\acceptance\mts\mts_3d_10x10x10_t2
+[MTS-PLOT] output=E:\GMW_CPU\results\board_acceptance\20260608_135515\acceptance\mts\mts_3d_10x10x10_t2
+[MTS-PLOT] plot=E:\GMW_CPU\results\board_acceptance\20260608_135515\acceptance\mts\mts_3d_10x10x10_t2\mts_3d_density_xy_max.png
+[MTS-PLOT] plot=E:\GMW_CPU\results\board_acceptance\20260608_135515\acceptance\mts\mts_3d_10x10x10_t2\mts_3d_density_xz_max.png
+[MTS-PLOT] plot=E:\GMW_CPU\results\board_acceptance\20260608_135515\acceptance\mts\mts_3d_10x10x10_t2\mts_3d_density_yz_max.png
+[MTS-PLOT] plot=E:\GMW_CPU\results\board_acceptance\20260608_135515\acceptance\mts\mts_3d_10x10x10_t2\mts_3d_density_mid_z.png
+[MTS-PLOT] report=E:\GMW_CPU\results\board_acceptance\20260608_135515\acceptance\mts\mts_3d_10x10x10_t2\mts_report.md

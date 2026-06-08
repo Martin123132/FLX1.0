@@ -1,0 +1,460 @@
+[cmd] help
+[uart] help
+[uart]   Commands:
+[uart]     status | s          Full system status
+[uart]     stop | q | exit     Clean shutdown and exit
+[uart]     step <N>            Single-step N times
+[uart]     checkpoint | cp     Stage active payload, then force WAL checkpoint
+[uart]     read-site <idx>     Read A7 site (0-511)
+[uart]     cmod-site <idx>     Read raw 512-site Cmod mirror site
+[uart]     dump-wal            Read all 32 Cmod WAL sites
+[uart]     dump-cmod [n]       Read raw Cmod mirror and print non-zero sites
+[uart]     dump-all            Dump all 512 A7 sites
+[uart]     wal-var-status      Read variable WAL metadata/caps
+[uart]     wal-active          Show Z7 active variable WAL engine
+[uart]     wal-var-config <words> <mask_hex> [checksum_hex]  Stage variable WAL metadata
+[uart]     wal-var-write <idx> <word_hex> | wal-var-read <idx> [count]
+[uart]     wal-var-dump [count] | wal-var-selftest  Verify Cmod variable WAL RAM
+[uart]     wal-save-mts | wal-save-mts-checkpoint | wal-restore-mts
+[uart]                          Save/restore MTS field+potential through WAL_VAR/flash
+[uart]     wal-save-sha|robot|ukernel and wal-restore-sha|robot|ukernel
+[uart]                          Save/restore accelerator/VM state through WAL_VAR/flash
+[uart]                          Default checkpoint stages active MTS/SHA/robot/ukernel unless wal-bypass is ON
+[uart]     restore             Manual restore from flash
+[uart]     cold-start          Configure A7/Cmod from defaults/config
+[uart]   Physics / timing:
+[uart]     set tau-rate <hz>        Change tau tick rate live
+[uart]     set spi1-div <n>         Set Z7->A7 SPI divider
+[uart]     set spi0-div <n>         Set Z7->Cmod SPI divider
+[uart]     set v2|eta|zeta|lambdaR|gamma|cg2|epsilon <hex>  A7 coefficient
+[uart]     set tau-low|tau-high|tau-block <hex>   Anomaly thresholds
+[uart]     set w-energy|w-curvature|step-size <hex>  Repair weights
+[uart]     set push-period <n>      SPI3 push period
+[uart]     set repair on|off        Enable/disable repair
+[uart]     set logging on|off       Enable/disable WAL logging
+[uart]     set recovery-fields 3|6  Select compact or six-field recovery
+[uart]     set recovery-depth <n>   Set requested recovery depth (Cmod caps it)
+[uart]     set wal-bypass on|off    Bypass Cmod step_done
+[uart]     set particle-count <n>   Override Particle3D count before cold-start
+[uart]     set particle-batch <n>   Override Particle3D batch size before cold-start
+[uart]     set particle-seed <n>    Override Particle3D deterministic seed
+[uart]     set particle-scale <hex> Override accelerator normalization scale
+[uart]     set accum-mode full512|local27|local125|hist
+[uart]     set accum-lanes <n>      Request Particle3D accumulation lanes
+[uart]     set site-lanes <n>       Request Particle3D site/evolution lanes
+[uart]     set wal-policy full|checkpoint|final|off-debug
+[uart]     set binary-output-first on|off
+[uart]   Site data:
+[uart]     write-site <i> <psi> <prev> <m>   Write A7 site (Q16.16 hex)
+[uart]     write-lambda <site> <val>          Write per-site lambdaR
+[uart]     write-block <addr> <val>           Raw Cmod register write
+[uart]   Flow control:
+[uart]     pause                   Stop tau ticks; A7 may still report BUSY while waiting
+[uart]     resume                  Restart tau using auto-step bootstrap
+[uart]     tau-reset               Force tau auto-step bootstrap/reset
+[uart]     layer-status | ls       Show derived adaptive layer plan and A7 descriptor
+[uart]     layer-push [idx]        Write A7 descriptor for layer idx (default 0)
+[uart]     particle-load [idx]     Load particle layer idx into A7 and pause
+[uart]     particle-start          Run Particle3D hardware accumulation now
+[uart]     particle-status         Read Particle3D accelerator status
+[uart]     particle-clear          Clear Particle3D done/error status
+[uart]   MTS full-physics kernels:
+[uart]     mts-config 1d <particles> <gx> [timesteps]     Auto-sets dt/diffusion/vcoeff/dx
+[uart]     mts-config 2d <particles> <gx> <gy> [timesteps]
+[uart]     mts-config 3d <particles> <gx> <gy> <gz> [timesteps]
+[uart]     mts-coeff <dt_q16> <diffusion_q16> <v_coeff_q16>  Override coefficients
+[uart]     mts-normalize on|off       Enable/disable per-timestep normalization
+[uart]     mts-init [grid_size [width]]  ARM computes Gaussian IC, loads field+potential
+[uart]        Defaults: grid_size=100 width=0.1. Uses the active 1D/2D/3D shape.
+[uart]     mts-load-field <idx> <real_q16> <imag_q16>  Manual single-site field load
+[uart]     mts-load-potential <idx> <q16>              Manual single-site potential load
+[uart]     mts-load-potential-all <q16>                Fill active potential table
+[uart]     mts-load-layer <particle_base> <count>  Load deterministic Q16 occupancy field
+[uart]     mts-start               Start configured 1D/2D/3D MTS kernel
+[uart]     mts-start-field-dump [n]  Start and dump final Q16 field in one command
+[uart]     wal-var-mts-restore-start-field-dump <words> <checksum_hex> [n]
+[uart]     mts-status              Poll full MTS status/cycles/active shape/contract
+[uart]     mts-read <idx>          Read one complex i64 result entry
+[uart]     mts-dump [count]        Dump up to 1024 result entries as decimal real/imag
+[uart]     mts-field-read <idx>    Read one final Q16 field entry
+[uart]     mts-field-dump [count]  Dump final Q16 field entries
+[uart]     mts-clear               Clear MTS done/error status
+[uart]     mts-reset               Reset MTS kernel control state
+[uart]     mts-bench               Print MTS cycle and cycles/point/step counters
+[uart]   FLX lattice layout / expansion routing:
+[uart]     layout-status           Read mapper contract, mode, shape, coordinate, local index
+[uart]     layout-set row|snake|morton  Select row-major, serpentine, or Morton/Z-order mapper
+[uart]     layout-map <dim> <gx> [gy] [gz] <x> [y] [z]  Map logical coordinate to local index
+[uart]     layout-dump [count]     Print first logical coordinates mapped through active layout
+[uart]     route-status | route-map  Read Z7-mediated expansion route mailbox
+[uart]     route-read <board> <idx> | route-write <board> <idx> <word_hex>
+[uart]   GMW Universal Kernel v1:
+[uart]     ukernel-caps | ukernel-status  Read VM contract/status/cycles/hashes
+[uart]     ukernel-config <active> [sx] [sy] [sz] [flags_hex]  Stage VM shape, no start
+[uart]     ukernel-load-prog halt|sum4     Load built-in VM program slot
+[uart]     ukernel-load-prog <idx> <word_hex>  Load raw 32-bit VM instruction
+[uart]     ukernel-load-data <idx> <word_hex>  Load VM data RAM
+[uart]     ukernel-load-const <idx> <word_hex> Load VM constant RAM
+[uart]     ukernel-start | ukernel-step [n]    Run or single-step VM
+[uart]     ukernel-read <idx> [count] | ukernel-dump [count]  Read VM data RAM
+[uart]     ukernel-hash-state | ukernel-bench  Hash/report VM state
+[uart]     ukernel-clear | ukernel-reset | ukernel-restore-test
+[uart]   SHA / robotics accelerator slots:
+[uart]     sha-config <nonce_start> <nonce_count>
+[uart]     sha-load-header <idx0-19> <word_hex>  Load big-endian SHA header word
+[uart]     sha-start | sha-status | sha-clear | sha-reset
+[uart]     robot-config <active> <gx> <gy> <steps> [flags_hex]
+[uart]     robot-load <idx> <cell_word_hex> | robot-read <idx> [count]
+[uart]     robot-start | robot-status | robot-hash-state | robot-clear | robot-reset
+[uart]     accel-status            Show accelerator mode, lanes, progress, cycles
+[uart]     accel-caps              Show compiled accelerator capabilities
+[uart]     benchmark-status        Show accelerator + evolution benchmark counters
+[uart]     reset-stats             Clear repair/error counters
+[uart]     clear-errors            Clear sticky Z7 error flags
+[uart]     drain-ack               Force one Cmod WAL drain acknowledgement
+[uart]     clear-backpressure      Pause tau and force Cmod checkpoint/drain
+[uart]     bp-recover              Alias for clear-backpressure
+[uart]     BTN2/L20                Hardware button: clear backpressure, wait 0.5s, resume
+[uart]   Files:
+[uart]     snapshot <file>         Save state to file
+[uart]     load <file>             Load state from file into A7
+[uart]     sd-ls [path]            List SD directory with size/CRC
+[uart]     sd-cat <file>           Print small SD text file
+[uart]     sd-get <file>           Emit binary file as CRC checked chunks
+[uart]     sd-get-dir <path>       Enumerate files for host pull tool
+[uart]     particle-superpose [n]  Run Particle3D A7 hardware accumulation, optionally limited to n particles
+[uart]   Monitor:
+[uart]     monitor on|off          Stream status every poll
+[uart]     monitor rate <ms>       Set monitor print interval
+[uart]     log-energy on|off       Toggle per-tick energy log
+[uart]   Diagnostics:
+[uart]     energy-check | ec      Pause tau, scan A7 site RAM, compare SW energy to HW regs
+[uart]     wal-bypass on|off       Bypass Cmod step_done
+[uart]     regs                    Dump all Z7 PL registers
+[uart]     spi-health              Test SPI1/SPI0 links
+[uart]     force-spi3              Push A7 state to Cmod and print Cmod SPI3 counters
+[uart]     a7-debug                Dump A7 first-step/engine debug registers
+[uart]     button status is included in regs (btn[2] is L20 recovery)
+[uart]     read-reg  <hex>         Raw Z7 register read
+[uart]     write-reg <hex> <hex>   Raw Z7 register write
+[uart]     a7-reg  <hex>           SPI1 read to A7 register
+[uart]     cmod-reg <hex>          SPI0 read to Cmod register
+[uart]   General:
+[uart]     status|s  step <N>  checkpoint|cp  dump-wal  dump-all
+[uart]     restore   cold-start   stop|q    help|h
+[cmd] layout-status
+[uart] layout-status
+[uart]   FLX layout: caps=0x464C584D mode=snake(1) dim=3 shape=8x8x8 coord=7,7,7 local_idx=504
+[cmd] layout-set morton
+[uart] layout-set morton
+[uart]   FLX layout mode staged: morton (2). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 1 1024 0
+[uart] layout-map 1 1024 0
+[uart]   FLX map: mode=morton dim=1 shape=1024x1x1 coord=0,0,0 -> local_idx=0 a7_raw_idx=0
+[cmd] layout-set morton
+[uart] layout-set morton
+[uart]   FLX layout mode staged: morton (2). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 1 1024 512
+[uart] layout-map 1 1024 512
+[uart]   FLX map: mode=morton dim=1 shape=1024x1x1 coord=512,0,0 -> local_idx=512 a7_raw_idx=512
+[cmd] layout-set morton
+[uart] layout-set morton
+[uart]   FLX layout mode staged: morton (2). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 1 1024 1023
+[uart] layout-map 1 1024 1023
+[uart]   FLX map: mode=morton dim=1 shape=1024x1x1 coord=1023,0,0 -> local_idx=1023 a7_raw_idx=1023
+[cmd] layout-set morton
+[uart] layout-set morton
+[uart]   FLX layout mode staged: morton (2). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 2 32 32 0 0
+[uart] layout-map 2 32 32 0 0
+[uart]   FLX map: mode=morton dim=2 shape=32x32x1 coord=0,0,0 -> local_idx=0 a7_raw_idx=0
+[cmd] layout-set morton
+[uart] layout-set morton
+[uart]   FLX layout mode staged: morton (2). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 2 32 32 0 31
+[uart] layout-map 2 32 32 0 31
+[uart]   FLX map: mode=morton dim=2 shape=32x32x1 coord=0,31,0 -> local_idx=682 a7_raw_idx=682
+[cmd] layout-set morton
+[uart] layout-set morton
+[uart]   FLX layout mode staged: morton (2). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 2 32 32 16 16
+[uart] layout-map 2 32 32 16 16
+[uart]   FLX map: mode=morton dim=2 shape=32x32x1 coord=16,16,0 -> local_idx=768 a7_raw_idx=768
+[cmd] layout-set morton
+[uart] layout-set morton
+[uart]   FLX layout mode staged: morton (2). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 2 32 32 31 0
+[uart] layout-map 2 32 32 31 0
+[uart]   FLX map: mode=morton dim=2 shape=32x32x1 coord=31,0,0 -> local_idx=341 a7_raw_idx=341
+[cmd] layout-set morton
+[uart] layout-set morton
+[uart]   FLX layout mode staged: morton (2). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 2 32 32 31 31
+[uart] layout-map 2 32 32 31 31
+[uart]   FLX map: mode=morton dim=2 shape=32x32x1 coord=31,31,0 -> local_idx=1023 a7_raw_idx=1023
+[cmd] layout-set morton
+[uart] layout-set morton
+[uart]   FLX layout mode staged: morton (2). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 3 8 8 8 0 0 0
+[uart] layout-map 3 8 8 8 0 0 0
+[uart]   FLX map: mode=morton dim=3 shape=8x8x8 coord=0,0,0 -> local_idx=0 a7_raw_idx=0
+[cmd] layout-set morton
+[uart] layout-set morton
+[uart]   FLX layout mode staged: morton (2). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 3 8 8 8 0 0 7
+[uart] layout-map 3 8 8 8 0 0 7
+[uart]   FLX map: mode=morton dim=3 shape=8x8x8 coord=0,0,7 -> local_idx=292 a7_raw_idx=292
+[cmd] layout-set morton
+[uart] layout-set morton
+[uart]   FLX layout mode staged: morton (2). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 3 8 8 8 0 7 0
+[uart] layout-map 3 8 8 8 0 7 0
+[uart]   FLX map: mode=morton dim=3 shape=8x8x8 coord=0,7,0 -> local_idx=146 a7_raw_idx=146
+[cmd] layout-set morton
+[uart] layout-set morton
+[uart]   FLX layout mode staged: morton (2). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 3 8 8 8 0 7 7
+[uart] layout-map 3 8 8 8 0 7 7
+[uart]   FLX map: mode=morton dim=3 shape=8x8x8 coord=0,7,7 -> local_idx=438 a7_raw_idx=438
+[cmd] layout-set morton
+[uart] layout-set morton
+[uart]   FLX layout mode staged: morton (2). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 3 8 8 8 4 4 4
+[uart] layout-map 3 8 8 8 4 4 4
+[uart]   FLX map: mode=morton dim=3 shape=8x8x8 coord=4,4,4 -> local_idx=448 a7_raw_idx=448
+[cmd] layout-set morton
+[uart] layout-set morton
+[uart]   FLX layout mode staged: morton (2). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 3 8 8 8 7 0 0
+[uart] layout-map 3 8 8 8 7 0 0
+[uart]   FLX map: mode=morton dim=3 shape=8x8x8 coord=7,0,0 -> local_idx=73 a7_raw_idx=73
+[cmd] layout-set morton
+[uart] layout-set morton
+[uart]   FLX layout mode staged: morton (2). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 3 8 8 8 7 0 7
+[uart] layout-map 3 8 8 8 7 0 7
+[uart]   FLX map: mode=morton dim=3 shape=8x8x8 coord=7,0,7 -> local_idx=365 a7_raw_idx=365
+[cmd] layout-set morton
+[uart] layout-set morton
+[uart]   FLX layout mode staged: morton (2). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 3 8 8 8 7 7 0
+[uart] layout-map 3 8 8 8 7 7 0
+[uart]   FLX map: mode=morton dim=3 shape=8x8x8 coord=7,7,0 -> local_idx=219 a7_raw_idx=219
+[cmd] layout-set morton
+[uart] layout-set morton
+[uart]   FLX layout mode staged: morton (2). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 3 8 8 8 7 7 7
+[uart] layout-map 3 8 8 8 7 7 7
+[uart]   FLX map: mode=morton dim=3 shape=8x8x8 coord=7,7,7 -> local_idx=511 a7_raw_idx=511
+[cmd] layout-set row
+[uart] layout-set row
+[uart]   FLX layout mode staged: row (0). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 1 1024 0
+[uart] layout-map 1 1024 0
+[uart]   FLX map: mode=row dim=1 shape=1024x1x1 coord=0,0,0 -> local_idx=0 a7_raw_idx=0
+[cmd] layout-set row
+[uart] layout-set row
+[uart]   FLX layout mode staged: row (0). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 1 1024 512
+[uart] layout-map 1 1024 512
+[uart]   FLX map: mode=row dim=1 shape=1024x1x1 coord=512,0,0 -> local_idx=512 a7_raw_idx=512
+[cmd] layout-set row
+[uart] layout-set row
+[uart]   FLX layout mode staged: row (0). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 1 1024 1023
+[uart] layout-map 1 1024 1023
+[uart]   FLX map: mode=row dim=1 shape=1024x1x1 coord=1023,0,0 -> local_idx=1023 a7_raw_idx=1023
+[cmd] layout-set row
+[uart] layout-set row
+[uart]   FLX layout mode staged: row (0). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 2 32 32 0 0
+[uart] layout-map 2 32 32 0 0
+[uart]   FLX map: mode=row dim=2 shape=32x32x1 coord=0,0,0 -> local_idx=0 a7_raw_idx=0
+[cmd] layout-set row
+[uart] layout-set row
+[uart]   FLX layout mode staged: row (0). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 2 32 32 0 31
+[uart] layout-map 2 32 32 0 31
+[uart]   FLX map: mode=row dim=2 shape=32x32x1 coord=0,31,0 -> local_idx=992 a7_raw_idx=992
+[cmd] layout-set row
+[uart] layout-set row
+[uart]   FLX layout mode staged: row (0). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 2 32 32 16 16
+[uart] layout-map 2 32 32 16 16
+[uart]   FLX map: mode=row dim=2 shape=32x32x1 coord=16,16,0 -> local_idx=528 a7_raw_idx=528
+[cmd] layout-set row
+[uart] layout-set row
+[uart]   FLX layout mode staged: row (0). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 2 32 32 31 0
+[uart] layout-map 2 32 32 31 0
+[uart]   FLX map: mode=row dim=2 shape=32x32x1 coord=31,0,0 -> local_idx=31 a7_raw_idx=31
+[cmd] layout-set row
+[uart] layout-set row
+[uart]   FLX layout mode staged: row (0). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 2 32 32 31 31
+[uart] layout-map 2 32 32 31 31
+[uart]   FLX map: mode=row dim=2 shape=32x32x1 coord=31,31,0 -> local_idx=1023 a7_raw_idx=1023
+[cmd] layout-set row
+[uart] layout-set row
+[uart]   FLX layout mode staged: row (0). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 3 8 8 8 0 0 0
+[uart] layout-map 3 8 8 8 0 0 0
+[uart]   FLX map: mode=row dim=3 shape=8x8x8 coord=0,0,0 -> local_idx=0 a7_raw_idx=0
+[cmd] layout-set row
+[uart] layout-set row
+[uart]   FLX layout mode staged: row (0). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 3 8 8 8 0 0 7
+[uart] layout-map 3 8 8 8 0 0 7
+[uart]   FLX map: mode=row dim=3 shape=8x8x8 coord=0,0,7 -> local_idx=448 a7_raw_idx=448
+[cmd] layout-set row
+[uart] layout-set row
+[uart]   FLX layout mode staged: row (0). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 3 8 8 8 0 7 0
+[uart] layout-map 3 8 8 8 0 7 0
+[uart]   FLX map: mode=row dim=3 shape=8x8x8 coord=0,7,0 -> local_idx=56 a7_raw_idx=56
+[cmd] layout-set row
+[uart] layout-set row
+[uart]   FLX layout mode staged: row (0). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 3 8 8 8 0 7 7
+[uart] layout-map 3 8 8 8 0 7 7
+[uart]   FLX map: mode=row dim=3 shape=8x8x8 coord=0,7,7 -> local_idx=504 a7_raw_idx=504
+[cmd] layout-set row
+[uart] layout-set row
+[uart]   FLX layout mode staged: row (0). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 3 8 8 8 4 4 4
+[uart] layout-map 3 8 8 8 4 4 4
+[uart]   FLX map: mode=row dim=3 shape=8x8x8 coord=4,4,4 -> local_idx=292 a7_raw_idx=292
+[cmd] layout-set row
+[uart] layout-set row
+[uart]   FLX layout mode staged: row (0). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 3 8 8 8 7 0 0
+[uart] layout-map 3 8 8 8 7 0 0
+[uart]   FLX map: mode=row dim=3 shape=8x8x8 coord=7,0,0 -> local_idx=7 a7_raw_idx=7
+[cmd] layout-set row
+[uart] layout-set row
+[uart]   FLX layout mode staged: row (0). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 3 8 8 8 7 0 7
+[uart] layout-map 3 8 8 8 7 0 7
+[uart]   FLX map: mode=row dim=3 shape=8x8x8 coord=7,0,7 -> local_idx=455 a7_raw_idx=455
+[cmd] layout-set row
+[uart] layout-set row
+[uart]   FLX layout mode staged: row (0). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 3 8 8 8 7 7 0
+[uart] layout-map 3 8 8 8 7 7 0
+[uart]   FLX map: mode=row dim=3 shape=8x8x8 coord=7,7,0 -> local_idx=63 a7_raw_idx=63
+[cmd] layout-set row
+[uart] layout-set row
+[uart]   FLX layout mode staged: row (0). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 3 8 8 8 7 7 7
+[uart] layout-map 3 8 8 8 7 7 7
+[uart]   FLX map: mode=row dim=3 shape=8x8x8 coord=7,7,7 -> local_idx=511 a7_raw_idx=511
+[cmd] layout-set snake
+[uart] layout-set snake
+[uart]   FLX layout mode staged: snake (1). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 1 1024 0
+[uart] layout-map 1 1024 0
+[uart]   FLX map: mode=snake dim=1 shape=1024x1x1 coord=0,0,0 -> local_idx=0 a7_raw_idx=0
+[cmd] layout-set snake
+[uart] layout-set snake
+[uart]   FLX layout mode staged: snake (1). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 1 1024 512
+[uart] layout-map 1 1024 512
+[uart]   FLX map: mode=snake dim=1 shape=1024x1x1 coord=512,0,0 -> local_idx=512 a7_raw_idx=512
+[cmd] layout-set snake
+[uart] layout-set snake
+[uart]   FLX layout mode staged: snake (1). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 1 1024 1023
+[uart] layout-map 1 1024 1023
+[uart]   FLX map: mode=snake dim=1 shape=1024x1x1 coord=1023,0,0 -> local_idx=1023 a7_raw_idx=1023
+[cmd] layout-set snake
+[uart] layout-set snake
+[uart]   FLX layout mode staged: snake (1). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 2 32 32 0 0
+[uart] layout-map 2 32 32 0 0
+[uart]   FLX map: mode=snake dim=2 shape=32x32x1 coord=0,0,0 -> local_idx=0 a7_raw_idx=0
+[cmd] layout-set snake
+[uart] layout-set snake
+[uart]   FLX layout mode staged: snake (1). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 2 32 32 0 31
+[uart] layout-map 2 32 32 0 31
+[uart]   FLX map: mode=snake dim=2 shape=32x32x1 coord=0,31,0 -> local_idx=1023 a7_raw_idx=1023
+[cmd] layout-set snake
+[uart] layout-set snake
+[uart]   FLX layout mode staged: snake (1). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 2 32 32 16 16
+[uart] layout-map 2 32 32 16 16
+[uart]   FLX map: mode=snake dim=2 shape=32x32x1 coord=16,16,0 -> local_idx=528 a7_raw_idx=528
+[cmd] layout-set snake
+[uart] layout-set snake
+[uart]   FLX layout mode staged: snake (1). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 2 32 32 31 0
+[uart] layout-map 2 32 32 31 0
+[uart]   FLX map: mode=snake dim=2 shape=32x32x1 coord=31,0,0 -> local_idx=31 a7_raw_idx=31
+[cmd] layout-set snake
+[uart] layout-set snake
+[uart]   FLX layout mode staged: snake (1). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 2 32 32 31 31
+[uart] layout-map 2 32 32 31 31
+[uart]   FLX map: mode=snake dim=2 shape=32x32x1 coord=31,31,0 -> local_idx=992 a7_raw_idx=992
+[cmd] layout-set snake
+[uart] layout-set snake
+[uart]   FLX layout mode staged: snake (1). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 3 8 8 8 0 0 0
+[uart] layout-map 3 8 8 8 0 0 0
+[uart]   FLX map: mode=snake dim=3 shape=8x8x8 coord=0,0,0 -> local_idx=0 a7_raw_idx=0
+[cmd] layout-set snake
+[uart] layout-set snake
+[uart]   FLX layout mode staged: snake (1). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 3 8 8 8 0 0 7
+[uart] layout-map 3 8 8 8 0 0 7
+[uart]   FLX map: mode=snake dim=3 shape=8x8x8 coord=0,0,7 -> local_idx=448 a7_raw_idx=448
+[cmd] layout-set snake
+[uart] layout-set snake
+[uart]   FLX layout mode staged: snake (1). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 3 8 8 8 0 7 0
+[uart] layout-map 3 8 8 8 0 7 0
+[uart]   FLX map: mode=snake dim=3 shape=8x8x8 coord=0,7,0 -> local_idx=63 a7_raw_idx=63
+[cmd] layout-set snake
+[uart] layout-set snake
+[uart]   FLX layout mode staged: snake (1). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 3 8 8 8 0 7 7
+[uart] layout-map 3 8 8 8 0 7 7
+[uart]   FLX map: mode=snake dim=3 shape=8x8x8 coord=0,7,7 -> local_idx=511 a7_raw_idx=511
+[cmd] layout-set snake
+[uart] layout-set snake
+[uart]   FLX layout mode staged: snake (1). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 3 8 8 8 4 4 4
+[uart] layout-map 3 8 8 8 4 4 4
+[uart]   FLX map: mode=snake dim=3 shape=8x8x8 coord=4,4,4 -> local_idx=292 a7_raw_idx=292
+[cmd] layout-set snake
+[uart] layout-set snake
+[uart]   FLX layout mode staged: snake (1). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 3 8 8 8 7 0 0
+[uart] layout-map 3 8 8 8 7 0 0
+[uart]   FLX map: mode=snake dim=3 shape=8x8x8 coord=7,0,0 -> local_idx=7 a7_raw_idx=7
+[cmd] layout-set snake
+[uart] layout-set snake
+[uart]   FLX layout mode staged: snake (1). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 3 8 8 8 7 0 7
+[uart] layout-map 3 8 8 8 7 0 7
+[uart]   FLX map: mode=snake dim=3 shape=8x8x8 coord=7,0,7 -> local_idx=455 a7_raw_idx=455
+[cmd] layout-set snake
+[uart] layout-set snake
+[uart]   FLX layout mode staged: snake (1). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 3 8 8 8 7 7 0
+[uart] layout-map 3 8 8 8 7 7 0
+[uart]   FLX map: mode=snake dim=3 shape=8x8x8 coord=7,7,0 -> local_idx=56 a7_raw_idx=56
+[cmd] layout-set snake
+[uart] layout-set snake
+[uart]   FLX layout mode staged: snake (1). Existing MTS row-major compatibility path remains available.
+[cmd] layout-map 3 8 8 8 7 7 7
+[uart] layout-map 3 8 8 8 7 7 7
+[uart]   FLX map: mode=snake dim=3 shape=8x8x8 coord=7,7,7 -> local_idx=504 a7_raw_idx=504
+[cmd] route-status
+[uart] route-status
+[uart]   FLX route: caps=0x464C5852 self=0 target=0 global_idx=0 local_idx=0 data=0x00000000 status=0x00000051
+[uart]              status local=1 remote=0 requested=1 write=0 code=0x1
+[cmd] route-read 0 0
+[uart] route-read 0 0
+[uart]   route-read local board=0 idx=0 psi=0x00000000 prev=0x00000000 m=0x00000000

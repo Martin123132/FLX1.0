@@ -1,0 +1,37 @@
+{
+  "source_dir": "E:\\GMW_CPU\\results\\board_acceptance\\20260608_135515\\acceptance\\mts\\mts_1d_1024_t2",
+  "metric_name": "field_norm_energy_q16",
+  "dimension": "mts_1d",
+  "logical_shape": [
+    1024,
+    1,
+    1
+  ],
+  "active_points": 1024,
+  "particles": 1,
+  "timesteps": 2,
+  "cycles": 52480,
+  "wall_elapsed_s": 0.2065734000007069,
+  "cycles_per_point": 51.25,
+  "cycles_per_point_step": 25.625,
+  "density_energy_q16": 10.226714758435264,
+  "density_l2": 8.317846309872541,
+  "density_max": 8.01970960199833,
+  "density_min": 0.0,
+  "peak_index": 1,
+  "peak_density": 8.01970960199833,
+  "real_min": -2.8319091796875,
+  "real_max": 1.485595703125,
+  "imag_min": 0.0,
+  "imag_max": 0.0,
+  "kernel_contract": "a7_mts_full_physics_kernel_v2_q16",
+  "kernel_contract_word": 1297371954,
+  "kernel_contract_word_hex": "0x4D545332",
+  "compare": {
+    "pass": true,
+    "mismatches": 0,
+    "max_abs_delta_q16": 0,
+    "normalized_overlap": 0.9999999999999998,
+    "density_integral_relative_error": 0.0
+  }
+}

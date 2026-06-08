@@ -1,0 +1,64 @@
+[host] opening COM5 @ 115200
+[host] draining for 5.0s
+[uart] [SD] Wrote '0:/BOOT.bin' (4541660 bytes)
+[uart] [SD] Wrote '0:/mbt.cfg' (769 bytes)
+[uart] [SD] Wrote '0:/state.bin' (6144 bytes)
+[uart] [SD] Wrote '0:/lambda_r.bin' (2048 bytes)
+[uart] [DDR] Copied 4 file(s) to SD card.  Staging area cleared.
+[uart] [MAIN] 4 experiment file(s) copied from DDR to SD.
+[uart] [SD] Read '0:/mbt.cfg' (769 bytes)
+[uart] [CONFIG] Parsing SD/JTAG config buffer directly...
+[uart] [CONFIG] Loaded experiment 'mts_2d_dense' from direct buffer parser
+[uart] [SD] Experiment config loaded from SD.
+[uart] [SD] MTS mode: ignoring optional state.bin/lambda_r.bin; command/config path loads field and potential.
+[uart] Z7 Orchestrator v2.0
+[uart] === Experiment Configuration ===
+[uart]   Name:          mts_2d_dense
+[uart]   Lattice:       512 sites (8x8x8)
+[uart]   Mode:          mts_2d (0)
+[uart]   Auto-run:      no
+[uart]   Dimension:     kind=mts_2d packing=dense_compressed min_thickness=state_words
+[uart]                  logical=16x16x1 physical=8x8x8 channels/tile=1 layers=1
+[uart]   Layering:      capacity=512 items/layer=512 total_layers=1
+[uart]                  grid/item=1 timesteps/layer=1 used/spare=512/0
+[uart]   A7 coeffs:     v2=0x00010000 eta=0x00000666 zeta=0x00008000
+[uart]                  lambda=0x00004000 gamma=0x00002000 cg2=0x00010000
+[uart]                  epsilon=0x00000100 step_period=0
+[uart]                  spi3_push=7 spi3_sites=512
+[uart]   Cmod coeffs:   tau_low=0x00100000 tau_high=0x00400000
+[uart]                  tau_block=0x01000000 w_e=0x00008000 w_g=0x00008000
+[uart]                  eta_psi=0x00000666
+[uart]   Timing:        tau_div=49999999  steps=1  ckpt_every=100  poll=10000 µs
+[uart]   Logging:       energy=no  snapshot_every=0  wal_stream=no
+[uart]   Recovery:      snapshot_fields=6  depth=128  restore_audit=yes
+[uart]   IC (cold):     sigma=32.0  amplitude=1.000
+[uart]   Robustness:    max_consec_errors=5  wal_stream_floor=5000 µs
+[uart] ================================
+[uart] [SD] output dir ready: 0:/output
+[uart] === Z7 Orchestrator Early Startup ===
+[uart] [STARTUP] PL version: 0x00010001
+[uart] [STARTUP] SPI dividers: SPI1=9 (5 MHz), SPI0=31 (~1.56 MHz)
+[uart] [STARTUP] Cmod SHUTDOWN_FLAG = 0x00
+[uart] [STARTUP] Cle�C��>> EARLY PRESTART: adjust/debug before A7/Cmod config or restore
+[uart]     Commands: status, regs, spi-health, set spi1-div <n>, set spi0-div <n>
+[uart]               a7-debug, layer-status, particle-load, mts-config/load/status, bp-recover, sd-ls, cold-start, restore, wal-bypass on/off, help
+[uart]     'go' continues only after cold-start or restore succeeds. 'stop' exits.
+[cmd] cold-start
+[uart] cold-start
+[uart] === COLD START: Configuring A7 and Cmod from defaults/config ===
+[uart] [STARTUP] Resetting external fabric boards ...
+[uart] [STARTUP] Configuring A7 ...
+[uart]   A7 layer descriptor <- mode=mbt_3d_lattice layer=0 item_start=0 items=512 grid=1 steps=1
+[uart] [STARTUP] Writing Î»R for 512 sites ...
+[uart] [STARTUP] Writing initial conditions (Gaussian: Ïƒ=32.0 A=1.000) ...
+[uart] [STARTUP] A7 configured OK.
+[uart] [STARTUP] Capturing initial A7 field RAM ...
+[uart] [A7] Dumping 512 sites 0 64 128 192 256 320 384 448 done
+[uart] [STARTUP] Initial A7 field captured in PS RAM.
+[uart] [STARTUP] Initial A7 field SD output deferred to final evidence bundle.
+[uart] [STARTUP] Configuring Cmod ...
+[uart] [STARTUP] Cmod recovery: fields=6 policy=0x0000000F depth=128
+[uart] [STARTUP] Cmod WAL control: logging=on repair=on
+[uart] [STARTUP] Cmod configured OK.
+[uart] === Cold Start Complete - Hardware Ready (tau NOT started) ===
+[host] final drain 1.0s

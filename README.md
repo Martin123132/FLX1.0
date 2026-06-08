@@ -1,114 +1,121 @@
-# FLX1.0
+# FLX (Finite Lattice maXimus)
 
-**Finite Lattice maXimus: a deterministic FPGA lattice/field-state processing fabric with CPU-reference validation, replay, and controlled recovery.**
+**Deterministic FPGA field-state compute with reference-model validation, replay, controlled recovery, and layout-aware lattice addressing.**
 
-FLX1.0 stands for Finite Lattice maXimus.
+Start here for the shortest review path:
 
-FLX1.0 is a prototype hardware execution path for finite-lattice and field-state workloads. The project is focused on a practical question: can a hardware run be validated, replayed, restored, and inspected with evidence?
+- [START_HERE.md](START_HERE.md)
+- [VALIDATION_RESULTS.md](VALIDATION_RESULTS.md)
+- [EVIDENCE_CORRELATION.md](EVIDENCE_CORRELATION.md)
+- [MEDIA/evidence_panels/lattice_memory_layout_panel.png](MEDIA/evidence_panels/lattice_memory_layout_panel.png)
+- [MEDIA/evidence_panels/cpu_vs_flx_benchmark_panel.png](MEDIA/evidence_panels/cpu_vs_flx_benchmark_panel.png)
+- [MEDIA/evidence_panels/adaptability_flash_boot_panel.png](MEDIA/evidence_panels/adaptability_flash_boot_panel.png)
+- [MEDIA/videos/flx1_evidence_demo.mp4](MEDIA/videos/flx1_evidence_demo.mp4)
 
-The current prototype has completed a hardware acceptance run covering field simulation, particle accumulation, restore/recovery, adaptive workload dispatch, and evidence/report generation. This repository collects the customer-facing summary plus the generated evidence archive for that run.
+FLX is a prototype finite-lattice compute architecture for workloads where the important question is not only "did it run?", but:
 
-## At A Glance
+- did the hardware result match the reference model exactly?
+- can the run be replayed?
+- can state be checkpointed and restored?
+- can the same fabric handle field, particle, world-state, and programmable workloads?
+- can logical 1D/2D/3D fields be mapped deterministically into physical lattice memory?
 
-| Area | Current evidence status |
-|---|---:|
-| Hardware acceptance run | Pass, 6 June 2026 |
-| Deterministic field-state workload execution | Demonstrated |
-| CPU-reference comparison | Pass |
-| Controlled restore/recovery | Pass |
-| Adaptive workload dispatch | Pass |
-| Evidence/report generation | Pass |
+## Latest Hardware Evidence
 
-## What This Repository Contains
+The latest hardware acceptance run passed on **8 June 2026**.
 
-- summary documents for technical and commercial review;
-- validation results and benchmark summaries;
-- the generated hardware acceptance evidence archive;
-- raw logs, comparison outputs, plots, JSON summaries, and file-integrity hashes.
+| Area | Evidence | Result |
+|---|---|---:|
+| Full board acceptance suite | [acceptance_20260608_full](evidence/acceptance_20260608_full/README.md) | Pass |
+| 100T build and timing gate | [board_deployment_20260608](evidence/board_deployment_20260608/README.md) | Pass |
+| 100T config-memory program/verify | [board_deployment_20260608](evidence/board_deployment_20260608/README.md) | Pass |
+| Cmod config-memory program/verify | [board_deployment_20260608](evidence/board_deployment_20260608/README.md) | Pass |
+| SPI health, Cmod mirror, live board run | [board_acceptance_20260608_135515.stdout.log](evidence/board_deployment_20260608/board_acceptance_20260608_135515.stdout.log) | Pass |
+| Configurable 1D/2D/3D field workloads | [acceptance_summary.json](evidence/acceptance_20260608_full/acceptance_summary.json) | Pass |
+| 1024-active-point capability checks | [acceptance_summary.json](evidence/acceptance_20260608_full/acceptance_summary.json) | Pass |
+| 10,000,000-particle 3D regression | [particle3d_438](evidence/acceptance_20260608_full/particle3d_438) | Pass |
+| Controlled WAL/recovery proof | [fault_recovery](evidence/acceptance_20260608_full/fault_recovery) | Pass |
+| Lattice memory mapper and router proof | [lattice_memory_20260608](evidence/lattice_memory_20260608/README.md) | Pass |
+| CPU-vs-FLX benchmark comparison | [cpu_vs_flx_20260608](evidence/cpu_vs_flx_20260608/README.md) | Pass |
+| Flash-booted programmable adaptability suite | [adaptability_flash_boot_20260608](evidence/adaptability_flash_boot_20260608/README.md) | Pass |
 
-The raw evidence archive is here:
+The validated comparisons report:
 
-- [evidence/acceptance_20260606_full](evidence/acceptance_20260606_full/)
-- [acceptance_report.md](evidence/acceptance_20260606_full/acceptance_report.md)
-- [acceptance_summary.json](evidence/acceptance_20260606_full/acceptance_summary.json)
-- [manifest.json](evidence/acceptance_20260606_full/manifest.json)
-- [flx_evidence_file_hashes_sha256.txt](evidence/acceptance_20260606_full/flx_evidence_file_hashes_sha256.txt)
-
-## What Has Been Demonstrated
-
-The latest hardware acceptance run completed on **6 June 2026**.
-
-Validated results:
-
-| Area | Result |
-|---|---:|
-| Full hardware acceptance suite | Pass |
-| Configurable 1D field workload | Pass |
-| Configurable 2D field workload | Pass |
-| Configurable 3D field workload | Pass |
-| 1024-active-point capability checks | Pass |
-| 10,000,000-particle 3D regression | Pass |
-| 438-step deterministic 3D run | Pass |
-| CPU-reference comparison | Pass |
-| Final fixed-point mismatches in validated comparisons | 0 |
-| Maximum fixed-point delta in validated comparisons | 0 |
-| Controlled restore/recovery proof | Pass |
-| Wave propagation restore demo | Pass |
-| Adaptive dispatcher proof | Pass |
-| Hardware health checks | Pass |
-| Documentation/help audit | Pass |
-| RTL simulation proof | Pass |
-
-The 10,000,000-particle 3D regression matched the CPU-reference output with:
-
-- final field mismatches: **0**
+- final fixed-point mismatches: **0**
 - maximum fixed-point delta: **0**
-- normalized overlap: **1.0**
+- reference-model comparison: **pass**
+- controlled restore/recovery comparison: **pass**
+- live board lattice-map cross-checks: **51 / 51 pass**
+- host lattice mapping coverage: **48 / 48 pass**
+- CPU-vs-FLX benchmark exact matches: **3 / 3 pass**
+- flash-booted programmable adaptability exact matches: **11 / 11 pass**
 
-## Why This Exists
+## What Was Demonstrated
 
-Ordinary CPU/GPU software stacks are powerful, but some physical-world systems need more than raw throughput:
+| Capability | Validated Result |
+|---|---:|
+| 1D field workload, 100 points, 140 steps | Pass, mismatches 0 |
+| 2D field workload, 16 x 16, 140 steps | Pass, mismatches 0 |
+| 3D field workload, 8 x 8 x 8, 140 steps | Pass, mismatches 0 |
+| 1D cap check, 1024 points | Pass, mismatches 0 |
+| 2D cap check, 32 x 32 | Pass, mismatches 0 |
+| 3D cap check, 10 x 10 x 10 | Pass, mismatches 0 |
+| Particle3D regression, 10,000,000 particles, 438 steps | Pass, mismatches 0 |
+| Wave restore demo | Pass, mismatches 0 |
+| WAL-controlled recovery | Pass, mismatches 0 |
+| Adaptive dispatch | Pass |
+| Lattice layouts: row, snake, Morton | Pass |
+| Route mailbox local read/status | Pass |
+| CPU-style VM, SHA-256, and robot-grid comparison | Pass, exact matches 3 / 3 |
+| Flash-booted VM/load/reduction/world-state workload suite | Pass, exact matches 11 / 11 |
 
-- deterministic replay;
-- fixed-contract validation against a reference model;
-- state persistence;
-- controlled restore after interruption;
-- repeatable world-state evolution;
-- hardware-assisted execution for grid, field, and local-state workloads.
+## Technical Evidence Archive
 
-FLX1.0 explores that space: a deterministic field-state processing fabric that can run workloads, compare them against a CPU/reference model, and preserve evidence about what happened.
+Current evidence:
+
+- [evidence/acceptance_20260608_full](evidence/acceptance_20260608_full/README.md)
+- [evidence/board_deployment_20260608](evidence/board_deployment_20260608/README.md)
+- [evidence/lattice_memory_20260608](evidence/lattice_memory_20260608/README.md)
+- [evidence/cpu_vs_flx_20260608](evidence/cpu_vs_flx_20260608/README.md)
+- [evidence/adaptability_flash_boot_20260608](evidence/adaptability_flash_boot_20260608/README.md)
+
+Prior evidence retained for comparison:
+
+- [evidence/acceptance_20260606_full](evidence/acceptance_20260606_full/README.md)
+- [evidence/flx3d_generality_20260524](evidence/flx3d_generality_20260524/summary.json)
+
+The evidence folders include raw UART logs, runner logs, JSON summaries, comparison reports, CSV result artefacts, plots, and SHA-256 file hashes.
+
+## Presentation Media
+
+The [`MEDIA`](MEDIA/README.md) folder contains presentation media generated from the evidence artefacts.
+
+![FLX1.0 presentation thumbnail](MEDIA/public_presentation_thumbnail.png)
+
+Useful review visuals:
+
+- [Lattice memory layout proof panel](MEDIA/evidence_panels/lattice_memory_layout_panel.png)
+- [CPU-vs-FLX benchmark panel](MEDIA/evidence_panels/cpu_vs_flx_benchmark_panel.png)
+- [Flash-boot adaptability panel](MEDIA/evidence_panels/adaptability_flash_boot_panel.png)
+- [2D layout map: row, snake, Morton](MEDIA/plots/lattice_layout_2d_32x32_row_snake_morton.png)
+- [3D layout map: 8 x 8 x 8](MEDIA/plots/lattice_layout_3d_8x8x8_row_snake_morton.png)
+- [3D layout map: 10 x 10 x 10](MEDIA/plots/lattice_layout_3d_10x10x10_row_snake_morton.png)
+- [Evidence wall](MEDIA/flx1_evidence_wall.png)
+- [Evidence demo video](MEDIA/videos/flx1_evidence_demo.mp4)
+- [Media file hashes](MEDIA/MEDIA_MANIFEST.json)
 
 ## Evidence Flow
 
 ```mermaid
 flowchart LR
     A["Workload definition"] --> B["FPGA hardware run"]
-    A --> C["CPU/reference model run"]
+    A --> C["Reference-model run"]
     B --> D["Hardware output"]
     C --> E["Reference output"]
     D --> F["Comparison"]
     E --> F
     F --> G["Metrics: mismatches, max delta, overlap"]
-    G --> H["Report, plots, evidence bundle"]
-```
-
-## Architecture View
-
-```mermaid
-flowchart TB
-    O["Operator / host tooling"] --> C["Control and orchestration"]
-    C --> F["Deterministic FPGA lattice fabric"]
-    F --> M["Field / lattice workloads"]
-    F --> P["Particle workloads"]
-    F --> W["World-state workloads"]
-    F --> U["Programmable workload path"]
-    F --> R["Checkpoint / restore path"]
-    M --> V["CPU-reference validation"]
-    P --> V
-    W --> V
-    U --> V
-    R --> V
-    V --> E["Evidence reports"]
+    G --> H["Reports, plots, logs, hashes"]
 ```
 
 ## Current Workload Classes
@@ -116,32 +123,23 @@ flowchart TB
 - **Field-state workloads:** configurable 1D, 2D, and 3D field evolution.
 - **Particle-field workloads:** deterministic particle accumulation into a 3D field.
 - **Wave/world demo:** wave-style propagation with restore and comparison.
-- **Adaptive workload routing:** field, SHA-style, robotics-style, and generic programmable workload classes.
-- **Recovery proof:** controlled restore path compared against baseline and CPU-reference output.
+- **Adaptive workload routing:** field, SHA-style, robotics-style, and programmable workload classes.
+- **Flash-booted programmable workload diversity:** VM RAM load, integer bitwork, Q16 fixed-point arithmetic, reductions, lattice-neighbour addressing, and world-state local-rule cases.
+- **Recovery proof:** controlled restore path compared against baseline and reference-model output.
+- **Lattice memory mapping:** row-major compatibility, serpentine/snake layout, and Morton/Z-order layout with live board cross-checks.
 
-## Evidence-Based Claim
+## Core Claim Supported By This Evidence
 
-The claim supported by the current evidence is:
-
-> A deterministic FPGA-based field-state processing fabric can run multiple validated grid/world-state workloads, compare hardware results against a CPU-reference model, preserve evidence, and demonstrate controlled recovery behavior.
-
-Potential application areas include:
-
-- robotics simulation and replay;
-- factory/digital-twin state engines;
-- deterministic physical-world control loops;
-- scientific field simulation;
-- fault-recoverable embedded processing;
-- hardware-accelerated world-state experimentation.
+> A deterministic FPGA-based finite-lattice compute fabric can run multiple validated grid/world-state workloads, compare hardware results against a reference model, preserve evidence, restore controlled state, and address logical 1D/2D/3D lattice memory through a deterministic layout contract.
 
 ## Read More
 
-- [RESULT_SUMMARY.md](RESULT_SUMMARY.md)
 - [VALIDATION_RESULTS.md](VALIDATION_RESULTS.md)
-- [VALIDATION_CARD.md](VALIDATION_CARD.md)
 - [BENCHMARKS.md](BENCHMARKS.md)
+- [EVIDENCE_CORRELATION.md](EVIDENCE_CORRELATION.md)
+- [EVIDENCE_MANIFEST.md](EVIDENCE_MANIFEST.md)
+- [MEDIA/README.md](MEDIA/README.md)
 - [ARCHITECTURE_OVERVIEW.md](ARCHITECTURE_OVERVIEW.md)
 - [APPLICATIONS.md](APPLICATIONS.md)
-- [EVIDENCE_MANIFEST.md](EVIDENCE_MANIFEST.md)
 - [NOTICE.md](NOTICE.md)
 - [CONTACT.md](CONTACT.md)

@@ -1,0 +1,23 @@
+{
+  "date_time": "2026-06-08T14:16:57+0100",
+  "python_version": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "port": "COM5",
+  "baud": 115200,
+  "kernel_contract_words": [
+    "0x4D545332"
+  ],
+  "final_pass": true,
+  "boot_bin_path": "E:\\GMW_CPU\\experiments\\sd_card\\BOOT.bin",
+  "source_hashes": {
+    "fpga\\arty_a7\\src\\a7_mts_dimensional_kernel.sv": "0c5b84eca61a0063bf07a1bf63ea6169e1789f9ae0725e5592d81d71b1eee6c3",
+    "fpga\\arty_a7\\src\\top_arty_a7_tile.sv": "72e6a0dd9599ac1f446fef5ebe4f534f2a4024c156ea5dd2d741b6de92d0d51e",
+    "arty_a7_fabric\\z7_new\\platform_set\\orch\\main.c": "837ef89f7e02005c34ae83299468e40b443060424c9c9cc864a064aaf0a87425",
+    "tools\\mts_full_physics_q16.py": "063dbc4cbe359e576d1d96561c90d6f630cfd1be572e6f9876f5d280ca8ea5fa",
+    "tools\\mts_metrics.py": "bacd63fb6aa5cf644e1e65a7308963bd1ca955a72b0350faa52db0d634bfbca7",
+    "tools\\gmw_adaptive_dispatcher.py": "ba50b76c6e1940a0169cf5c492989b8adf372d912b7fa9cacd68bf25cb312b76",
+    "run_gmw_wave_restore_demo.py": "8238b09dd39ebadf5d92c8cec80940748f951d6be6fec18fbbd98dfd2507164d",
+    "run_gmw_workload.py": "db12f2713d6907dedec4913276ec184679577bfe1bfaceb02b69bd3006996bac",
+    "run_gmw_acceptance.py": "c114777ecf4dd4788b82ea0b94b298137801306b5c8bd0260fc921a9c9cd55e7"
+  }
+}
