@@ -5,8 +5,7 @@ For commercial evaluation, technical review, licensing, collaboration, investmen
 Contact fields to complete:
 
 - organisation: TWO HANDS NETWORK LTD
-- contact name: [add approved contact name]
-- email: [add approved email]
-- website: [optional]
+- contact name: Glyn Evans
+- email: glyn@twohandsnetwork.co.uk
 
-Sensitive third-party material should only be shared through an agreed review process.
+Sensitive third-party material will only be shared through an agreed review process.
