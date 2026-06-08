@@ -1,6 +1,6 @@
 # Architecture Overview
 
-FLX (Finite Lattice maXimus) is a deterministic finite-lattice compute architecture. It is built around the idea that hardware workloads should be:
+FLX1.0 (Finite Lattice maXimus) is a deterministic finite-lattice processing fabric. It is built around the idea that hardware workloads should be:
 
 - explicitly configured;
 - deterministic;

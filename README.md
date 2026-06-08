@@ -1,6 +1,8 @@
-# FLX (Finite Lattice maXimus)
+# FLX1.0
 
-**Deterministic FPGA field-state compute with reference-model validation, replay, controlled recovery, and layout-aware lattice addressing.**
+**Finite Lattice maXimus: a deterministic FPGA lattice/field-state processing fabric with CPU-reference validation, replay, and controlled recovery.**
+
+FLX1.0 stands for **Finite Lattice maXimus**.
 
 Start here for the shortest review path:
 
@@ -12,7 +14,7 @@ Start here for the shortest review path:
 - [MEDIA/evidence_panels/adaptability_flash_boot_panel.png](MEDIA/evidence_panels/adaptability_flash_boot_panel.png)
 - [MEDIA/videos/flx1_evidence_demo.mp4](MEDIA/videos/flx1_evidence_demo.mp4)
 
-FLX is a prototype finite-lattice compute architecture for workloads where the important question is not only "did it run?", but:
+FLX1.0 is a prototype finite-lattice processing fabric for workloads where the important question is not only "did it run?", but:
 
 - did the hardware result match the reference model exactly?
 - can the run be replayed?

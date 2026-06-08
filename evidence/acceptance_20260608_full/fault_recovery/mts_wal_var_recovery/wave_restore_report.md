@@ -1,4 +1,4 @@
-# GMW Wave Restore Demo
+# FLX1.0 Wave Restore Demo
 
 - final_pass: `True`
 - shape: `[4, 4, 1]`

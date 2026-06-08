@@ -1,4 +1,4 @@
-# GMW Core CPU Acceptance Report
+# FLX1.0 Core CPU Acceptance Report
 
 - Final PASS: `True`
 - Port: `COM5`

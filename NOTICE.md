@@ -1,7 +1,3 @@
 # Notice
 
-This repository is a technical evidence summary for the FLX (Finite Lattice maXimus) prototype.
-
-All rights are reserved by the project owners and/or their assigned legal entity.
-
-Commercial evaluation, technical review, collaboration, licensing, investment, or acquisition discussions should be arranged directly with the project owners.
+This repository is private technical evidence for FLX1.0, also expanded as Finite Lattice maXimus. All rights are reserved by the project owners and/or their assigned legal entity. Do not redistribute, publish, copy, sublicense, or use commercially without written permission.

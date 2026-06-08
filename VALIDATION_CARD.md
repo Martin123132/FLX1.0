@@ -1,6 +1,6 @@
 # Validation Card
 
-## FLX (Finite Lattice maXimus)
+## FLX1.0 (Finite Lattice maXimus)
 
 Validation date: **8 June 2026**
 

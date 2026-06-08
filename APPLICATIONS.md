@@ -1,12 +1,12 @@
 # Applications
 
-FLX is aimed at deterministic workloads where state, replay, and validation matter.
+FLX1.0 is aimed at deterministic workloads where state, replay, and validation matter.
 
 ## Robotics And Control
 
 Robotics systems often need repeatable state evolution, sensor-state replay, fault diagnosis, and deterministic control loops.
 
-Relevant FLX properties:
+Relevant FLX1.0 properties:
 
 - deterministic workload execution;
 - replayable state;
@@ -18,7 +18,7 @@ Relevant FLX properties:
 
 Factory systems involve queues, stations, jams, failures, recovery, and stateful process flow.
 
-Relevant FLX properties:
+Relevant FLX1.0 properties:
 
 - deterministic world-state updates;
 - checkpoint and restore;
@@ -30,7 +30,7 @@ Relevant FLX properties:
 
 Grid and field workloads map naturally to deterministic lattice-style execution.
 
-Relevant FLX properties:
+Relevant FLX1.0 properties:
 
 - 1D, 2D, and 3D field support;
 - fixed-point reference-model validation;
@@ -41,7 +41,7 @@ Relevant FLX properties:
 
 Some systems need to know not only the final answer, but whether they can restore and continue from a known state.
 
-Relevant FLX properties:
+Relevant FLX1.0 properties:
 
 - controlled restore proof;
 - baseline vs restored comparison;
